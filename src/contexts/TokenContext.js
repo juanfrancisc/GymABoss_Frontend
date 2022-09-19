@@ -56,6 +56,4 @@ export const useTokenContext = () => {
 
   return { token, setToken, loggedUser, setLoggedUser };
 
-  // Forma abreviada:
-  // return useContext(TokenContext);
 };
