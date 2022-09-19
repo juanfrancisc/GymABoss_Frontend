@@ -8,18 +8,17 @@ const Exercise = ({ exercise }) => {
   const { token, loggedUser } = useTokenContext();
 
   return (
-      <section className="exercise">
-        <h3>{title}</h3>
-        <p>{typology}</p>
-        <p>{description}</p>
-        {{photo.length > 0 && (
-          <img
-            src={`${process.env.REACT_APP_API_URL}/exercises/${photos[0].title}`}
-            alt={title}
-          />
-        )}}
-      </section>
-    
+    <section className="exercise">
+      <h3>{title}</h3>
+      <p>{typology}</p>
+      <p>{description}</p>
+      {photo.length > 0 && (
+        <img
+          src={`${process.env.REACT_APP_API_URL}/exercises/${photo[0].title}`}
+          alt={title}
+        />
+      )}
+    </section>
   );
 };
 
