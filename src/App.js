@@ -8,8 +8,8 @@ import Spinner from "../src/components/Spinner/Spinner";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import RegisterPage from "./pages/RegisterPage/Registerpage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import NewExercisePage from "./pages/NewExercisePage";
+import ExercisesPage from "./pages/ExercisesPage";
 
 function App() {
   return (
@@ -20,8 +20,10 @@ function App() {
         </header>
         <main>
           <Routes>
-            <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/newExercise" element={<NewExercisePage />} />
+            <Route path="/exercisesPage" element={<ExercisesPage />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Spinner />
@@ -30,7 +32,7 @@ function App() {
         {/* Para mostrar las alertas */}
         <ToastContainer position="bottom-center" theme="dark" />
 
-        <footer></footer>
+        <footer>Gym a Boss 2022</footer>
       </CustomTokenContextProvider>
     </BrowserRouter>
   );
