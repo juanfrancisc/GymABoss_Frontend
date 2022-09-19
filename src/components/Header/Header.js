@@ -13,9 +13,7 @@ const Header = () => {
         </Link>
 
         {token && (
-          <li>
-            <Navbar />
-          </li>
+          <Navbar />
         )}
     </header>
   );

@@ -1,0 +1,24 @@
+button{
+    /*margin-right: 1rem;*/
+	width:10%;
+    padding: 1rem;
+	border:1px solid white;
+	border-radius:5px;
+	display:block;
+	color: #000;
+	background-color:#8fa2f5;
+} 
+
+button:hover{
+	cursor:pointer;
+	color: #fff;
+	background-color:#191c29;
+}
+
+.logout{
+    margin-top: -3rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end
+
+}
