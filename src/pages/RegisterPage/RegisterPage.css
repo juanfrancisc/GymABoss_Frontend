@@ -1,11 +1,12 @@
 h2 {
-  display: flex;
-  justify-content: left;
   align-items: center;
+  justify-content: left;
+  display: flex;
   margin-left: 20vw;
 }
+
 fieldset {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }

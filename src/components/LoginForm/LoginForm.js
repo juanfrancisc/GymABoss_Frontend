@@ -1,10 +1,10 @@
-import './LoginForm.css';
+import "./LoginForm.css";
 import { useState } from "react";
 import { useTokenContext } from "../../contexts/TokenContext";
 import { toast } from "react-toastify";
 
 const LoginForm = () => {
-  console.log("LoginForm")
+  console.log("LoginForm");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,11 +27,11 @@ const LoginForm = () => {
           const body = await res.json();
           //console.log(body)
           //console.log(body.status)
-          console.log(body.authtoken)
+          console.log(body.authtoken);
           if (!res.ok) {
             throw new Error(body.message);
           }
-          
+
           setToken(body.authtoken);
           toast.success("Logged succesfully");
         } catch (error) {
@@ -60,9 +60,8 @@ const LoginForm = () => {
         }}
       />
 
-      <button type='submit'>Login</button>
+      <button type="submit">Login</button>
     </form>
-    
   );
 };
 

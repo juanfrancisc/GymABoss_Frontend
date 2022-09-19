@@ -1,4 +1,6 @@
+import "./RegisterForm.css";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");
@@ -59,7 +61,7 @@ const RegisterForm = () => {
           setPassword(event.target.value);
         }}
       />
-      <button>Register</button>
+      <button type="submit">Register</button>
     </form>
   );
 };
