@@ -3,22 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   
-}
-html{
-  /*background-color: rgba(244, 155, 155, 0.8);*/
   
-
 }
 
 main{
-  background-image: url(./assets/imagenes/background.png);
-  background-image: center;
+  /*background-image: url(./assets/imagenes/background.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: contain;
-  background-position: center center;
+  background-size: cover;
+  background-position: center center;*/
 }
-
 
 
 

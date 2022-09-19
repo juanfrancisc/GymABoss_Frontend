@@ -1,0 +1,177 @@
+section :nth-child(2){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+fieldset{
+	border: none;
+}
+form{
+	color: white;
+	padding:2rem;
+	border-radius:10px;
+	margin: 1rem;
+	background-color:#191c29;
+	margin-right: 1rem;
+}
+
+form label{
+	width:80%;
+	font-weight:bold;
+	display:inline-block;
+}
+
+form input[type="email"],
+form input[type="password"]{
+	width:95%;
+	padding:0.5rem;
+	border:1px solid white;
+	border-radius:5px;
+	background-color:white;
+	margin:1rem;
+	display:inline-block;
+}
+
+form button[type="submit"]{
+	width:50%;
+	padding:0.5rem;
+	margin-top:32px;
+	border:1px solid white;
+	border-radius:5px;
+	display:block;
+	color: #000;
+	background-color:#8fa2f5;
+} 
+
+form button[type="submit"]:hover{
+	cursor:pointer;
+	color: #fff;
+	background-color:#191c29;
+}
+
+/*Efecto contorno logo*/
+@property --rotate {
+	syntax: "<angle>";
+	initial-value: 132deg;
+	inherits: false;
+  }
+  
+  :root {
+	--card-height: 60vh;
+	--card-width: calc(var(--card-height) / 1.6);
+  }
+  
+  .logo {
+	background: #191c29;
+	/*width: var(--card-width);
+	height: var(--card-height);
+	padding: 3px;
+	margin-top: 50px;*/
+	position: relative;
+	border-radius: 6px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 1.3em;
+	color: rgb(88 199 250 / 0%);
+	cursor: pointer;
+	text-align: center;
+	display: block;
+  }
+  
+  .logo:hover {
+	color: rgb(88 199 250 / 100%);
+	transition: color 1s;
+  }
+  .logo:hover:before, .logo:hover:after {
+	animation: none;
+	opacity: 0;
+  }
+  
+  .logo h3{
+	letter-spacing: 0.5px;
+  }
+  
+  .logo span{
+	font-size: 13px;
+  }
+  
+  .logo::before {
+	content: "";
+	width: 104%;
+	height: 103%;
+	border-radius: 8px;
+	background-image: linear-gradient(
+	  var(--rotate)
+	  , #5ddcff, #3c67e3 43%, #4e00c2);
+	  position: absolute;
+	  z-index: -1;
+	  top: -1%;
+	  left: -2%;
+	  animation: spin 2.5s linear infinite;
+  }
+  
+  .logo::after {
+	position: absolute;
+	content: "";
+	top: calc(var(--card-height) / 6);
+	left: 0;
+	right: 0;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	transform: scale(0.8);
+	filter: blur(calc(var(--card-height) / 6));
+	background-image: linear-gradient(
+	  var(--rotate)
+	  , #5ddcff, #3c67e3 43%, #4e00c2);
+	  opacity: 1;
+	transition: opacity .5s;
+	animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+	0% {
+	  --rotate: 0deg;
+	}
+	100% {
+	  --rotate: 360deg;
+	}
+  }
+
+/* Efecto CSS
+.logo {
+	border-radius: 50%;
+	cursor: pointer;
+	padding: 40px;
+	clip-path: circle(calc(50% - 40px));
+	--_p: 100px;
+	--_g1: radial-gradient(50% 50%,#e71e24 90%,#0000); 
+	--_g2: radial-gradient(50% 50%,#fcc010 90%,#0000); 
+	--_g3: radial-gradient(50% 50%,#85c341 90%,#0000); 
+	--_g4: radial-gradient(50% 50%,#eb2288 90%,#0000); 
+	background:
+	   var(--_g1) calc(20% - var(--_p)) calc(20% - var(--_p)),
+	   var(--_g2) calc(80% + var(--_p)) calc(10% - var(--_p)),
+	   var(--_g3) calc(80% + var(--_p)) calc(80% + var(--_p)),
+	   var(--_g3) 55%                   calc(12% - var(--_p)),
+	   var(--_g1) calc(18% - var(--_p)) calc(88% + var(--_p)),
+	   var(--_g2) calc(10% - var(--_p)) calc(70% + var(--_p)),
+	   var(--_g2) calc(88% + var(--_p)) 40%,
+	   var(--_g1) calc(82% + var(--_p)) calc(28% - var(--_p)),
+	   var(--_g4) calc(12% - var(--_p)) 30%,
+	   var(--_g4) 65%                   calc(85% + var(--_p)),
+	   var(--_g3) calc(20% - var(--_p)) calc(10% - var(--_p)),
+	   var(--_g4) calc(30% - var(--_p)) calc(85% + var(--_p));
+	background-size: 15px 15px, 20px 20px, 30px 30px;
+	background-repeat: no-repeat;
+	filter: grayscale(80%);
+	transition: .5s;
+  }
+  .logo:hover {
+	filter: grayscale(0%);
+	clip-path: circle(50%);
+	--_p: 0px;
+  }*/
+  
