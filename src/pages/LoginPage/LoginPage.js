@@ -5,11 +5,10 @@ import { Navigate } from "react-router-dom";
 import LoginForm from "../../components/LoginForm/LoginForm";
 
 const LoginPage = () => {
-  console.log("LoginPage")
   const { token } = useTokenContext();
 
   if (token) {
-    return <Navigate to="/" />;
+    return <Navigate to="/exercisesPage" />;
   }
 
   return (

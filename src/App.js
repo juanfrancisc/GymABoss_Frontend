@@ -10,6 +10,8 @@ import Header from "./components/Header/Header";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import NewExercisePage from "./pages/NewExercisePage";
 import ExercisesPage from "./pages/ExercisesPage";
+import RegisterPage from "./pages/RegisterPage/Registerpage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 
 function App() {
   return (
@@ -20,13 +22,13 @@ function App() {
         </header>
         <main>
           <Routes>
+            <Route path='/' element={<LoginPage  />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/newExercise" element={<NewExercisePage />} />
             <Route path="/exercisesPage" element={<ExercisesPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-          <Spinner />
         </main>
 
         {/* Para mostrar las alertas */}

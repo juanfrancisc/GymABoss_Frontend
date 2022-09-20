@@ -4,10 +4,9 @@ import useLocalStorage from "../hooks/useLocalStorage";
 export const TokenContext = createContext();
 
 export const CustomTokenContextProvider = ({ children }) => {
-  console.log("TokenContext")
   const [token, setToken] = useLocalStorage("token");
   const [loggedUser, setLoggedUser] = useState({});
-  console.log(token)
+
   useEffect(() => {
     if (!token) {
       setLoggedUser({});
@@ -20,20 +19,20 @@ export const CustomTokenContextProvider = ({ children }) => {
         const decodedToken = JSON.parse(atob(token.split(".")[1]));
 
         console.log("2");
-
         const res = await fetch(
           `${process.env.REACT_APP_API_URL}/users/${decodedToken.id}`
         );
 
         const body = await res.json();
-        
+        //console.log(body)
         console.log("3");
 
         if (!res.ok) {
           console.log("4");
           throw new Error(body.message);
         }
-
+        console.log("5")
+        //console.log(body.data)
         setLoggedUser(body.data);
       } catch (error) {
         console.error(error.message);

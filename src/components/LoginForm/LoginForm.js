@@ -4,7 +4,6 @@ import { useTokenContext } from "../../contexts/TokenContext";
 import { toast } from "react-toastify";
 
 const LoginForm = () => {
-  console.log("LoginForm");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

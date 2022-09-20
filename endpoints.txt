@@ -1,0 +1,21 @@
+app.post('/newRegisterUsers', newRegisterUser);
+app.post('/getLogin', getLogin);
+app.post('/login', getLogin);
+app.get('/users/:idUser', getUser); //Recuperar datos del usuario
+app.post('/remenberPass', remenberPass)
+
+// De ejercicios
+//app.put('/uploadPhoto', isLogin, isAdmin, uploadPhoto)
+app.get('/listExercises', isLogin, listExercises);
+app.get('/getExerciseId/:idExcercise', isLogin, getExerciseId);
+app.get('/listExercises/:typology', isLogin, getTypolgy);
+app.post('/newExercise', isLogin, isAdmin, newExercises);
+app.post('/modifyExercises/:idExercise', isLogin, isAdmin, modifyExercises);
+app.delete('/deleteExercise/:idExercise', isLogin,isAdmin, deleteExercises);
+
+
+
+//botón like
+
+app.get('/like/:idUser_Like_Exercises', userLikeExercises);
+app.post('/addLike/:idExercises', isLogin, addLike);

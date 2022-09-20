@@ -1,11 +1,16 @@
 import "./RegisterForm.css";
 import { useState } from "react";
 import { toast } from "react-toastify";
+//Falta importar useNavigate
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  //Falta crear esta variable
+  const navigate = useNavigate();
 
   return (
     <form>
