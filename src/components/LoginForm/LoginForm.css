@@ -33,7 +33,7 @@ form input[type="password"]{
 }
 
 form button[type="submit"]{
-	width:50%;
+	width:95%;
 	padding:0.5rem;
 	margin-top:32px;
 	border:1px solid white;
@@ -44,6 +44,23 @@ form button[type="submit"]{
 } 
 
 form button[type="submit"]:hover{
+	cursor:pointer;
+	color: #fff;
+	background-color:#191c29;
+}
+
+button{
+	width:95%;
+	padding:0.5rem;
+	margin-top:32px;
+	border:1px solid white;
+	border-radius:5px;
+	display:block;
+	color: #000;
+	background-color:#8fa2f5;
+} 
+
+button:hover{
 	cursor:pointer;
 	color: #fff;
 	background-color:#191c29;

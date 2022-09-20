@@ -2,6 +2,8 @@ import "./LoginForm.css";
 import { useState } from "react";
 import { useTokenContext } from "../../contexts/TokenContext";
 import { toast } from "react-toastify";
+import RemenberButton from "../RemenberButton/RemenberButton";
+import RegisterButton from "../RegisterButton/RegisterButton";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -60,6 +62,8 @@ const LoginForm = () => {
       />
 
       <button type="submit">Login</button>
+      <RegisterButton />
+      <RemenberButton />
     </form>
   );
 };

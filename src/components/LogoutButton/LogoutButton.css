@@ -1,4 +1,4 @@
-button{
+.logoutButton{
     /*margin-right: 1rem;*/
 	width:10%;
     padding: 1rem;
@@ -6,10 +6,10 @@ button{
 	border-radius:5px;
 	display:block;
 	color: #000;
-	background-color:#8fa2f5;
+	background-color:#c90505;
 } 
 
-button:hover{
+.logoutButton:hover{
 	cursor:pointer;
 	color: #fff;
 	background-color:#191c29;

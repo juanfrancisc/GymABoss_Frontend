@@ -8,7 +8,7 @@ const LogoutButton = () => {
   const navigate = useNavigate();
 
   return (
-    <button
+    <button className='logoutButton'
       onClick={() => {
         setToken("");
         navigate("/");

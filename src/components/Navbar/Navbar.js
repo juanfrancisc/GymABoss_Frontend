@@ -11,7 +11,10 @@ const Navbar = () => {
       {token && (
       <ul>
         <li>
-          <Link to="/cardio">Cardio</Link>
+          <a href="/Musculacion"> Pruebas </a>
+        </li>
+        <li>
+          <Link to="exercisePage/cardio">Cardio</Link>
         </li>
         <li>
           <Link to="/musculacion">Musculación</Link>
