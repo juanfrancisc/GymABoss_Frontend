@@ -22,9 +22,10 @@ export const CustomTokenContextProvider = ({ children }) => {
         const res = await fetch(
           `${process.env.REACT_APP_API_URL}/users/${decodedToken.id}`
         );
-
+      
+        
         const body = await res.json();
-        //console.log(body)
+
         console.log("3");
 
         if (!res.ok) {

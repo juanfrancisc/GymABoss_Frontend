@@ -7,17 +7,23 @@ const useExercises = () => {
   const [loading, setLoading] = useState(true);
 
   const { token } = useTokenContext();
-  console.log(token)
+  //console.log(token)
 
   useEffect(() => {
     const fetchExercises = async () => {
       try {
-
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/getExercises`,);
-        console.log(res)
+        //La linea comentada es para recuperar el listado de ejercicios sin estar logado
+        //const res = await fetch(`${process.env.REACT_APP_API_URL}/getExercises`,);
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/listExercises`,{
+            method: "GET",
+            headers: {
+              authorization: token,
+            }
+        });
+        //console.log(res)
 
         const body = await res.json();
-        console.log(body)
+        //console.log(body)
 
         if (!res.ok) {
           throw new Error(
@@ -26,7 +32,7 @@ const useExercises = () => {
         }
 
         setExercises(body.data);
-        console.log(body.data)
+        //console.log(body.data)
       } catch (error) {
         console.error(error.message);
         setErrorMessage(error.message);

@@ -12,6 +12,8 @@ import NewExercisePage from "./pages/NewExercisePage";
 import ExercisesPage from "./pages/ExercisesPage";
 import RegisterPage from "./pages/RegisterPage/Registerpage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
+import VerExercise from "./components/VerExercise/VerExercise_pruebas";
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
             <Route path='/' element={<LoginPage  />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/newExercise" element={<NewExercisePage />} />
+            <Route path="/verExercise/*" element={<VerExercise />} />
             <Route path="/exercisesPage" element={<ExercisesPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="*" element={<NotFoundPage />} />

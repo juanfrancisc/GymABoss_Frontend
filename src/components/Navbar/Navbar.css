@@ -20,10 +20,10 @@ ul {
     cursor: pointer;
     color: black;
   }
-  li:last-child {
+  nav ul li:last-child {
     margin-right: 0px;
   }
-  li:after {
+  nav ul li:after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -31,40 +31,40 @@ ul {
     transform: translateX(-50%) rotate(0deg);
   }
   
-  li:nth-child(1):after {
-    /*background: #ED4337;*/
-    background-image: url(../../assets/imagenes/cardio.png);
+  nav ul li:nth-child(1):after {
+    background: #ED4337;
+    /* background-image: url(../../assets/imagenes/cardio.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
   }
   
-  li:nth-child(2):after {
-    /*background: #A1D3A2;*/
-    background-image: url(../../assets/imagenes/musculacion.png);
+  nav ul li:nth-child(2):after {
+    background: #A1D3A2;
+    /* background-image: url(../../assets/imagenes/musculacion.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
   }
   
-  li:nth-child(3):after {
-    /*background: #50B8E7;*/
-    background-image: url(../../assets/imagenes/relax.png);
+  nav ul li:nth-child(3):after {
+    background: #50B8E7;
+    /* background-image: url(../../assets/imagenes/relax.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
   }
   
-  li:nth-child(4):after {
-    /*background: #efe200;*/
-    background-image: url(../../assets/imagenes/natacion.png);
+  nav ul li:nth-child(4):after {
+    background: #efe200;
+    /* background-image: url(../../assets/imagenes/natacion.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center center; */
 
   }
   
-  li:nth-child(1):after {
+  nav ul li:nth-child(1):after {
     clip-path: polygon(6% 10%, 100% 0, 64% 65%, 28% 65%);
     height: 85px;
     width: 75px;
@@ -84,7 +84,7 @@ ul {
     }
   }
   
-  li:nth-child(2):after {
+  nav ul li:nth-child(2):after {
     clip-path: polygon(61% 0%, 100% 19%, 71% 100%, 0% 100%);
     height: 55px;
     width: 75px;
@@ -105,7 +105,7 @@ ul {
     }
   }
   
-  li:nth-child(3):after {
+  nav ul li:nth-child(3):after {
     clip-path: polygon(0% 0%, 100% 0%, 100% 99%, 0% 57%);
     height: 55px;
     width: 45px;
@@ -126,7 +126,7 @@ ul {
     }
   }
   
-  li:nth-child(4):after {
+  nav ul li:nth-child(4):after {
     clip-path: polygon(0% 40%, 100% 0%, 100% 99%, 19% 100%);
     height: 55px;
     width: 45px;
@@ -147,7 +147,7 @@ ul {
     }
   }
   
-  li:hover:after {
+  nav ul li:hover:after {
     animation: boink 1s ease forwards 1;
   }
   @keyframes boink {
