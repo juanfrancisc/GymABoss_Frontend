@@ -8,17 +8,18 @@ const RegisterForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  //console.log(name)
   //Falta crear esta variable
   const navigate = useNavigate();
 
   return (
-    <form>
-      {async (event) => {
+    <form 
+      onSubmit={async (event) => {
         try {
           event.preventDefault();
 
           const newUser = { name, email, password };
+          console.log(newUser)
           const res = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
             method: "POST",
             headers: {
@@ -27,6 +28,7 @@ const RegisterForm = () => {
             body: JSON.stringify(newUser),
           });
           const body = await res.json();
+          console.log(body)
 
           if (!res.ok) {
             throw new Error(body.message);
@@ -39,7 +41,7 @@ const RegisterForm = () => {
           toast.error(error.message);
         }
       }}
-
+      >
       <label htmlFor="name">Name:</label>
       <input
         id="name"
