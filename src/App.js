@@ -14,6 +14,7 @@ import RegisterPage from "./pages/RegisterPage/Registerpage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 import VerExercise from "./components/VerExercise/VerExercise_pruebas";
 import RememberPass from "./components/RememberPass/RememberPass";
+import TypologyFilter from "./components/TypologyFilter/TypologyFilter";
 
 
 function App() {
@@ -24,9 +25,9 @@ function App() {
           <Header />
         </header>
         <main>
+          <TypologyFilter />
 
           <Routes>
-            
             <Route path='/' element={<LoginPage  />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
