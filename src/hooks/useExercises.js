@@ -13,24 +13,14 @@ const useExercises = (typology) => {
   useEffect(() => {
     const fetchExercises = async () => {
       try {
-        let consulta;
-        if (!typology){
-          consulta = `${process.env.REACT_APP_API_URL}/getExercises`;
-
-        } else {
-          consulta = `${process.env.REACT_APP_API_URL}/getExercises/${typology}`
-        }
-        //La linea comentada es para recuperar el listado de ejercicios sin estar logado
-        //const res = await fetch(`${process.env.REACT_APP_API_URL}/getExercises`,);
-        /*const res = await fetch(`${process.env.REACT_APP_API_URL}/listExercises`,{
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/listExercises`,{
             method: "GET",
             headers: {
               authorization: token,
             }
-        });*/
-        //console.log(res)
-        console.log(consulta)
-        const res = await fetch(consulta);
+        });
+                //console.log(res)
+
         const body = await res.json();
         //console.log(body)
 

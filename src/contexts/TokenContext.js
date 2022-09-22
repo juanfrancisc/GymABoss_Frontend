@@ -17,11 +17,15 @@ export const CustomTokenContextProvider = ({ children }) => {
     //console.log("1");
     const fetchUser = async () => {
       try {
-        const decodedToken = JSON.parse(atob(token.split(".")[1]));
+        console.log({token})
 
         //console.log("2");
         const res = await fetch(
-          `${process.env.REACT_APP_API_URL}/users/${decodedToken.id}`
+          `${process.env.REACT_APP_API_URL}/users`,{
+            headers: {
+              authorization: token,
+            }
+          }
         );
       
         
@@ -36,7 +40,7 @@ export const CustomTokenContextProvider = ({ children }) => {
         //console.log("5")
         //console.log(body.data)
         setLoggedUser(body.data);
-        toast.message(body.message)
+        toast.success(body.message)
       } catch (error) {
         console.error(error.message);
         toast.error(error.message);
