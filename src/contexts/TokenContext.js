@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { toast } from "react-toastify";
 
 export const TokenContext = createContext();
 
@@ -13,12 +14,12 @@ export const CustomTokenContextProvider = ({ children }) => {
       return;
     }
 
-    console.log("1");
+    //console.log("1");
     const fetchUser = async () => {
       try {
         const decodedToken = JSON.parse(atob(token.split(".")[1]));
 
-        console.log("2");
+        //console.log("2");
         const res = await fetch(
           `${process.env.REACT_APP_API_URL}/users/${decodedToken.id}`
         );
@@ -26,17 +27,19 @@ export const CustomTokenContextProvider = ({ children }) => {
         
         const body = await res.json();
 
-        console.log("3");
+        //console.log("3");
 
         if (!res.ok) {
-          console.log("4");
+          //console.log("4");
           throw new Error(body.message);
         }
-        console.log("5")
+        //console.log("5")
         //console.log(body.data)
         setLoggedUser(body.data);
+        toast.message(body.message)
       } catch (error) {
         console.error(error.message);
+        toast.error(error.message);
       }
     };
 

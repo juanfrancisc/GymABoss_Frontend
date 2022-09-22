@@ -12,7 +12,7 @@ const LoginForm = () => {
   const { setToken } = useTokenContext();
 
   return (
-    <form
+    <form 
       onSubmit={async (event) => {
         try {
           event.preventDefault();
@@ -60,11 +60,11 @@ const LoginForm = () => {
           setPassword(event.target.value);
         }}
       />
-
+      
       <button type="submit">Login</button>
       <RegisterButton />
       <RemenberButton />
-    </form>
+      </form>
   );
 };
 

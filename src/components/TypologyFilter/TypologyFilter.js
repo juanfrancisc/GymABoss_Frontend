@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import LogoutButton from "../LogoutButton/LogoutButton";
+//import useExercises from "../../hooks/useExercises";
+
 
 const TypologyFilter = () => {
     const [typology, setTypology] = useState("");
-    console.log(typology)
+    //console.log(typology)
   
+    //const  typologia  = useExercises();
+
     return (
+      <>
       <form onSubmit={async(event) => {
         try{
           event.preventDefault();
@@ -32,7 +38,7 @@ const TypologyFilter = () => {
         onChange={(event) => {
           setTypology(event.target.value)
         }}>
-          <option value="cardio">cardio</option>
+          <option value="cardio" defaultValue>cardio</option>
           <option value="musculacion">musculacion</option>
           <option value="natacion">natacion</option>
           <option value="relajacion">relajacion</option>
@@ -40,6 +46,11 @@ const TypologyFilter = () => {
         
         <button type="submit">Buscar</button>
       </form>
+      <div className='logout'>
+        <LogoutButton />
+      </div>
+
+      </>
     );
   };
   

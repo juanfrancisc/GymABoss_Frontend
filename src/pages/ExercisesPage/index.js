@@ -2,6 +2,7 @@ import ErrorMessage from "../../components/ErrorMessage";
 import ExerciseList from "../../components/ExerciseList";
 import Spinner from "../../components/Spinner/Spinner";
 import useExercises from "../../hooks/useExercises";
+//import useTypology from "../../hooks/useTypology";
 
 /**
  * Hacer fetch de los ejercicios del backend y pintarlos en
@@ -10,6 +11,7 @@ import useExercises from "../../hooks/useExercises";
 
 const ExercisesPage = () => {
   const { exercises, errorMessage, loading } = useExercises();
+  //const { exercises, errorMessage, loading } = useTypology(); 
 
   return (
     <section>

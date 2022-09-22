@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useTokenContext } from "../contexts/TokenContext";
+import { toast } from "react-toastify";
 
-const useExercises = (typology) => {
+const useTypology = () => {
   console.log(typology)
+  const [typology, setTypology] = useState("")
   const [exercises, setExercises] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(true);
 
   const { token } = useTokenContext();
@@ -13,24 +14,11 @@ const useExercises = (typology) => {
   useEffect(() => {
     const fetchExercises = async () => {
       try {
-        let consulta;
-        if (!typology){
-          consulta = `${process.env.REACT_APP_API_URL}/getExercises`;
-
-        } else {
-          consulta = `${process.env.REACT_APP_API_URL}/getExercises/${typology}`
-        }
         //La linea comentada es para recuperar el listado de ejercicios sin estar logado
         //const res = await fetch(`${process.env.REACT_APP_API_URL}/getExercises`,);
-        /*const res = await fetch(`${process.env.REACT_APP_API_URL}/listExercises`,{
-            method: "GET",
-            headers: {
-              authorization: token,
-            }
-        });*/
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/getExercises/${typology}`);
         //console.log(res)
-        console.log(consulta)
-        const res = await fetch(consulta);
+
         const body = await res.json();
         //console.log(body)
 
@@ -42,18 +30,19 @@ const useExercises = (typology) => {
 
         setExercises(body.data);
         //console.log(body.data)
+        toast.success(body.message);
       } catch (error) {
         console.error(error.message);
-        setErrorMessage(error.message);
+        toast.error(error.message);
       } finally {
         setLoading(false);
       }
     };
 
     fetchExercises();
-  }, [token]);
+  }, [typology]);
 
-  return { exercises, errorMessage, loading };
+  return { exercises, loading };
 };
 
-export default useExercises;
+export default useTypology;

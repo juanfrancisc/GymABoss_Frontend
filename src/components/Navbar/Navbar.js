@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useTokenContext } from "../../contexts/TokenContext";
 import LogoutButton from "../LogoutButton/LogoutButton";
 
+
 const Navbar = () => {
   const { token } = useTokenContext();
 
@@ -11,19 +12,16 @@ const Navbar = () => {
       {token && (
       <ul>
         <li>
-          <a href="/Musculacion"> Pruebas </a>
+          <Link to="?typology=cardio">Cardio</Link>
         </li>
         <li>
-          <Link to="exercisePage/cardio">Cardio</Link>
+          <Link to="?typology=musculacion">Musculación</Link>
         </li>
         <li>
-          <Link to="/musculacion">Musculación</Link>
+          <Link to="?typology=relajacion">Relajación</Link>
         </li>
         <li>
-          <Link to="/relajacion">Relajación</Link>
-        </li>
-        <li>
-          <Link to="/natacion">Natación</Link>
+          <Link to="?typology=natacion" >Natación</Link>
         </li>
       </ul>)} 
       <div className='logout'>

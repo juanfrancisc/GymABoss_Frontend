@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import "./styles.css";
+/* import { Link } from "react-router-dom";
+ */import "./styles.css";
 import Exercise from "../Exercise";
 
 const ExercisesList = ({ exercises }) => {
@@ -8,11 +8,11 @@ const ExercisesList = ({ exercises }) => {
       {exercises.map((exercise) => {
         //console.log(exercise)
         return (
-            <Link to={`/verExercise/${exercise.id}`}>
+           /*  <Link to={`/verExercise/${exercise.id}`}> */
             <li key={exercise.id}>
               <Exercise exercise={exercise} />
             </li>
-            </Link>
+            /* </Link> */
         );
       })}
     </ul>
