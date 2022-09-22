@@ -23,10 +23,14 @@ const Navbar = () => {
         <li>
           <Link to="?typology=natacion" >Natación</Link>
         </li>
+        <li>
+          <Link to="?typology" >Todas las tipologias</Link>
+        </li>
+
       </ul>)} 
       <div className='logout'>
         <LogoutButton />
-      </div>              
+      </div>             
     </nav>
   );
 };

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 //import { toast } from "react-toastify";
 import "./styles.css";
 import flexiones from "../../assets/imagenes/flexiones.jpg";
+
+
 const Exercise = ({ exercise }) => {
   //console.log(exercise)
   const { id, idUser, n_like, title, description, photo, typology } = exercise;

@@ -2,7 +2,6 @@ import "./header.css";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useTokenContext } from "../../contexts/TokenContext";
-import TypologyFilter from "../TypologyFilter/TypologyFilter";
 
 
 const Header = () => {
@@ -16,7 +15,6 @@ const Header = () => {
         {token && (
           <li>
             <Navbar />
-            <TypologyFilter />
           </li>
         )}
     </header>

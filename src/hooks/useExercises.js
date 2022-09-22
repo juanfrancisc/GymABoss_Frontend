@@ -1,28 +1,33 @@
 import { useState, useEffect } from "react";
 import { useTokenContext } from "../contexts/TokenContext";
+import { useSearchParams } from "react-router-dom"
 
-const useExercises = (typology) => {
-  console.log(typology)
+const useExercises = () => {
   const [exercises, setExercises] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(true);
+ 
 
   const { token } = useTokenContext();
+
+  const [searchParams, setSearchParams] = useSearchParams();
   //console.log(token)
 
   useEffect(() => {
     const fetchExercises = async () => {
       try {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/listExercises`,{
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/getExercises?${searchParams.toString()}`)
+        
+        /*const res = await fetch(`${process.env.REACT_APP_API_URL}/listExercises?${searchParams.toString}`,{
             method: "GET",
             headers: {
               authorization: token,
             }
-        });
-                //console.log(res)
+        });*/
+        console.log(res)
 
         const body = await res.json();
-        //console.log(body)
+        console.log(body)
 
         if (!res.ok) {
           throw new Error(
@@ -41,9 +46,9 @@ const useExercises = (typology) => {
     };
 
     fetchExercises();
-  }, [token]);
+  }, [searchParams]);
 
-  return { exercises, errorMessage, loading };
+  return { exercises, errorMessage, loading, searchParams, setSearchParams };
 };
 
 export default useExercises;
