@@ -40,9 +40,9 @@ const Navbar = () => {
           </li>
         </ul>
       )}
-      <div className="logout">
+      {/* <div className="logout">
         <NewExerciseButton />
-      </div>      
+      </div> */}      
       <div className="logout">
         <LogoutButton />
       </div>
