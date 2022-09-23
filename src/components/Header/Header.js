@@ -7,17 +7,15 @@ import { useTokenContext } from "../../contexts/TokenContext";
 const Header = () => {
     const { token } = useTokenContext();
   return (
-    <header>
+    <>
         <Link to="/">
             <h1>Gym a Boss</h1>
         </Link>
 
         {token && (
-          <li>
             <Navbar />
-          </li>
         )}
-    </header>
+    </>
   );
 };
 

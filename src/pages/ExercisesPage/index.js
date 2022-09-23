@@ -1,7 +1,7 @@
 //import { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage";
 import ExerciseList from "../../components/ExerciseList";
-import NewExerciseButton from "../../components/NewExerciseButton/NewExereciseButton"
+//import NewExerciseButton from "../../components/NewExerciseButton/NewExereciseButton"
 import Spinner from "../../components/Spinner/Spinner";
 import useExercises from "../../hooks/useExercises";
 import useUser from "../../hooks/useUser";
@@ -11,7 +11,6 @@ import useUser from "../../hooks/useUser";
 const ExercisesPage = () => {
   const { exercises, errorMessage, loading } = useExercises();
   const { user } = useUser();
-  //console.log(user.type_user)
 
 
   return (
@@ -20,8 +19,8 @@ const ExercisesPage = () => {
 
       {loading && <Spinner />}
 
-      {user.type_user === 'admin' && <NewExerciseButton />  }
-
+{/*       {user.type_user === 'admin' && <NewExerciseButton />  }
+ */}
       {exercises.length > 0 && <ExerciseList exercises={exercises} />}
 
       {errorMessage && <ErrorMessage msg={errorMessage} />}

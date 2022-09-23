@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 //import { toast } from "react-toastify";
 import "./styles.css";
 import flexiones from "../../assets/imagenes/flexiones.jpg";
+import useUser from "../../hooks/useUser";
+import DeteleExerciseButton from "../DeleteExerciseButton/DeleteExerciseButton";
 
 
 const Exercise = ({ exercise }) => {
@@ -12,10 +14,13 @@ const Exercise = ({ exercise }) => {
   //const { token, loggedUser } = useTokenContext();
   //console.log(photo)
 
+  const { user } = useUser();
+
   return (
-    <Link to={`?id=${id}`}>
+    
     <section className="boxes">
-      
+      {user.type_user === 'admin' && <DeteleExerciseButton id={id}/>  }
+      <Link to={`?id=${id}`}>
       <h3 className="title">{title}</h3>
       <p className="typology">{typology}</p>
       <img height="180" src={flexiones}></img>
@@ -28,8 +33,9 @@ const Exercise = ({ exercise }) => {
       )} */}
 
       <p className="nLikes">Likes: {n_like}</p>
+      </Link>
     </section>
-    </Link>
+    
   );
 };
 

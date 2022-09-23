@@ -4,15 +4,19 @@ import { useTokenContext } from "../../contexts/TokenContext";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import NewExerciseButton from "../NewExerciseButton/NewExereciseButton";
 import { useState } from "react";
+import useUser from "../../hooks/useUser";
 
 const Navbar = () => {
   const { token } = useTokenContext();
-
+  const { user } = useUser();
 
   return (
     <nav>
       {token && (
         <ul>
+          <li>
+            <h4>Estas logado como: {user.name}</h4>
+          </li>
           <li>
             <Link to="?typology=cardio" className="LinkNavbar">
               Cardio
@@ -38,14 +42,16 @@ const Navbar = () => {
               Todas las tipologias
             </Link>
           </li>
+          <li className="logout">
+            {user.type_user === 'admin' && <NewExerciseButton />  } 
+          </li>
+          <li className="logout">
+            <LogoutButton />
+          </li>
         </ul>
       )}
-      {/* <div className="logout">
-        <NewExerciseButton />
-      </div> */}      
-      <div className="logout">
-        <LogoutButton />
-      </div>
+          
+      
     </nav>
   );
 };

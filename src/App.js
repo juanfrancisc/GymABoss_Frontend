@@ -14,6 +14,7 @@ import RegisterPage from "./pages/RegisterPage/Registerpage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 import VerExercise from "./components/VerExercise/VerExercise_pruebas";
 import RememberPass from "./components/RememberPass/RememberPass";
+//mport DeteleExercise from "./components/DeleteExercise/DeleteExercise";
 //import TypologyFilter from "./components/TypologyFilter/TypologyFilter";
 //import NavbarButton from "./components/NavbarButton/NavbarButton";
 
@@ -38,6 +39,7 @@ function App() {
             <Route path="/exercisesPage" element={<ExercisesPage />} />
             <Route path="/exercisesPage/:id" element={<ExercisesPage />} />
             <Route path="/exercisesPage/:typology" element={<ExercisesPage />} />
+            {/* <Route path="/deleteExercise/:id" element={<DeteleExercise />} /> */}
             
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
