@@ -1,8 +1,7 @@
-import './Navbar.css'
+import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useTokenContext } from "../../contexts/TokenContext";
 import LogoutButton from "../LogoutButton/LogoutButton";
-
 
 const Navbar = () => {
   const { token } = useTokenContext();
@@ -10,27 +9,37 @@ const Navbar = () => {
   return (
     <nav>
       {token && (
-      <ul>
-        <li>
-          <Link to="?typology=cardio">Cardio</Link>
-        </li>
-        <li>
-          <Link to="?typology=musculacion">Musculación</Link>
-        </li>
-        <li>
-          <Link to="?typology=relajacion">Relajación</Link>
-        </li>
-        <li>
-          <Link to="?typology=natacion" >Natación</Link>
-        </li>
-        <li>
-          <Link to="?typology" >Todas las tipologias</Link>
-        </li>
-
-      </ul>)} 
-      <div className='logout'>
+        <ul>
+          <li>
+            <Link to="?typology=cardio" className="LinkNavbar">
+              Cardio
+            </Link>
+          </li>
+          <li>
+            <Link to="?typology=musculacion" className="LinkNavbar">
+              Musculación
+            </Link>
+          </li>
+          <li>
+            <Link to="?typology=relajacion" className="LinkNavbar">
+              Relajación
+            </Link>
+          </li>
+          <li>
+            <Link to="?typology=natacion" className="LinkNavbar">
+              Natación
+            </Link>
+          </li>
+          <li>
+            <Link to="?typology" className="LinkNavbar">
+              Todas las tipologias
+            </Link>
+          </li>
+        </ul>
+      )}
+      <div className="logout">
         <LogoutButton />
-      </div>             
+      </div>
     </nav>
   );
 };
