@@ -36,6 +36,7 @@ function App() {
             <Route path="/newExercise" element={<NewExercisePage />} />
             <Route path="/verExercise/:id" element={<VerExercise />} />
             <Route path="/exercisesPage" element={<ExercisesPage />} />
+            <Route path="/exercisesPage/:id" element={<ExercisesPage />} />
             <Route path="/exercisesPage/:typology" element={<ExercisesPage />} />
             
             <Route path="*" element={<NotFoundPage />} />

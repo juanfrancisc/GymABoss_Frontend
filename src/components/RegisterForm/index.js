@@ -8,7 +8,6 @@ const RegisterForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //console.log(name)
   //Falta crear esta variable
   const navigate = useNavigate();
 
@@ -28,7 +27,7 @@ const RegisterForm = () => {
             body: JSON.stringify(newUser),
           });
           const body = await res.json();
-          console.log(body)
+          //console.log(body)
 
           if (!res.ok) {
             throw new Error(body.message);

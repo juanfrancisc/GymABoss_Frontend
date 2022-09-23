@@ -8,21 +8,10 @@ import useExercises from "../../hooks/useExercises";
 
 const ExercisesPage = () => {
   const { exercises, errorMessage, loading } = useExercises();
-  //const { exercises, errorMessage, loading, searchParams, setSearchParams } = useExercises();
-  //const { exercises, errorMessage, loading } = useTypology(); 
-
-  //const initailSearch = searchParams.get("search") || "";
-
-  //const [search, setSearch] = useState(initailSearch);
 
   return (
     <section>
       <h2>Ejercicios</h2>
-      
-      {/* <button onClick={(event) => {
-        setSearchParams(new URLSearchParams("?typology=natacion"))
-        
-      }}>Natacion</button> */}
 
       {loading && <Spinner />}
 

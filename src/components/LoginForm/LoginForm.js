@@ -27,7 +27,6 @@ const LoginForm = () => {
 
           const body = await res.json();
           //console.log(body)
-          //console.log(body.status)
           console.log(body.authtoken);
           if (!res.ok) {
             throw new Error(body.message);

@@ -6,13 +6,13 @@ const ExercisesList = ({ exercises }) => {
   return (
     <ul className="exercise_list">
       {exercises.map((exercise) => {
-        //console.log(exercise)
+        console.log(exercise.id)
         return (
-            <Link to={`?title=${exercise.title}`}> */
+            /* <Link to={`?id=${exercise.id}`}> */
             <li key={exercise.id}>
               <Exercise exercise={exercise} />
             </li>
-            </Link>
+            /* </Link> */
         );
       })}
     </ul>

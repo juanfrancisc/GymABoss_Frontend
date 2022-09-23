@@ -13,7 +13,9 @@ const Exercise = ({ exercise }) => {
   //console.log(photo)
 
   return (
+    <Link to={`?id=${id}`}>
     <section className="boxes">
+      
       <h3 className="title">{title}</h3>
       <p className="typology">{typology}</p>
       <img height="180" src={flexiones}></img>
@@ -27,6 +29,7 @@ const Exercise = ({ exercise }) => {
 
       <p className="nLikes">Likes: {n_like}</p>
     </section>
+    </Link>
   );
 };
 
