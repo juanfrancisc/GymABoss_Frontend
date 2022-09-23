@@ -6,7 +6,6 @@ const ExercisesList = ({ exercises }) => {
   return (
     <ul className="exercise_list">
       {exercises.map((exercise) => {
-        console.log(exercise.id)
         return (
             /* <Link to={`?id=${exercise.id}`}> */
             <li key={exercise.id}>

@@ -9,9 +9,17 @@ const NewExerciseForm = () => {
   const [typology, setTypology] = useState("");
   const { token } = useTokenContext();
 
+  /* const decodedToken = JSON.parse(atob(token.split(".")[1]));
+  console.log(decodedToken) */
+
   const navigate = useNavigate();
 
   const photoRef = useRef();
+
+  /* if(decodedToken.type !== 'admin'){
+    console.error("Errorooooo");
+    
+  } */
 
   return (
     <form
@@ -22,7 +30,7 @@ const NewExerciseForm = () => {
           const newExercise = { title, description, typology };
 
           const res = await fetch(
-            `${process.env.REACT_APP_API_URL}/exercises/new`,
+            `${process.env.REACT_APP_API_URL}/newExercise`,
             {
               method: "POST",
               headers: {

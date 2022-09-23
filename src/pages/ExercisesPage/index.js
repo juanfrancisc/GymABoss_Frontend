@@ -3,11 +3,13 @@ import ErrorMessage from "../../components/ErrorMessage";
 import ExerciseList from "../../components/ExerciseList";
 import Spinner from "../../components/Spinner/Spinner";
 import useExercises from "../../hooks/useExercises";
+//import useUser from "../../hooks/useUser";
 //import useTypology from "../../hooks/useTypology";
 
 
 const ExercisesPage = () => {
   const { exercises, errorMessage, loading } = useExercises();
+  //const { user } = useUser();
 
   return (
     <section>

@@ -17,7 +17,7 @@ export const CustomTokenContextProvider = ({ children }) => {
     //console.log("1");
     const fetchUser = async () => {
       try {
-        console.log({token})
+        //console.log({token})
 
         //console.log("2");
         const res = await fetch(

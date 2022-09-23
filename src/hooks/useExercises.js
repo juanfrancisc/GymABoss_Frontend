@@ -16,8 +16,6 @@ const useExercises = () => {
   useEffect(() => {
     const fetchExercises = async () => {
       try {
-        //const res = await fetch(`${process.env.REACT_APP_API_URL}/getExercises?${searchParams.toString()}`)
-
         const consulta = `${process.env.REACT_APP_API_URL}/getExercises?${searchParams.toString()}`;
         //console.log(consulta)
         const res = await fetch(consulta,{
@@ -27,16 +25,9 @@ const useExercises = () => {
             }
         });
         
-        /* const res = await fetch(`${process.env.REACT_APP_API_URL}/listExercises?${searchParams.toString}`,{
-            method: "GET",
-            headers: {
-              authorization: token,
-            }
-        }); */
-        console.log(res)
 
         const body = await res.json();
-        console.log(body)
+        //console.log(body)
 
         if (!res.ok) {
           throw new Error(

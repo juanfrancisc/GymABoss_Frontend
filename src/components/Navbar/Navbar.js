@@ -2,9 +2,12 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useTokenContext } from "../../contexts/TokenContext";
 import LogoutButton from "../LogoutButton/LogoutButton";
+import NewExerciseButton from "../NewExerciseButton/NewExereciseButton";
+import { useState } from "react";
 
 const Navbar = () => {
   const { token } = useTokenContext();
+
 
   return (
     <nav>
@@ -37,6 +40,9 @@ const Navbar = () => {
           </li>
         </ul>
       )}
+      <div className="logout">
+        <NewExerciseButton />
+      </div>      
       <div className="logout">
         <LogoutButton />
       </div>
