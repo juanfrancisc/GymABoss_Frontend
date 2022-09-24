@@ -1,46 +1,46 @@
-import { useTokenContext } from "../../contexts/TokenContext";
-import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-//import { Link } from "react-router-dom";
 import Trash from "../../assets/imagenes/trash.png"
-//import useDeteleExercise from "../../hooks/useDeleteExercise";
+import { useTokenContext } from "../../contexts/TokenContext";
 
+const deleteExerciseID = async (id) => {
+  const {token} = useTokenContext
+  console.log(token)
+  try {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${id.id}`, {
+    method: "DELETE",
+    headers: {
+      authorization: token,
+    }
+  })
+  console.log(res);
+  const body = await res.json();
 
-const DeteleExerciseButton = () => {
-  const {token} = useTokenContext();
-  const [loading, setLoading] = useState(true);
-  const [id, setId] = useState("");
+  if (!res.ok) {
+    throw new Error(body.message);
+  }
 
-    const fetchDelete = async () =>{
-       try {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/`,{
-            method: "GET",
-            headers: {
-              authorization: token,
-            }
-        })
-        console.log(res)
+  console.log(body)
 
-        const body = await res.json();
-        console.log(body)
+  toast.success(body.message)
 
-        setId("")
-        toast.success(body.message)
-    } catch (error) {
-        console.error(error.message);
-        toast.error(error.message);
-    } finally {
-        setLoading(false);
-    } 
-    };
+} catch (error) {
+  console.error(error.message);
+  toast.error(error.message);
+}
+
+}
+
+const DeteleExerciseButton = (id) => {
+  
+  //useDeteleExercise();
 
   return (
     <button className='logoutButton'
       onClick={() => {
-        {/* <Link to={`/deleteExercise/${id}`} /> */}
-       console.log(id)
-        fetchDelete(id);
-      }}
+        console.log(id);
+        
+    deleteExerciseID(id);
+    }}
     >
       <img src={Trash } alt="Logout" height ="64" width="64" />
     </button>

@@ -14,8 +14,8 @@ const useDeteleExercise = (id) => {
     useEffect(() => {
         const fetchDelete = async () =>{
            try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${id}`,{
-                method: "GET",
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${id.id}`,{
+                method: "DELETE",
                 headers: {
                   authorization: token,
                 }
