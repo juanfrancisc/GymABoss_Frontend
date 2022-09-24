@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTokenContext } from "../../contexts/TokenContext";
 import LogoutButton from "../LogoutButton/LogoutButton";
 import NewExerciseButton from "../NewExerciseButton/NewExereciseButton";
-import { useState } from "react";
+/* import { useState } from "react"; */
 import useUser from "../../hooks/useUser";
 
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
       {token && (
         <ul>
           <li>
-            <h4>Estas logado como: {user.name}</h4>
+            <h4>Hola: {user.name}. {user.type_user === 'admin' ? "Estas logado como "+user.type_user:"" }</h4>
           </li>
           <li>
             <Link to="?typology=cardio" className="LinkNavbar">
