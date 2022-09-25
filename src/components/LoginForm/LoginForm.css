@@ -1,8 +1,15 @@
-section :nth-child(2){
+/* section :nth-child(2){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */
+
+section #logo{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 fieldset{
 	border: none;
 }

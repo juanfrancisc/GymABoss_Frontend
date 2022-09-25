@@ -32,12 +32,12 @@ nav ul li:after {
   transform: translateX(-50%) rotate(0deg);
 }
 
-nav ul li:nth-child(1):after {
+/* nav ul li:nth-child(1):after {
   background: #ed4337;
   /* background-image: url(../../assets/imagenes/cardio.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; */
+    background-position: center center; 
 }
 
 nav ul li:nth-child(2):after {
@@ -45,7 +45,7 @@ nav ul li:nth-child(2):after {
   /* background-image: url(../../assets/imagenes/musculacion.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; */
+    background-position: center center; 
 }
 
 nav ul li:nth-child(3):after {
@@ -53,7 +53,7 @@ nav ul li:nth-child(3):after {
   /* background-image: url(../../assets/imagenes/relax.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; */
+    background-position: center center; 
 }
 
 nav ul li:nth-child(4):after {
@@ -61,7 +61,7 @@ nav ul li:nth-child(4):after {
   /* background-image: url(../../assets/imagenes/natacion.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; */
+    background-position: center center; 
 }
 
 nav ul li:nth-child(1):after {
@@ -145,7 +145,7 @@ nav ul li:nth-child(4):after {
     transform: translateX(-50%) rotate(3deg) scaleY(1.05);
     clip-path: polygon(0% 40%, 100% 0%, 100% 99%, 19% 100%);
   }
-}
+} */
 
 nav ul li:hover:after {
   animation: boink 1s ease forwards 1;

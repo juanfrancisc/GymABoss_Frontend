@@ -34,12 +34,12 @@ const DeteleExerciseButton = (id) => {
   //useDeteleExercise();
   const navigate = useNavigate();
   const {token} = useTokenContext();
-  console.log(token)
+  //console.log(token)
 
   return (
     <button id='deleteButton'
       onClick={() => {
-        console.log(id);
+        //console.log(id);
         deleteExerciseID(id,token);
         navigate("/");
     }}

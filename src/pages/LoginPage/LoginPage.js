@@ -14,11 +14,11 @@ const LoginPage = () => {
   return (
     <section>
       <h2>Login</h2>
-      <section>
+      <section id="logo">
         <fieldset >
           <LoginForm />
         </fieldset>
-        <fieldset className="logo">
+        <fieldset className='logo'>
           <img src={logo} alt="Logo de Gym a Boos" />
         </fieldset>
       </section> 

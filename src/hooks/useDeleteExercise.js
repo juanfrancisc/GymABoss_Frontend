@@ -34,7 +34,7 @@ const useDeteleExercise = (id) => {
         };
         fetchDelete();
         
-    })
+    }, [])
   
     return { id, idDelete,setIdDelete,exercise, setExercise, loading };
   };
