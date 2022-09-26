@@ -5,9 +5,10 @@ import "./styles.css";
 import flexiones from "../../assets/imagenes/flexiones.jpg";
 import useUser from "../../hooks/useUser";
 import DeteleExerciseButton from "../DeleteExerciseButton/DeleteExerciseButton";
-import ModifyExerciseButton from "../ModifyExerciseButton/ModifyExerciseButton";
+import EditExerciseButton from "../EditExerciseButton/EditExerciseButton";
 import LikeButton from "../LikeButton/LikeButton";
 import { useState } from "react";
+import EditExerciseForm from "../EditExerciseForm/EditExerciseForm";
 
 
 const Exercise = ({ exercise, like }) => {
@@ -20,14 +21,15 @@ const Exercise = ({ exercise, like }) => {
   const { user } = useUser();
   const { token } = useTokenContext();
   //const [like, setLike] = useState([])
-  console.log(like)
+  //console.log(like)
   const [loading, setLoading] = useState(true);
 
   return (
     
     <section className="boxes">
       {user.type_user === 'admin' && <DeteleExerciseButton id={id}/> }
-      {user.type_user === 'admin' && <ModifyExerciseButton id={id}/> }
+      {user.type_user === 'admin' && <EditExerciseForm exercise={exercise}/>}
+      {user.type_user === 'admin' && <EditExerciseButton exercise={exercise}/> }
       <Link to={`?id=${id}`}>
       <h3 className="title">{title}</h3>
       <p className="typology">{typology}</p>
@@ -49,7 +51,7 @@ const Exercise = ({ exercise, like }) => {
         
         try {
           const consulta = `${process.env.REACT_APP_API_URL}/addLike/${id}`
-          console.log(consulta)
+          //console.log(consulta)
   
           const res = await fetch(consulta,{
               method: "POST",
@@ -68,7 +70,7 @@ const Exercise = ({ exercise, like }) => {
   
           toast.success(body.message)
           like(id)
-          console.log(like)
+          //console.log(like)
         } catch (error) {
           console.error(error.message);
           toast.error(error.message);

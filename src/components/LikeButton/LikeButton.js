@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const likeExerciseId = async (id, token) => {
-    console.log(token)
+    //console.log(token)
 
     try {
         const consulta = `${process.env.REACT_APP_API_URL}/addLike/${id.id}`
@@ -36,7 +36,7 @@ const likeExerciseId = async (id, token) => {
 
 
 const LikeButton = (id) => {
-    console.log(id)
+    //console.log(id)
     /* console.log(idUser) */
     const {token} = useTokenContext();
     const navigate = useNavigate();

@@ -65,7 +65,7 @@ const NewExerciseForm = () => {
         }
       }}
     >
-      <label htmlFor="title">Nombre:</label>
+      <label htmlFor="title">Titulo:</label>
       <input
         id="title"
         value={title}
@@ -82,15 +82,6 @@ const NewExerciseForm = () => {
           setDescription(event.target.value);
         }}
       />
-
-      {/* <label htmlFor="typology">Tipología:</label>
-      <input
-        id="typology"
-        value={typology}
-        onChange={(event) => {
-          setTypology(event.target.value);
-        }}
-      /> */}
 
       <label htmlFor="typology">Tipología:</label>
       <select name="typology" id="typology"
