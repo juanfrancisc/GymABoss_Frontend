@@ -10,20 +10,16 @@ import LikeButton from "../LikeButton/LikeButton";
 import { useState } from "react";
 import EditExerciseForm from "../EditExerciseForm/EditExerciseForm";
 import Edit from "../../assets/imagenes/edit.png"
+import useExercises from "../../hooks/useExercises";
 
 
-const Exercise = ({ exercise, setExercise, like }) => {
-  //console.log(exercise)
+const Exercise = ({exercise, setExercise}) => {
+  /* console.log({exercise, setExercise}); */
   const { id, idUser, n_like, title, description, photo, typology } = exercise;
-
-  //const { token, loggedUser } = useTokenContext();
-  //console.log(photo)
-
   const { user } = useUser();
   const { token } = useTokenContext();
-  //const [like, setLike] = useState([])
-  //console.log(like)
   const [loading, setLoading] = useState(true);
+  const [exercises, setExercises] = useState("");
 
   return (
  
@@ -71,7 +67,7 @@ const Exercise = ({ exercise, setExercise, like }) => {
           }
   
           toast.success(body.message)
-          like(id)
+          setExercises({...exercises});
           //console.log(like)
         } catch (error) {
           console.error(error.message);

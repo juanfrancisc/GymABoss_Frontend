@@ -7,6 +7,7 @@ const useExercises = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(true);
  
+  //console.log([exercises, setExercises])
 
   const { token } = useTokenContext();
 
@@ -48,7 +49,7 @@ const useExercises = () => {
     fetchExercises();
   }, [searchParams]);
 
-  return { exercises, errorMessage, loading, searchParams, setSearchParams };
+  return { exercises, setExercises ,errorMessage, loading, searchParams, setSearchParams };
 };
 
 export default useExercises;

@@ -2,6 +2,7 @@ import Heart from '../Heart/Heart';
 import { toast } from "react-toastify";
 import { useTokenContext } from "../../contexts/TokenContext";
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 
 
 const likeExerciseId = async (id, token) => {
@@ -40,6 +41,7 @@ const LikeButton = (id) => {
     /* console.log(idUser) */
     const {token} = useTokenContext();
     const navigate = useNavigate();
+    const [like, setLike] = useState("");
     
 
     return (
