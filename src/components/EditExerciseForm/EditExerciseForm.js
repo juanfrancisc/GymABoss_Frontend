@@ -5,7 +5,7 @@ import { useTokenContext } from "../../contexts/TokenContext";
 
 const EditExerciseForm = (exercise, setExercise, setShowEditForm) => {
 
-    console.log(exercise.photo)
+    console.log(exercise)
     const { 
         id: id,
         title: currentTittle,
@@ -16,8 +16,8 @@ const EditExerciseForm = (exercise, setExercise, setShowEditForm) => {
 
     
 
-    const [newTitle, setNewTitle] = useState("")
-    const [newDescription, setNewDescription] = useState("")
+    const [newTitle, setNewTitle] = useState(currentTittle)
+    const [newDescription, setNewDescription] = useState(currentDescription)
     const [newTypology, setNewTypology] = useState("")
     const [newPhotoPreview, setNewPhotoPreview] = useState("")
 

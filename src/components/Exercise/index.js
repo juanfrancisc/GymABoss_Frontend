@@ -5,13 +5,14 @@ import "./styles.css";
 import flexiones from "../../assets/imagenes/flexiones.jpg";
 import useUser from "../../hooks/useUser";
 import DeteleExerciseButton from "../DeleteExerciseButton/DeleteExerciseButton";
-import EditExerciseButton from "../EditExerciseButton/EditExerciseButton";
+import EditExerciseButton from "../ModifyExerciseButton/ModifyExerciseButton";
 import LikeButton from "../LikeButton/LikeButton";
 import { useState } from "react";
 import EditExerciseForm from "../EditExerciseForm/EditExerciseForm";
+import Edit from "../../assets/imagenes/edit.png"
 
 
-const Exercise = ({ exercise, like }) => {
+const Exercise = ({ exercise, setExercise, like }) => {
   //console.log(exercise)
   const { id, idUser, n_like, title, description, photo, typology } = exercise;
 
@@ -25,11 +26,12 @@ const Exercise = ({ exercise, like }) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    
+ 
     <section className="boxes">
       {user.type_user === 'admin' && <DeteleExerciseButton id={id}/> }
-      {user.type_user === 'admin' && <EditExerciseForm exercise={exercise}/>}
-      {user.type_user === 'admin' && <EditExerciseButton exercise={exercise}/> }
+
+      {user.type_user === 'admin' && <EditExerciseButton exercise={exercise} setExercise={setExercise}/> }
+
       <Link to={`?id=${id}`}>
       <h3 className="title">{title}</h3>
       <p className="typology">{typology}</p>
@@ -60,7 +62,7 @@ const Exercise = ({ exercise, like }) => {
               }
           });
           const body = await res.json();
-          console.log(body)
+          //console.log(body)
   
           if (!res.ok) {
             throw new Error(
@@ -81,7 +83,7 @@ const Exercise = ({ exercise, like }) => {
 
       }}>Me gusta!</button>
     </section>
-    
+
   );
 };
 

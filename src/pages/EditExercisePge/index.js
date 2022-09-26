@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import EditExerciseForm from "../../components/EditExerciseForm/EditExerciseForm";
 import { useTokenContext } from "../../contexts/TokenContext";
 
-const EditExercisePage = () => {
+const EditExercisePage = (exercise, setExercise) => {
   const { token } = useTokenContext();
   
    if (!token) {
@@ -13,7 +13,7 @@ const EditExercisePage = () => {
     <section>
       <h2>Editar Ejercicio</h2>
 
-      <EditExerciseForm/>
+      <EditExerciseForm exercise={exercise} setExercise={setExercise}/>
     </section>
   );
 };

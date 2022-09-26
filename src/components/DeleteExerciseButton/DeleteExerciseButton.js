@@ -18,7 +18,7 @@ const deleteExerciseID = async (id,token) => {
   const body = await res.json();
 
   if (!res.ok) {
-            throw new Error(body.message);
+      throw new Error(body.message);
   }
    //console.log(body)
 

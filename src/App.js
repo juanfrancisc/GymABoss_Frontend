@@ -15,6 +15,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 import VerExercise from "./components/VerExercise/VerExercise_pruebas";
 import RememberPass from "./components/RememberPass/RememberPass";
 import EditExercisePage from "./pages/EditExercisePge";
+import EditExerciseForm from "./components/EditExerciseForm/EditExerciseForm";
 //mport DeteleExercise from "./components/DeleteExercise/DeleteExercise";
 //import TypologyFilter from "./components/TypologyFilter/TypologyFilter";
 //import NavbarButton from "./components/NavbarButton/NavbarButton";
@@ -29,7 +30,6 @@ function App() {
           <Header />
         </header>
         <main>
-          {/*}<TypologyFilter />*/}
           <Routes>
             <Route path='/' element={<LoginPage  />} />
             <Route path="/login" element={<LoginPage />} />
