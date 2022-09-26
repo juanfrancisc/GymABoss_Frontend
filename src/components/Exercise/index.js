@@ -7,9 +7,10 @@ import useUser from "../../hooks/useUser";
 import DeteleExerciseButton from "../DeleteExerciseButton/DeleteExerciseButton";
 import ModifyExerciseButton from "../ModifyExerciseButton/ModifyExerciseButton";
 import LikeButton from "../LikeButton/LikeButton";
+import { useState } from "react";
 
 
-const Exercise = ({ exercise, likeExercise }) => {
+const Exercise = ({ exercise, like }) => {
   //console.log(exercise)
   const { id, idUser, n_like, title, description, photo, typology } = exercise;
 
@@ -18,6 +19,10 @@ const Exercise = ({ exercise, likeExercise }) => {
 
   const { user } = useUser();
   const { token } = useTokenContext();
+  //const [like, setLike] = useState([])
+  console.log(like)
+  const [loading, setLoading] = useState(true);
+
   return (
     
     <section className="boxes">
@@ -41,6 +46,7 @@ const Exercise = ({ exercise, likeExercise }) => {
       <LikeButton id={id}/>
 
       <button type="button" onClick={ async () => {
+        
         try {
           const consulta = `${process.env.REACT_APP_API_URL}/addLike/${id}`
           console.log(consulta)
@@ -61,10 +67,13 @@ const Exercise = ({ exercise, likeExercise }) => {
           }
   
           toast.success(body.message)
-          
+          like(id)
+          console.log(like)
         } catch (error) {
           console.error(error.message);
           toast.error(error.message);
+        } finally {
+          setLoading(false);
         }
 
 
