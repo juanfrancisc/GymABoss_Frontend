@@ -4,11 +4,12 @@ import { useTokenContext } from "../../contexts/TokenContext";
 /* import { useState } from "react"; */
 import { useNavigate } from "react-router-dom";
 import './DeleteExerciseButton.css'
+import { useState } from "react";
 
-const deleteExerciseID = async (id,token) => {
-  
+const deleteExerciseID = async (exercise, token) => {
+  console.log(exercise.exercise.id)
   try {
-  const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${id.id}`, {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${exercise.exercise.id}`, {
     method: "DELETE",
     headers: {
       authorization: token,
@@ -21,7 +22,7 @@ const deleteExerciseID = async (id,token) => {
       throw new Error(body.message);
   }
    //console.log(body)
-
+  //setExcercise([...exercise])
   toast.success(body.message)
 } catch (error) {
   console.error(error.message);
@@ -34,6 +35,7 @@ const DeteleExerciseButton = (id) => {
   //useDeteleExercise();
   const navigate = useNavigate();
   const {token} = useTokenContext();
+  const [exercise, setExcercise] = useState("");
   //console.log(token)
 
   return (
@@ -41,7 +43,7 @@ const DeteleExerciseButton = (id) => {
       onClick={() => {
         //console.log(id);
         deleteExerciseID(id,token);
-        navigate("/");
+        setExcercise([...exercise])
     }}
     >
       <img src={Trash } alt="Logout" height ="64" width="64" />

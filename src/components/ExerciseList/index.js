@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import './styles.css'
+import { toast } from "react-toastify";
+import { useTokenContext } from "../../contexts/TokenContext";
+import Trash from "../../assets/imagenes/trash.png"
 import Exercise from '../Exercise'
 import useUser from '../../hooks/useUser'
 import { useState } from 'react'
@@ -10,6 +13,7 @@ const ExercisesList = () => {
     const {exercises, setExercises} = useExercises();
     const { user } = useUser()
     const [exercise, setExercise]= useState("");
+    const { token } = useTokenContext();
 
     console.log({exercises, setExercises})
     return (
@@ -18,6 +22,34 @@ const ExercisesList = () => {
                 return (
                     /* <Link to={`?id=${exercise.id}`}> */
                     <li key={exercise.id}>
+                        {user.type_user === 'admin' && 
+                            <button id='deleteButton'
+                            onClick={async () => {
+                            try {
+                                const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${exercise.id}`, {
+                                method: "DELETE",
+                                headers: {
+                                    authorization: token,
+                                }
+                                })
+                                //console.log(res);
+                                const body = await res.json();
+                            
+                                if (!res.ok) {
+                                    throw new Error(body.message);
+                                }
+                                //console.log(body)
+                                setExercises([...exercises])
+                                toast.success(body.message)
+                            } catch (error) {
+                                console.error(error.message);
+                                toast.error(error.message);
+                            }
+                            }}
+                            >
+                                <img src={Trash } alt="Logout" height ="64" width="64" />
+                            </button>
+                        }
                         {/*user.type_user === 'admin' && <DeteleExerciseButton id={exercise.id}/>*/}
                         <Exercise exercise={exercise} setExercise={setExercise}/>
                     </li>

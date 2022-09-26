@@ -7,6 +7,7 @@ import useUser from "../../hooks/useUser";
 import DeteleExerciseButton from "../DeleteExerciseButton/DeleteExerciseButton";
 import EditExerciseButton from "../ModifyExerciseButton/ModifyExerciseButton";
 import LikeButton from "../LikeButton/LikeButton";
+import Trash from "../../assets/imagenes/trash.png"
 import { useState } from "react";
 import EditExerciseForm from "../EditExerciseForm/EditExerciseForm";
 import Edit from "../../assets/imagenes/edit.png"
@@ -24,7 +25,35 @@ const Exercise = ({exercise, setExercise}) => {
   return (
  
     <section className="boxes">
-      {user.type_user === 'admin' && <DeteleExerciseButton id={id}/> }
+      {/* {user.type_user === 'admin' && <DeteleExerciseButton exercise={exercise}/> } */}
+      {/* {user.type_user === 'admin' && 
+      <button id='deleteButton'
+        onClick={async () => {
+          try {
+            const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${exercise.id}`, {
+              method: "DELETE",
+              headers: {
+                authorization: token,
+              }
+            })
+            //console.log(res);
+            const body = await res.json();
+          
+            if (!res.ok) {
+                throw new Error(body.message);
+            }
+             //console.log(body)
+            setExercises([...exercises])
+            toast.success(body.message)
+          } catch (error) {
+            console.error(error.message);
+            toast.error(error.message);
+          }
+        }}
+      >
+        <img src={Trash } alt="Logout" height ="64" width="64" />
+      </button>
+      } */}
 
       {user.type_user === 'admin' && <EditExerciseButton exercise={exercise} setExercise={setExercise}/> }
 
