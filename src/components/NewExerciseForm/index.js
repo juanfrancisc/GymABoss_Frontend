@@ -26,18 +26,31 @@ const NewExerciseForm = () => {
       onSubmit={async (event) => {
         try {
           event.preventDefault();
+          const exerecisePhoto = photoRef.current.files[0];
+          console.log(exerecisePhoto);
+
+
+          const formData = new FormData();
+          if (!exerecisePhoto) {
+            throw new Error("NO hay FOTO!")
+          }
+          formData.append("photo", exerecisePhoto);
 
           const newExercise = { title, description, typology };
+          formData.append("title", title);
+          formData.append("description", description);
+          formData.append("typology", typology);
+
+          console.log(formData)
 
           const res = await fetch(
             `${process.env.REACT_APP_API_URL}/newExercise`,
             {
               method: "POST",
               headers: {
-                "Content-Type": "application/json",
-                Authorization: token,
+                authorization: token,
               },
-              body: JSON.stringify(newExercise),
+              body:  formData,
             }
           );
 
@@ -45,31 +58,6 @@ const NewExerciseForm = () => {
 
           if (!res.ok) {
             throw new Error(body.message);
-          }
-
-          const exercisePhoto = photoRef.current.files[0];
-
-          if (exercisePhoto) {
-            const formData = new FormData();
-
-            formData.append("exercisePhoto", exercisePhoto);
-
-            const photoRes = await fetch(
-              `${process.env.REACT_APP_API_URL}/exercise/${body.data.id}/photo`,
-              {
-                method: "PUT",
-                headers: {
-                  Authorization: token,
-                },
-                body: formData,
-              }
-            );
-
-            const photoBody = await photoRes.json();
-
-            if (!photoRes.ok) {
-              throw new Error(photoBody.message);
-            }
           }
 
           toast.success(body.message);
