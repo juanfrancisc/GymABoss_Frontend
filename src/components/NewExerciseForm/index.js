@@ -27,7 +27,7 @@ const NewExerciseForm = () => {
         try {
           event.preventDefault();
           const exerecisePhoto = photoRef.current.files[0];
-          console.log(exerecisePhoto);
+          //console.log(exerecisePhoto);
 
 
           const formData = new FormData();
@@ -35,13 +35,10 @@ const NewExerciseForm = () => {
             throw new Error("NO hay FOTO!")
           }
           formData.append("photo", exerecisePhoto);
-
-          const newExercise = { title, description, typology };
           formData.append("title", title);
           formData.append("description", description);
           formData.append("typology", typology);
 
-          console.log(formData)
 
           const res = await fetch(
             `${process.env.REACT_APP_API_URL}/newExercise`,
@@ -86,14 +83,26 @@ const NewExerciseForm = () => {
         }}
       />
 
-      <label htmlFor="typology">Tipología:</label>
+      {/* <label htmlFor="typology">Tipología:</label>
       <input
         id="typology"
         value={typology}
         onChange={(event) => {
           setTypology(event.target.value);
         }}
-      />
+      /> */}
+
+      <label htmlFor="typology">Tipología:</label>
+      <select name="typology" id="typology"
+        onChange={(event) => {
+          setTypology(event.target.value)
+        }}>
+        <option value="cardio">Cardio</option>
+        <option value="musculacion">Musculación</option>
+        <option value="relajacion">Relejación</option>
+        <option value="natacion">Natación</option>
+      </select>
+
 
       <label htmlFor="photo"></label>
       <input id="photo" type="file" accept="image/*" ref={photoRef} />
