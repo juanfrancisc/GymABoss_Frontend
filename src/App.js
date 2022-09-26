@@ -40,7 +40,7 @@ function App() {
             <Route path="/exercisesPage" element={<ExercisesPage />} />
             <Route path="/exercisesPage/:id" element={<ExercisesPage />} />
             <Route path="/exercisesPage/:typology" element={<ExercisesPage />} />
-            <Route path="/modifyExercises/:id" element={<EditExercisePage />} />
+            <Route path="/editExercises/:id" element={<EditExercisePage />} />
             {/* <Route path="/deleteExercise/:id" element={<DeteleExercise />} /> */}
             
             <Route path="*" element={<NotFoundPage />} />

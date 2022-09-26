@@ -1,9 +1,11 @@
 import { useState, useRef } from "react";
 import { toast } from "react-toastify";
 import { useTokenContext } from "../../contexts/TokenContext";
+import useExerciseId from "../../hooks/useExerciseId";
 
 
-const EditExerciseForm = (exercise, setExercise, setShowEditForm) => {
+const EditExerciseForm = ( {exercise, setExercise, setShowEditForm}) => {
+    //const {exercise, setExercise} = useExerciseId();
 
     console.log(exercise)
     const { 
