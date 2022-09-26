@@ -1,6 +1,14 @@
 .exercises_list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 400px;
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 400px;
+    gap: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    align-items: flex;
+    flex-wrap: wrap;
+    font-size: 22px;
+    text-align: center;
 }
