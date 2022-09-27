@@ -29,7 +29,7 @@ const ExercisesList = () => {
             {exercises.map((exercise) => {
                 return (
                     /* <Link to={`?id=${exercise.id}`}> */
-                    <li key={exercise.id}>
+                    <li className="li_exercise_list" key={exercise.id}>
 
 
                         {/* Boton y funcionalidad de borrar ejercicios si es admin */}

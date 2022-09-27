@@ -28,12 +28,15 @@ const useExercises = () => {
         
 
         const body = await res.json();
-        //console.log(body)
+        console.log(body)
 
         if (!res.ok) {
           throw new Error(
-            "Unexpected error fetching API. Please, try again or contact support"
-          );
+            "Unexpected error fetching API. Please, try again or contact support");
+        }
+        console.log(body.data)
+        if (body.data < 1){
+          toast.success( "No existe ningun ejercicio creado con esa tipología");
         }
 
         setExercises(body.data);

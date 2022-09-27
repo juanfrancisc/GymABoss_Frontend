@@ -14,7 +14,7 @@ const ExercisesPage = () => {
 
 
   return (
-    <section>
+    <section className="list_exercises">
       <h2>Ejercicios</h2>
 
       {loading && <Spinner />}
