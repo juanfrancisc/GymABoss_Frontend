@@ -12,6 +12,7 @@ import { useState } from 'react'
 import EditExerciseForm from '../EditExerciseForm/EditExerciseForm'
 import Edit from '../../assets/imagenes/edit.png'
 import useExercises from '../../hooks/useExercises'
+import Heart from '../Heart/Heart'
 
 const Exercise = ({ exercise, setExercise }) => {
     /* console.log({exercise, setExercise}); */
@@ -63,14 +64,14 @@ const Exercise = ({ exercise, setExercise }) => {
             <Link className="Link" to={`?id=${id}`}>
                 <h3 className="title">{title}</h3>
                 <p className="typology">{typology}</p>
-                <img height="180" src={flexiones}></img>
-                {/* {photo.length > 0 && (
-        <img
-          
-          src={`${process.env.REACT_APP_API_URL}/imagenes/${photo}`}
-          alt={title}
-        />
-      )} */}
+                {/* <img  src={flexiones}></img> */}
+                {photo.length > 0 && (
+                    <img
+                        height="180"
+                        src={`${process.env.REACT_APP_API_URL}/imagenes/${photo}`}
+                        alt={title}
+                    />
+                )}
 
                 <p className="nLikes">Likes: {n_like}</p>
             </Link>
