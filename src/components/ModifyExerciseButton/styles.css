@@ -1,0 +1,13 @@
+.Modify_button {
+    color: red;
+    background-color: transparent;
+    border-color: transparent;
+    margin: 0;
+    padding-left: 3rem;
+    padding-top: 1rem;
+    display: flex;
+}
+
+.Modify_button:hover {
+    background-color: transparent;
+}

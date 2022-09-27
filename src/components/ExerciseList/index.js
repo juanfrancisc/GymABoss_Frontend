@@ -41,6 +41,10 @@ const ExercisesList = () => {
                                         const body = await res.json()
                                         //console.log(body)
 
+                                        if (!res.ok) {
+                                            throw new Error(body.message)
+                                        }
+
                                         //console.log(exercise.id)
                                         const updateExercises =
                                             exercises.filter(
@@ -67,8 +71,8 @@ const ExercisesList = () => {
                                 <img
                                     src={Trash}
                                     alt="Logout"
-                                    height="64"
-                                    width="64"
+                                    height="44"
+                                    width="44"
                                 />
                             </button>
                         )}
