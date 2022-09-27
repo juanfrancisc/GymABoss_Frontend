@@ -10,12 +10,11 @@ import useExercises from '../../hooks/useExercises'
 /* import DeteleExerciseButton from "../DeleteExerciseButton/DeleteExerciseButton";
  */
 const ExercisesList = () => {
-    const {exercises, setExercises} = useExercises();
+    const {exercises, setExercises} = useExercises([]);
     const { user } = useUser()
-    const [exercise, setExercise]= useState("");
     const { token } = useTokenContext();
+    const [updateExercises, setUpdateExercises] = useState([exercises])
 
-    console.log({exercises, setExercises})
     return (
         <ul className="exercises_list">
             {exercises.map((exercise) => {
@@ -23,8 +22,9 @@ const ExercisesList = () => {
                     /* <Link to={`?id=${exercise.id}`}> */
                     <li key={exercise.id}>
                         {user.type_user === 'admin' && 
-                            <button id='deleteButton'
+                            <button id='deleteButton' value={exercise.name}
                             onClick={async () => {
+                                
                             try {
                                 const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${exercise.id}`, {
                                 method: "DELETE",
@@ -33,13 +33,18 @@ const ExercisesList = () => {
                                 }
                                 })
                                 //console.log(res);
+
                                 const body = await res.json();
-                            
+                                //console.log(body)                                
+                                
                                 if (!res.ok) {
                                     throw new Error(body.message);
                                 }
-                                //console.log(body)
-                                setExercises([...exercises])
+
+                                const updateExercises = exercises.filter((item) => item !== exercise.id)
+                                console.log(updateExercises)
+                                
+                                setExercises([...updateExercises])
                                 toast.success(body.message)
                             } catch (error) {
                                 console.error(error.message);
@@ -51,7 +56,7 @@ const ExercisesList = () => {
                             </button>
                         }
                         {/*user.type_user === 'admin' && <DeteleExerciseButton id={exercise.id}/>*/}
-                        <Exercise exercise={exercise} setExercise={setExercise}/>
+                        <Exercise exercise={exercise} />
                     </li>
                     /* </Link> */
                 )
