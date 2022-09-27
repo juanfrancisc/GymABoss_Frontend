@@ -88,6 +88,7 @@ const NewExerciseForm = () => {
         onChange={(event) => {
           setTypology(event.target.value)
         }}>
+        <option value="" selected></option>
         <option value="cardio">Cardio</option>
         <option value="musculacion">Musculación</option>
         <option value="relajacion">Relejación</option>
