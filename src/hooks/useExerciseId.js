@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
 import { useTokenContext } from "../contexts/TokenContext";
+import { toast } from "react-toastify";
 
 const useExerciseId = () => {
-    const [exercise, setExercise] = useState([]);
-    const [errorMessage, setErrorMessage] = useState("");
+    const {exercise, setExercise} = useState({});
     const [loading, setLoading] = useState(true);
-    console.log(exercise)
+ 
+    //console.log(exercise)
 
     const { token } = useTokenContext();
-
-  //const [searchParams, setSearchParams] = useSearchParams();
-  //console.log(token)
 
     useEffect(() => {
         const fetchExercisesId = async () => {
@@ -36,9 +34,10 @@ const useExerciseId = () => {
 
             setExercise(body.data);
             //console.log(body.data)
+
         } catch (error) {
             console.error(error.message);
-            setErrorMessage(error.message);
+
         } finally {
             setLoading(false);
         }
@@ -47,7 +46,7 @@ const useExerciseId = () => {
     fetchExercisesId();
   }, []);
 
-  return { exercise, setExercise, errorMessage, loading };
+  return { exercise, setExercise, loading };
 };
 
 export default useExerciseId;

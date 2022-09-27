@@ -2,11 +2,12 @@ import { Navigate } from "react-router-dom";
 import EditExerciseForm from "../../components/EditExerciseForm/EditExerciseForm";
 import { useTokenContext } from "../../contexts/TokenContext";
 import useExerciseId from "../../hooks/useExerciseId";
+import useExercises from "../../hooks/useExercises";
 
 
 const EditExercisePage = () => {
   const { token } = useTokenContext();
-
+  console.log("hola")
   const {exercise, setExercise} = useExerciseId();
   console.log(exercise)
   

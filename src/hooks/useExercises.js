@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useTokenContext } from "../contexts/TokenContext";
 import { useSearchParams } from "react-router-dom"
+import { toast } from "react-toastify";
 
 const useExercises = () => {
   const [exercises, setExercises] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(true);
  
   //console.log([exercises, setExercises])
@@ -38,9 +38,12 @@ const useExercises = () => {
 
         setExercises(body.data);
         //console.log(body.data)
+        toast.success(body.message)
+
       } catch (error) {
         console.error(error.message);
-        setErrorMessage(error.message);
+        toast.error(error.message);
+
       } finally {
         setLoading(false);
       }
@@ -49,7 +52,7 @@ const useExercises = () => {
     fetchExercises();
   }, [searchParams]);
 
-  return { exercises, setExercises ,errorMessage, loading, searchParams, setSearchParams };
+  return { exercises, setExercises , loading, searchParams, setSearchParams };
 };
 
 export default useExercises;

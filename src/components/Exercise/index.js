@@ -53,32 +53,32 @@ const Exercise = ({ exercise, setExercise }) => {
         <img src={Trash } alt="Logout" height ="64" width="64" />
       </button>
       } */}
-
             {user.type_user === 'admin' && (
                 <EditExerciseButton
                     exercise={exercise}
                     setExercise={setExercise}
                 />
+                
             )}
 
             <Link className="Link" to={`?id=${id}`}>
                 <h3 className="title">{title}</h3>
                 <p className="typology">{typology}</p>
                 {/* <img  src={flexiones}></img> */}
-                {photo.length > 0 && (
+                {/* {photo.length > 0 && (
                     <img
                         height="180"
                         src={`${process.env.REACT_APP_API_URL}/imagenes/${photo}`}
                         alt={title}
                     />
-                )}
+                )} */}
 
                 <p className="nLikes">Likes: {n_like}</p>
             </Link>
 
-            <LikeButton id={id} />
+            {/* <LikeButton id={id} /> */}
 
-            <button
+            {/* <button
                 type="button"
                 onClick={async () => {
                     try {
@@ -112,7 +112,7 @@ const Exercise = ({ exercise, setExercise }) => {
                 }}
             >
                 Me gusta!
-            </button>
+            </button> */}
         </section>
     )
 }

@@ -5,9 +5,8 @@ import EditExerciseForm from "../EditExerciseForm/EditExerciseForm";
 const EditExerciseButton = ({exercise}) => {
 
     const navigate = useNavigate();
-   /*  console.log(exercise) */
+
     const { id, title, description, typology, photo} = exercise;
-    /* console.log(title) */
     return (
       <button id='deleteButton'
         onClick={() => {
