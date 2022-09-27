@@ -32,7 +32,7 @@ const NewExerciseForm = () => {
 
           const formData = new FormData();
           if (!exerecisePhoto) {
-            throw new Error("NO hay FOTO!")
+            throw new Error("No hay ninguna foto seleccionada para subir, es obligatorio indicar una.")
           }
           formData.append("photo", exerecisePhoto);
           formData.append("title", title);
