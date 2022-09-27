@@ -38,13 +38,14 @@
 }
 .title {
     padding: 1rem;
+    padding-top: 0;
     padding-bottom: 0rem;
     text-align: center;
     font-size: 2.7rem;
 }
 
 .typology {
-    text-align: justify;
+    text-align: center;
     padding: 2rem;
     padding-top: 0.5rem;
     font-size: medium;

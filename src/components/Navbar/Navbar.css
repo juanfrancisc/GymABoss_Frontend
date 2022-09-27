@@ -169,8 +169,12 @@ a:active {
     object-fit: contain;
 }
 
+.LinkNavbar:hover {
+    background-color: rgb(16, 16, 54);
+}
+
 .logo_nav {
-    height: 6.5rem;
+    height: 6.9rem;
     object-fit: contain;
 }
 
@@ -180,3 +184,7 @@ a:active {
     display: flex;
     justify-content: flex-end;
 } */
+
+.bienvenido {
+    color: rgb(156, 151, 151);
+}

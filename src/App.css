@@ -8,5 +8,13 @@
     flex-grow: 1;
 } */
 footer {
+    padding-top: 8rem;
     padding-left: 2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+link {
+    text-decoration: none;
 }

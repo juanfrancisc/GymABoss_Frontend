@@ -1,5 +1,8 @@
-#deleteButton{
-    color:red;
-    background-color: coral;
-    width: 0% !important;
+#deleteButton {
+    color: red;
+    background-color: transparent;
+    border-color: transparent;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }

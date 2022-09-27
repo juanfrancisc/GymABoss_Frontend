@@ -26,7 +26,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <h4>
+                            <h4 className="bienvenido">
                                 Bienvenido, {user.name}.{' '}
                                 {user.type_user === 'admin'
                                     ? 'Estas logado como ' + user.type_user
