@@ -1,26 +1,25 @@
-import { Navigate } from "react-router-dom";
-import EditExerciseForm from "../../components/EditExerciseForm/EditExerciseForm";
-import { useTokenContext } from "../../contexts/TokenContext";
-import useExerciseId from "../../hooks/useExerciseId";
-
+import { Navigate } from 'react-router-dom'
+import EditExerciseForm from '../../components/EditExerciseForm/EditExerciseForm'
+import { useTokenContext } from '../../contexts/TokenContext'
+import useExerciseId from '../../hooks/useExerciseId'
 
 const EditExercisePage = () => {
-  const { token } = useTokenContext();
+    const { token } = useTokenContext()
 
-  const {exercise, setExercise} = useExerciseId();
-  console.log(exercise)
-  
-   if (!token) {
-    return <Navigate to="/login" />;
-  }
+    const { exercise, setExercise } = useExerciseId()
+    console.log(exercise)
 
-  return (
-    <section>
-      <h2>Editar Ejercicio</h2>
+    if (!token) {
+        return <Navigate to="/login" />
+    }
 
-      <EditExerciseForm exercise={exercise} setExercise={setExercise}/>
-    </section>
-  );
-};
+    return (
+        <section>
+            <h2 className="exercise">Editar Ejercicio</h2>
 
-export default EditExercisePage;
+            <EditExerciseForm exercise={exercise} setExercise={setExercise} />
+        </section>
+    )
+}
+
+export default EditExercisePage

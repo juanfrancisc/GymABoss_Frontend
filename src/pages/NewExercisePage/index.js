@@ -1,21 +1,21 @@
-import { Navigate } from "react-router-dom";
-import NewExerciseForm from "../../components/NewExerciseForm/index";
-import { useTokenContext } from "../../contexts/TokenContext";
+import { Navigate } from 'react-router-dom'
+import NewExerciseForm from '../../components/NewExerciseForm/index'
+import { useTokenContext } from '../../contexts/TokenContext'
 
 const NewExercisePage = () => {
-  const { token } = useTokenContext();
+    const { token } = useTokenContext()
 
-  /*   if (!token) {
+    /*   if (!token) {
     return <Navigate to="/login" />;
   } */
 
-  return (
-    <section>
-      <h2>Nuevo Ejercicio</h2>
+    return (
+        <section>
+            <h2 className="exercise">Nuevo Ejercicio</h2>
 
-      <NewExerciseForm />
-    </section>
-  );
-};
+            <NewExerciseForm />
+        </section>
+    )
+}
 
-export default NewExercisePage;
+export default NewExercisePage
