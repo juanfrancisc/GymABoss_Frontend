@@ -1,37 +1,33 @@
-import { Link } from 'react-router-dom'
-import './styles.css'
-import { toast } from 'react-toastify'
-import { useTokenContext } from '../../contexts/TokenContext'
-import Trash from '../../assets/imagenes/trash.png'
-import Exercise from '../Exercise'
-import useUser from '../../hooks/useUser'
-import { useState } from 'react'
-import useExercises from '../../hooks/useExercises'
+import { Link } from 'react-router-dom';
+import './styles.css';
+import { toast } from 'react-toastify';
+import { useTokenContext } from '../../contexts/TokenContext';
+import Trash from '../../assets/imagenes/trash.png';
+import Exercise from '../Exercise';
+import useUser from '../../hooks/useUser';
+import { useState } from 'react';
+import useExercises from '../../hooks/useExercises';
 import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
-import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'
+import EditExerciseButton from '../EditExerciseButton/EditExerciseButton';
 
 /* import DeteleExerciseButton from "../DeleteExerciseButton/DeleteExerciseButton";
  */
 const ExercisesList = () => {
-    const { exercises, setExercises } = useExercises([])
-    const { user } = useUser()
+    const { exercises, setExercises, setExerciseLikes } = useExercises([]);
+    const { user } = useUser();
     const { token } = useTokenContext();
     /* const [updateExercises, setUpdateExercises] = useState([exercises]) */
-    const [loading, setLoading] = useState(true)
-    const {exercise, setExercise} = useState();
+    const [loading, setLoading] = useState(true);
+    const { exercise, setExercise } = useState();
 
-    const [updateExercises, setUpdateExercises] = useState([exercises])
-
+    const [updateExercises, setUpdateExercises] = useState([exercises]);
 
     return (
         <ul className="exercises_list">
-            
             {exercises.map((exercise) => {
                 return (
                     /* <Link to={`?id=${exercise.id}`}> */
                     <li key={exercise.id}>
-
-
                         {/* Boton y funcionalidad de borrar ejercicios si es admin */}
                         {user.type_user === 'admin' && (
                             <button
@@ -47,14 +43,14 @@ const ExercisesList = () => {
                                                     authorization: token,
                                                 },
                                             }
-                                        )
+                                        );
                                         //console.log(res);
 
-                                        const body = await res.json()
+                                        const body = await res.json();
                                         //console.log(body)
 
                                         if (!res.ok) {
-                                            throw new Error(body.message)
+                                            throw new Error(body.message);
                                         }
 
                                         //console.log(exercise.id)
@@ -62,23 +58,23 @@ const ExercisesList = () => {
                                             exercises.filter(
                                                 (item) =>
                                                     item.id !== exercise.id
-                                            )
+                                            );
                                         //console.log(updateExercises)
                                         //console.log(updateExercises.length)
 
                                         if (updateExercises.length < 1) {
                                             throw new Error(
                                                 'No hay ejercicios que mostrar, debes crear uno.'
-                                            )
+                                            );
                                         }
 
-                                        setExercises(updateExercises)
-                                        toast.success(body.message)
+                                        setExercises(updateExercises);
+                                        toast.success(body.message);
                                     } catch (error) {
-                                        console.error(error.message)
-                                        toast.error(error.message)
+                                        console.error(error.message);
+                                        toast.error(error.message);
                                     } finally {
-                                        setLoading(false)
+                                        setLoading(false);
                                     }
                                 }}
                             >
@@ -93,11 +89,16 @@ const ExercisesList = () => {
                         {/*user.type_user === 'admin' && <DeteleExerciseButton id={exercise.id}/>*/}
 
                         {/* {user.type_user === 'admin' && <EditExerciseButton id={exercise.id}/>} */}
-                        
-                        <Exercise exercise={exercise} setExercise={setExercise}/>
+
+                        <Exercise
+                            user={user}
+                            exercise={exercise}
+                            setExercise={setExercise}
+                            setExerciseLikes={setExerciseLikes}
+                        />
 
                         {/* Definicion y funcion boton like */}
-                        <button
+                        {/* <button
                             id='likeButton' className='likeButton'
                             onClick={async () => {
                                 try {
@@ -133,17 +134,13 @@ const ExercisesList = () => {
                             }}
                         >
                         Me gusta!
-                        </button>
-
-
-                        
-
+                        </button> */}
                     </li>
                     /* </Link> */
-                )
+                );
             })}
         </ul>
-    )
-}
+    );
+};
 
-export default ExercisesList
+export default ExercisesList;

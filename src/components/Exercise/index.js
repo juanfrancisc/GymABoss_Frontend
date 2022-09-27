@@ -1,28 +1,29 @@
-import { Link } from 'react-router-dom'
-import { useTokenContext } from '../../contexts/TokenContext'
-import { toast } from 'react-toastify'
-import './styles.css'
-import LikeButton from '../LikeButton/LikeButton'
+import { Link } from 'react-router-dom';
+import { useTokenContext } from '../../contexts/TokenContext';
+import { toast } from 'react-toastify';
+import './styles.css';
+import LikeButton from '../LikeButton/LikeButton';
 /* import flexiones from '../../assets/imagenes/flexiones.jpg' */
-import useUser from '../../hooks/useUser'
+import useUser from '../../hooks/useUser';
 /* import DeteleExerciseButton from '../DeleteExerciseButton/DeleteExerciseButton' */
-import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'
+import EditExerciseButton from '../EditExerciseButton/EditExerciseButton';
 
 /* import Trash from '../../assets/imagenes/trash.png' */
-import { useState } from 'react'
-import EditExerciseForm from '../EditExerciseForm/EditExerciseForm'
+import { useState } from 'react';
+import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
 /*import Edit from '../../assets/imagenes/edit.png'
 import useExercises from '../../hooks/useExercises'
 import Heart from '../Heart/Heart' */
 
-const Exercise = ({ exercise, setExercise }) => {
+const Exercise = ({ exercise, setExercise, setExerciseLikes, user }) => {
     /* console.log({exercise, setExercise}); */
-    const { id, idUser, n_like, title, description, photo, typology } = exercise
-    console.log(id)
-    const { user } = useUser()
-    const { token } = useTokenContext()
-    const [loading, setLoading] = useState(true)
-    const [exercises, setExercises] = useState('')
+    const { id, idUser, n_like, title, description, photo, typology } =
+        exercise;
+    console.log(id);
+
+    const { token } = useTokenContext();
+    const [loading, setLoading] = useState(true);
+    const [exercises, setExercises] = useState('');
 
     /* console.log(user.type_user) */
     return (
@@ -57,7 +58,9 @@ const Exercise = ({ exercise, setExercise }) => {
             </button>
             } */}
             {/* {user.type_user === 'admin' && <EditExerciseForm exercise={exercise}/>} */}
-            {user.type_user === 'admin' && <EditExerciseButton exercise={exercise}/> }
+            {user.type_user === 'admin' && (
+                <EditExerciseButton exercise={exercise} />
+            )}
 
             <Link className="Link" to={`?id=${id}`}>
                 <h3 className="title">{title}</h3>
@@ -74,7 +77,7 @@ const Exercise = ({ exercise, setExercise }) => {
                 <p className="nLikes">Likes: {n_like}</p>
             </Link>
 
-            <LikeButton id={id} />
+            <LikeButton id={id} setExerciseLikes={setExerciseLikes} />
 
             {/* <button
                 type="button"
@@ -112,7 +115,7 @@ const Exercise = ({ exercise, setExercise }) => {
                 Me gusta!
             </button> */}
         </section>
-    )
-}
+    );
+};
 
-export default Exercise
+export default Exercise;

@@ -1,18 +1,21 @@
-
-import { Navigate } from "react-router-dom";
-import EditExerciseForm from "../../components/EditExerciseForm/EditExerciseForm";
-import { useTokenContext } from "../../contexts/TokenContext";
-import useExerciseId from "../../hooks/useExerciseId";
-import useExercises from "../../hooks/useExercises";
-
+import { Navigate, useParams } from 'react-router-dom';
+import EditExerciseForm from '../../components/EditExerciseForm/EditExerciseForm';
+import { useTokenContext } from '../../contexts/TokenContext';
+import useExerciseId from '../../hooks/useExerciseId';
+import useExercises from '../../hooks/useExercises';
 
 const EditExercisePage = () => {
-  const { token } = useTokenContext();
-  const {exercise, setExercise} = useExerciseId();
-  
-   if (!token) {
-    return <Navigate to="/login" />;
-  }
+    const { token } = useTokenContext();
+    const { id } = useParams(); //esto saca la porción con :nombre de la URL
+    const { exercise, loading, setExercise } = useExerciseId(id);
+
+    console.log(exercise);
+
+    if (!token) {
+        return <Navigate to="/login" />;
+    }
+
+    if (loading) return <p>Cargando...</p>;
 
     return (
         <section>
@@ -20,7 +23,7 @@ const EditExercisePage = () => {
 
             <EditExerciseForm exercise={exercise} setExercise={setExercise} />
         </section>
-    )
-}
+    );
+};
 
-export default EditExercisePage
+export default EditExercisePage;
