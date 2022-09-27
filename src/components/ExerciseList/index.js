@@ -41,17 +41,22 @@ const ExercisesList = () => {
                                         const body = await res.json()
                                         //console.log(body)
 
-                                        if (!res.ok) {
-                                            throw new Error(body.message)
-                                        }
-
+                                        //console.log(exercise.id)
                                         const updateExercises =
                                             exercises.filter(
-                                                (item) => item !== exercise.id
+                                                (item) =>
+                                                    item.id !== exercise.id
                                             )
-                                        console.log(updateExercises)
+                                        //console.log(updateExercises)
+                                        //console.log(updateExercises.length)
 
-                                        setExercises([...updateExercises])
+                                        if (updateExercises.length < 1) {
+                                            throw new Error(
+                                                'No hay ejercicios que mostrar, debes crear uno.'
+                                            )
+                                        }
+
+                                        setExercises(updateExercises)
                                         toast.success(body.message)
                                     } catch (error) {
                                         console.error(error.message)

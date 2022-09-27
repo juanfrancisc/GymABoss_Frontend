@@ -105,6 +105,7 @@ const EditExerciseForm = ( {exercise, setExercise, setShowEditForm}) => {
             }}
             placeholder={currentTypology}
             >
+            <option value="" selected></option>
             <option value="cardio">Cardio</option>
             <option value="musculacion">Musculación</option>
             <option value="relajacion">Relejación</option>
