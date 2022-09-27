@@ -2,64 +2,61 @@ import { Link } from 'react-router-dom'
 import { useTokenContext } from '../../contexts/TokenContext'
 import { toast } from 'react-toastify'
 import './styles.css'
-import flexiones from '../../assets/imagenes/flexiones.jpg'
+/* import flexiones from '../../assets/imagenes/flexiones.jpg' */
 import useUser from '../../hooks/useUser'
-import DeteleExerciseButton from '../DeleteExerciseButton/DeleteExerciseButton'
-import EditExerciseButton from '../ModifyExerciseButton/ModifyExerciseButton'
-import LikeButton from '../LikeButton/LikeButton'
-import Trash from '../../assets/imagenes/trash.png'
+/* import DeteleExerciseButton from '../DeleteExerciseButton/DeleteExerciseButton' */
+import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'
+/* import LikeButton from '../LikeButton/LikeButton' */
+/* import Trash from '../../assets/imagenes/trash.png' */
 import { useState } from 'react'
 import EditExerciseForm from '../EditExerciseForm/EditExerciseForm'
-import Edit from '../../assets/imagenes/edit.png'
+/*import Edit from '../../assets/imagenes/edit.png'
 import useExercises from '../../hooks/useExercises'
-import Heart from '../Heart/Heart'
+import Heart from '../Heart/Heart' */
 
 const Exercise = ({ exercise, setExercise }) => {
     /* console.log({exercise, setExercise}); */
     const { id, idUser, n_like, title, description, photo, typology } = exercise
+    console.log(id)
     const { user } = useUser()
     const { token } = useTokenContext()
     const [loading, setLoading] = useState(true)
     const [exercises, setExercises] = useState('')
 
+    /* console.log(user.type_user) */
     return (
         <section className="boxes">
             {/* {user.type_user === 'admin' && <DeteleExerciseButton exercise={exercise}/> } */}
             {/* {user.type_user === 'admin' && 
-      <button id='deleteButton'
-        onClick={async () => {
-          try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${exercise.id}`, {
-              method: "DELETE",
-              headers: {
-                authorization: token,
-              }
-            })
-            //console.log(res);
-            const body = await res.json();
-          
-            if (!res.ok) {
-                throw new Error(body.message);
-            }
-             //console.log(body)
-            setExercises([...exercises])
-            toast.success(body.message)
-          } catch (error) {
-            console.error(error.message);
-            toast.error(error.message);
-          }
-        }}
-      >
-        <img src={Trash } alt="Logout" height ="64" width="64" />
-      </button>
-      } */}
-            {user.type_user === 'admin' && (
-                <EditExerciseButton
-                    exercise={exercise}
-                    setExercise={setExercise}
-                />
+            <button id='deleteButton'
+                onClick={async () => {
+                try {
+                    const res = await fetch(`${process.env.REACT_APP_API_URL}/deleteExercise/${exercise.id}`, {
+                    method: "DELETE",
+                    headers: {
+                        authorization: token,
+                    }
+                    })
+                    //console.log(res);
+                    const body = await res.json();
                 
-            )}
+                    if (!res.ok) {
+                        throw new Error(body.message);
+                    }
+                    //console.log(body)
+                    setExercises([...exercises])
+                    toast.success(body.message)
+                } catch (error) {
+                    console.error(error.message);
+                    toast.error(error.message);
+                }
+                }}
+            >
+                <img src={Trash } alt="Logout" height ="64" width="64" />
+            </button>
+            } */}
+            {/* {user.type_user === 'admin' && <EditExerciseForm exercise={exercise}/>} */}
+            {user.type_user === 'admin' && <EditExerciseButton exercise={exercise}/> }
 
             <Link className="Link" to={`?id=${id}`}>
                 <h3 className="title">{title}</h3>

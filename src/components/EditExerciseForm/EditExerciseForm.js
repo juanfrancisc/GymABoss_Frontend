@@ -3,10 +3,9 @@ import { toast } from 'react-toastify'
 import { useTokenContext } from '../../contexts/TokenContext'
 import useExerciseId from '../../hooks/useExerciseId'
 
-const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
+const EditExerciseForm = ( exercise, setExercise, setShowEditForm ) => {
     //const {exercise, setExercise} = useExerciseId();
 
-    console.log(exercise)
     const {
         id: id,
         title: currentTittle,
@@ -17,8 +16,8 @@ const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
 
     const [newTitle, setNewTitle] = useState(currentTittle)
     const [newDescription, setNewDescription] = useState(currentDescription)
-    const [newTypology, setNewTypology] = useState('')
-    const [newPhotoPreview, setNewPhotoPreview] = useState('')
+    const [newTypology, setNewTypology] = useState(currentTypology)
+    const [newPhotoPreview, setNewPhotoPreview] = useState(currentPhotoName)
 
     const newPhotoRef = useRef()
 
@@ -112,7 +111,7 @@ const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
             <label className="new_typology" htmlFor="typology">
                 Tipología:
             </label>
-            <select
+            <select 
                 name="typology"
                 id="typology"
                 onChange={(event) => {
@@ -120,21 +119,12 @@ const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
                 }}
                 placeholder={currentTypology}
             >
-<<<<<<< HEAD
-            <option value="defaultValue" selected></option>
+            <option value="" selected></option>
             <option value="cardio">Cardio</option>
             <option value="musculacion">Musculación</option>
             <option value="relajacion">Relejación</option>
             <option value="natacion">Natación</option>
         </select>
-=======
-                <option value="" selected></option>
-                <option value="cardio">Cardio</option>
-                <option value="musculacion">Musculación</option>
-                <option value="relajacion">Relejación</option>
-                <option value="natacion">Natación</option>
-            </select>
->>>>>>> 587ee7769feccbc355af15d0df19b337a76ad85c
 
             <label className="new_photo" htmlFor="photo">
                 Foto:
