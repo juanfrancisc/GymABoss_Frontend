@@ -94,7 +94,7 @@ const NewExerciseForm = () => {
             <label className="new_typology" htmlFor="typology">
                 Tipología:
             </label>
-            <select
+            <select defaultValue=""
                 className="select_typology"
                 name="typology"
                 id="typology"
@@ -102,7 +102,7 @@ const NewExerciseForm = () => {
                     setTypology(event.target.value)
                 }}
             >
-                <option value="" selected></option>
+                <option value="" disabled>Escoge una tipología</option>
                 <option value="cardio">Cardio</option>
                 <option value="musculacion">Musculación</option>
                 <option value="relajacion">Relejación</option>

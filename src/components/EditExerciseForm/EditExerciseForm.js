@@ -4,7 +4,7 @@ import { useTokenContext } from '../../contexts/TokenContext'
 import useExerciseId from '../../hooks/useExerciseId'
 
 const EditExerciseForm = ( exercise, setExercise, setShowEditForm ) => {
-    //const {exercise, setExercise} = useExerciseId();
+    /* const {exercise, setExercise} = useExerciseId(); */
 
     const {
         id: id,
@@ -111,7 +111,7 @@ const EditExerciseForm = ( exercise, setExercise, setShowEditForm ) => {
             <label className="new_typology" htmlFor="typology">
                 Tipología:
             </label>
-            <select 
+            <select defaultValue=""
                 name="typology"
                 id="typology"
                 onChange={(event) => {
@@ -119,7 +119,7 @@ const EditExerciseForm = ( exercise, setExercise, setShowEditForm ) => {
                 }}
                 placeholder={currentTypology}
             >
-            <option value="" selected></option>
+            <option value="" disabled>Escoge una tipología</option>
             <option value="cardio">Cardio</option>
             <option value="musculacion">Musculación</option>
             <option value="relajacion">Relejación</option>

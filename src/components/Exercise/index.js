@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom'
 import { useTokenContext } from '../../contexts/TokenContext'
 import { toast } from 'react-toastify'
 import './styles.css'
+import LikeButton from '../LikeButton/LikeButton'
 /* import flexiones from '../../assets/imagenes/flexiones.jpg' */
 import useUser from '../../hooks/useUser'
 /* import DeteleExerciseButton from '../DeleteExerciseButton/DeleteExerciseButton' */
 import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'
-/* import LikeButton from '../LikeButton/LikeButton' */
+
 /* import Trash from '../../assets/imagenes/trash.png' */
 import { useState } from 'react'
 import EditExerciseForm from '../EditExerciseForm/EditExerciseForm'
@@ -73,7 +74,7 @@ const Exercise = ({ exercise, setExercise }) => {
                 <p className="nLikes">Likes: {n_like}</p>
             </Link>
 
-            {/* <LikeButton id={id} /> */}
+            <LikeButton id={id} />
 
             {/* <button
                 type="button"
