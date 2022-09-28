@@ -64,9 +64,16 @@ const useExercises = () => {
             return ex;
         });
 
+
+        setExercises(updatedExercises);
+
+    };
+    const setDeleteExercise = (id) => {
+        const updatedExercises = exercises.filter(
+            (item) => item.id !== id
+        );
         setExercises(updatedExercises);
     };
-
     return {
         exercises,
         setExercises,
@@ -74,6 +81,7 @@ const useExercises = () => {
         searchParams,
         setSearchParams,
         setExerciseLikes,
+        setDeleteExercise,
     };
 };
 
