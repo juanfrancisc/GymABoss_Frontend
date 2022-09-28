@@ -3,11 +3,11 @@ img {
     z-index: -1;
     box-shadow: 0 0 5px;
 }
-[className='toggle-heart'] {
+[className='LikeButton'] {
     position: absolute;
     left: -100vw;
 }
-[className='toggle-heart']:checked + label {
+[className='LikeButton']:checked + label {
     color: #e2264d;
     -webkit-filter: none;
     filter: none;
@@ -15,29 +15,29 @@ img {
     -webkit-animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
     animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
 }
-[className='toggle-heart']:checked + label:before,
-[className='toggle-heart']:checked + label:after {
+[className='LikeButton']:checked + label:before,
+[className='LikeButton']:checked + label:after {
     -webkit-animation: inherit;
     animation: inherit;
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
 }
-[className='toggle-heart']:checked + label:before {
+[className='LikeButton']:checked + label:before {
     will-change: transform, border-wclassNameth, border-color;
     -webkit-animation-name: bubble;
     animation-name: bubble;
 }
-[className='toggle-heart']:checked + label:after {
+[className='LikeButton']:checked + label:after {
     will-change: opacity, box-shadow;
     -webkit-animation-name: sparkles;
     animation-name: sparkles;
 }
-[className='toggle-heart']:focus + label {
+[className='LikeButton']:focus + label {
     text-shadow: 0 0 3px white, 0 1px 1px white, 0 -1px 1px white,
         1px 0 1px white, -1px 0 1px white;
 }
 
-[for='toggle-heart'] {
+[for='LikeButton'] {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -52,8 +52,8 @@ img {
     user-select: none;
     cursor: pointer;
 }
-[for='toggle-heart']:before,
-[for='toggle-heart']:after {
+[for='LikeButton']:before,
+[for='LikeButton']:after {
     position: absolute;
     z-index: -1;
     top: 50%;
@@ -61,7 +61,7 @@ img {
     border-radius: 50%;
     content: '';
 }
-[for='toggle-heart']:before {
+[for='LikeButton']:before {
     box-sizing: border-box;
     margin: -2.25rem;
     border: solclassName 2.25rem #e2264d;
@@ -70,7 +70,7 @@ img {
     -webkit-transform: scale(0);
     transform: scale(0);
 }
-[for='toggle-heart']:after {
+[for='LikeButton']:after {
     margin: -0.1875rem;
     width: 0.375rem;
     height: 0.375rem;

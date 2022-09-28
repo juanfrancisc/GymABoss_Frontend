@@ -11,13 +11,11 @@ import { useState } from 'react';
 </label>*/
 
 const LikeButton = ({ id, setExerciseLikes }) => {
-
     const { token } = useTokenContext();
     const navigate = useNavigate();
     const [like, setLike] = useState('');
 
     const likeExerciseId = async (id, token) => {
-
         try {
             const consulta = `${process.env.REACT_APP_API_URL}/addLike/${id}`;
 
@@ -41,14 +39,14 @@ const LikeButton = ({ id, setExerciseLikes }) => {
 
     return (
         <>
-            <label htmlFor={id}>❤</label>
             <button
+                className="LikeButton"
                 id={id}
                 onClick={() => {
                     likeExerciseId(id, token);
                 }}
             >
-                ❤️
+                ❤
             </button>
         </>
     );
