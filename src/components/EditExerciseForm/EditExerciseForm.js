@@ -21,6 +21,7 @@ const EditExerciseForm = ({ exercise }) => {
     const [newPhoto, setNewPhoto] = useState(currentPhoto);
 
     const newPhotoRef = useRef();
+    console.log(newPhotoRef)
 
     const { token } = useTokenContext();
 
@@ -32,13 +33,13 @@ const EditExerciseForm = ({ exercise }) => {
                 try {
                     event.preventDefault();
 
-                    const newPhoto = newPhotoRef;
+                    /* const newPhoto = newPhotoRef; */
 
                     if (
                         !newTitle ||
                         !newDescription ||
                         !newTypology ||
-                        !newPhoto
+                        !newPhotoRef
                     ) {
                         toast.warn(
                             'No has modificado ningun datos del ejercicio'
@@ -125,9 +126,9 @@ const EditExerciseForm = ({ exercise }) => {
             <label className="new_photo" htmlFor="photo">
                 Foto:
             </label>
-            {/* <input
+            <input
                 name="photo"
-                value={newPhoto}
+                ref={newPhotoRef}
                 id="photo"
                 type="file"
                 accept="image/*"
@@ -137,11 +138,12 @@ const EditExerciseForm = ({ exercise }) => {
                     const newPhoto = new newPhotoRef.current.file[0];
                     setNewPhotoPreview(URL.createObjectURL(newPhoto));                    
                 }} */
-                /* onChange={(e) => {
+                onChange={(e) => {
                     console.log(e.target.files)
-                    setNewPhotoPreview(e.target.files[0])
-                }} */
-            /> */}
+                    setNewPhoto(e.target.files[0])
+                }}
+
+            /> 
 
             <button>Actualizar Ejercicio</button>
         </form>
