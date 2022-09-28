@@ -19,7 +19,7 @@ const Exercise = ({ exercise, setExercise, setExerciseLikes, user }) => {
     /* console.log({exercise, setExercise}); */
     const { id, idUser, n_like, title, description, photo, typology } =
         exercise;
-    console.log(id);
+    //console.log(id);
 
     const { token } = useTokenContext();
     const [loading, setLoading] = useState(true);

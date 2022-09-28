@@ -20,7 +20,7 @@ const ExercisesList = () => {
     const [loading, setLoading] = useState(true);
     const { exercise, setExercise } = useState();
 
-    const [updateExercises, setUpdateExercises] = useState([exercises]);
+    //const [updateExercises, setUpdateExercises] = useState([exercises]);
 
     return (
         <ul className="exercises_list">
@@ -97,44 +97,6 @@ const ExercisesList = () => {
                             setExerciseLikes={setExerciseLikes}
                         />
 
-                        {/* Definicion y funcion boton like */}
-                        {/* <button
-                            id='likeButton' className='likeButton'
-                            onClick={async () => {
-                                try {
-
-                                const consulta = `${process.env.REACT_APP_API_URL}/addLike/${exercise.id}`
-                                //console.log(consulta)
-
-                                const res = await fetch(consulta, {
-                                    method: 'POST',
-                                    headers: {
-                                        authorization: token,
-                                    },
-                                })
-                                const body = await res.json()
-                                //console.log(body)
-
-                                if (!res.ok) {
-                                    throw new Error(
-                                        'Unexpected error fetching API. Please, try again or contact support'
-                                    )
-                                }
-
-                                toast.success(body.message)
-                                setExercises(exercises)
-
-                                } catch (error) {
-                                console.error(error.message)
-                                toast.error(error.message)
-
-                                } finally {
-                                setLoading(false)
-                                }
-                            }}
-                        >
-                        Me gusta!
-                        </button> */}
                     </li>
                 
                     /* </Link> */

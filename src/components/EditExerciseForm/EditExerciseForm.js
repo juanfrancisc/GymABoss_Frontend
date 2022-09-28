@@ -4,26 +4,25 @@ import { toast } from 'react-toastify';
 import { useTokenContext } from '../../contexts/TokenContext';
 import useExerciseId from '../../hooks/useExerciseId';
 
-const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
+/* const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => { */
+const EditExerciseForm = ({ exercise }) => {
 
     const {
         id: id,
-        name: currentName,
+        name: currentTitle,
         description: currentDescription,
         typology: currentTypology,
         photo: currentPhoto,
     } = exercise;
 
-    const [newName, setNewName] = useState(currentName);
+    const [newTitle, setNewTitle] = useState(currentTitle);
     const [newDescription, setNewDescription] = useState(currentDescription);
     const [newTypology, setNewTypology] = useState(currentTypology);
-    const [newPhotoPreview, setNewPhotoPreview] = useState(currentPhoto);
-    console.log(newPhotoPreview)
+    const [newPhoto, setNewPhoto] = useState(currentPhoto);
 
-    const newPhotoRef = useRef(newPhotoPreview);
-    console.log(newPhotoRef)
+    const newPhotoRef = useRef();
 
-    const { token } = useTokenContext;
+    const { token } = useTokenContext();
 
     const navigate = useNavigate();
 
@@ -34,13 +33,12 @@ const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
                     event.preventDefault();
 
                     const newPhoto = newPhotoRef;
-                    console.log(newPhoto);
 
                     if (
-                        !newName ||
-                        newDescription ||
-                        newTypology ||
-                        newPhoto
+                        !newTitle ||
+                        !newDescription ||
+                        !newTypology ||
+                        !newPhoto
                     ) {
                         toast.warn(
                             'No has modificado ningun datos del ejercicio'
@@ -48,9 +46,9 @@ const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
                         return;
                     }
 
-                    if (newName || newDescription || newTypology || newPhoto) {
+                    if (newTitle || newDescription || newTypology || newPhoto) {
                         const formData = new FormData();
-                        formData.append('name', newName);
+                        formData.append('title', newTitle);
                         formData.append('description', newDescription);
                         formData.append('typology', newTypology);
                         formData.append('photo', newPhoto);
@@ -65,24 +63,14 @@ const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
                         );
 
                         const body = await res.json();
-                        console.log(body);
+                        /* console.log(body); */
 
                         if (!res.ok) {
                             throw new Error(body.message);
                         }
 
-                        //Cambiar esto por un navigate
-                        
-                        /* setExercise({
-                            ...exercise,
-                            title: newTitle || exercise.title,
-                            description: newDescription || exercise.description,
-                            typology: newTypology || exercise.typology,
-                            photo: newPhoto || exercise.photo,
-                        }); */
-
                         toast.success('Exercise updated succesfully!');
-                        setShowEditForm(false);
+                        //setShowEditForm(false);
                         navigate("/")
                     }
                 } catch (error) {
@@ -95,12 +83,13 @@ const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
                 Titulo:
             </label>
             <input
-                id="name"
-                value={newName}
+                id="title"
+                value={newTitle}
                 onChange={(event) => {
-                    setNewName(event.target.value);
+                    event.preventDefault();
+                    setNewTitle(event.target.value);
                 }}
-                placeholder={currentName}
+                placeholder={currentTitle}
             />
 
             <label className="new_description" htmlFor="description">
@@ -136,18 +125,23 @@ const EditExerciseForm = ({ exercise, setExercise, setShowEditForm }) => {
             <label className="new_photo" htmlFor="photo">
                 Foto:
             </label>
-            <input
+            {/* <input
                 name="photo"
+                value={newPhoto}
                 id="photo"
                 type="file"
                 accept="image/*"
-                placeholder={newPhotoPreview}
-                /* ref={newPhotoPreview} */
-                onChange={() => {
+                /* ref={newPhotoPreview} */ 
+                /* onChange={() => {
+
                     const newPhoto = new newPhotoRef.current.file[0];
                     setNewPhotoPreview(URL.createObjectURL(newPhoto));                    
-                }}
-            />
+                }} */
+                /* onChange={(e) => {
+                    console.log(e.target.files)
+                    setNewPhotoPreview(e.target.files[0])
+                }} */
+            /> */}
 
             <button>Actualizar Ejercicio</button>
         </form>

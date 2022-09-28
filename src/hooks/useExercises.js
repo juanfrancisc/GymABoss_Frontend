@@ -64,9 +64,7 @@ const useExercises = () => {
             return ex;
         });
 
-
         setExercises(updatedExercises);
-
     };
 
     return {
