@@ -1,23 +1,29 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useTokenContext } from '../../contexts/TokenContext';
+import Exercise from "../Exercise";
+import './styles.css';
 
-const VerExercise = (props) => {
-    const  {id}  = props;
-    console.log(id)
+const VerExercise = ({ id, user }) => {
+    
+    /* console.log(exercise) */
     const [exercise, setExercise] = useState("");
-    //const [errorMessage, setErrorMessage] = useState("");
-    //const [loading, setLoading] = useState(true);
-    console.log(exercise)
+    const { token } = useTokenContext();
+
+    const { name, description, typology, photo } = exercise;
+
+   console.log(name)
+
     useEffect(() => {
         const fetchExercises = async () => {
           try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/verExercise/${id}`,);
-            /*const res = await fetch(`${process.env.REACT_APP_API_URL}/listExercises`,{
-                method: "GET",
-                headers: {
-                  authorization: token,
-                }
-            });*/
-            //console.log(res)
+            let consulta = `${process.env.REACT_APP_API_URL}/getExerciseId/${id}`;
+            const res = await fetch(consulta,{
+              method: "GET",
+              headers: {
+                authorization: token,
+              }
+
+            });
     
             const body = await res.json();
             console.log(body)
@@ -28,8 +34,8 @@ const VerExercise = (props) => {
               );
             }
     
-            setExercise(body.data);
             console.log(body.data)
+            setExercise(body.data)
           } catch (error) {
             console.error(error.message);
             //setErrorMessage(error.message);
@@ -42,14 +48,14 @@ const VerExercise = (props) => {
       }, [id]);
     
       return (
-        <fieldset>
-            <legend>{exercise.typology}</legend>
-            <h3>{exercise.name}</h3>
-            <p>{exercise.description}</p>
+        <fieldset className="detail">
+          <p>{user.type_user}</p>
+          
+            <h3>{name}</h3>
+            <p>{description}</p>
+            <img className="detail" src={`${process.env.REACT_APP_API_URL}/imagenes/${photo}`} alt={name}/>
         </fieldset>
-      ) 
-
-      ;
+      );
 }
 
 export default VerExercise;

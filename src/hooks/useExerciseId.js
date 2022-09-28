@@ -6,8 +6,6 @@ const useExerciseId = (id) => {
     const [exercise, setExercise] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    //console.log(exercise)
-
     const { token } = useTokenContext();
 
     useEffect(() => {
