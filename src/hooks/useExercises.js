@@ -68,10 +68,14 @@ const useExercises = () => {
         setExercises(updatedExercises);
 
     };
+
     const setDeleteExercise = (id) => {
+        console.log(id)
         const updatedExercises = exercises.filter(
             (item) => item.id !== id
+
         );
+        console.log(updatedExercises)
         setExercises(updatedExercises);
     };
     return {

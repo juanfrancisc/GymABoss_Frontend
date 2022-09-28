@@ -6,16 +6,12 @@ import useExercises from '../../hooks/useExercises';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteExerciseButton = ({id} ) => {
-  const { exercises, setExercises } = useExercises([]);
-  const { user } = useUser();
+const DeleteExerciseButton = ({id , setDeleteExercise}) => {
   const { token } = useTokenContext();
-  /* const [updateExercises, setUpdateExercises] = useState([exercises]) */
   const [loading, setLoading] = useState(true);
   const [ exercise, setExercise ] = useState();
 
-  /* const [updateExercises, setUpdateExercises] = useState([exercises]); */
-  console.log(exercises);
+  console.log(id);
   return (
           <button
                 id="deleteButton"
@@ -40,22 +36,10 @@ const DeleteExerciseButton = ({id} ) => {
                                             throw new Error(body.message);
                                         }
 
-                                        //console.log(exercise.id)
-                                        const updateExercises =
-                                            exercises.filter(
-                                                (item) =>
-                                                    item.id !== id
-                                            );
-                                        console.log(updateExercises)
-                                        //console.log(updateExercises.length)
+                                        console.log(id)
 
-                                        if (updateExercises.length < 1) {
-                                            throw new Error(
-                                                'No hay ejercicios que mostrar, debes crear uno.'
-                                            );
-                                        }
 
-                                        setExercises(updateExercises);
+                                        setDeleteExercise(id);
                                         toast.success(body.message);
                                     } catch (error) {
                                         console.error(error.message);

@@ -13,7 +13,7 @@ import EditExerciseButton from '../EditExerciseButton/EditExerciseButton';
 /* import DeteleExerciseButton from "../DeleteExerciseButton/DeleteExerciseButton";
  */
 const ExercisesList = () => {
-    const { exercises, setExercises, setExerciseLikes } = useExercises([]);
+    const { exercises, setExercises, setExerciseLikes, setDeleteExercise } = useExercises([]);
     const { user } = useUser();
     const { token } = useTokenContext();
     /* const [updateExercises, setUpdateExercises] = useState([exercises]) */
@@ -28,8 +28,9 @@ const ExercisesList = () => {
                 return (
                     /* <Link to={`?id=${exercise.id}`}> */
                     <li className="li_exercise_list" key={exercise.id}>
+
                         {/* Boton y funcionalidad de borrar ejercicios si es admin */}
-                        {user.type_user === 'admin' && (
+                        {/* {user.type_user === 'admin' && (
                             <button
                                 id="deleteButton"
                                 value={exercise.name}
@@ -85,7 +86,7 @@ const ExercisesList = () => {
                                     width="44"
                                 />
                             </button>
-                        )}
+                        )} */}
                         {/*user.type_user === 'admin' && <DeteleExerciseButton id={exercise.id}/>*/}
 
                         {/* {user.type_user === 'admin' && <EditExerciseButton id={exercise.id}/>} */}
@@ -95,6 +96,7 @@ const ExercisesList = () => {
                             exercise={exercise}
                             setExercise={setExercise}
                             setExerciseLikes={setExerciseLikes}
+                            setDeleteExercise={setDeleteExercise}
                         />
 
                     </li>
