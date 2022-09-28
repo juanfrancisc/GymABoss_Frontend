@@ -21,7 +21,6 @@ const EditExerciseForm = ({ exercise }) => {
     const [newPhoto, setNewPhoto] = useState(currentPhoto);
 
     const newPhotoRef = useRef();
-    console.log(newPhotoRef)
 
     const { token } = useTokenContext();
 
@@ -32,8 +31,6 @@ const EditExerciseForm = ({ exercise }) => {
             onSubmit={async (event) => {
                 try {
                     event.preventDefault();
-
-                    /* const newPhoto = newPhotoRef; */
 
                     if (
                         !newTitle ||
@@ -64,14 +61,12 @@ const EditExerciseForm = ({ exercise }) => {
                         );
 
                         const body = await res.json();
-                        /* console.log(body); */
 
                         if (!res.ok) {
                             throw new Error(body.message);
                         }
-
-                        toast.success('Exercise updated succesfully!');
-                        //setShowEditForm(false);
+                        toast.success(body.title)
+                        
                         navigate("/")
                     }
                 } catch (error) {

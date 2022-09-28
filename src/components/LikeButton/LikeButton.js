@@ -11,18 +11,15 @@ import { useState } from 'react';
 </label>*/
 
 const LikeButton = ({ id, setExerciseLikes }) => {
-    //console.log(id)
-    /* console.log(idUser) */
+
     const { token } = useTokenContext();
     const navigate = useNavigate();
     const [like, setLike] = useState('');
 
     const likeExerciseId = async (id, token) => {
-        //console.log(token)
 
         try {
             const consulta = `${process.env.REACT_APP_API_URL}/addLike/${id}`;
-            console.log(consulta);
 
             const res = await fetch(consulta, {
                 method: 'POST',
@@ -30,10 +27,8 @@ const LikeButton = ({ id, setExerciseLikes }) => {
                     authorization: token,
                 },
             });
-            console.log(res);
 
             const body = await res.json();
-            console.log(body);
 
             toast.success(body.message);
 

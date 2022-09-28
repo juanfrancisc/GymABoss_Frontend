@@ -11,7 +11,6 @@ const DeleteExerciseButton = ({id , setDeleteExercise}) => {
   const [loading, setLoading] = useState(true);
   const [ exercise, setExercise ] = useState();
 
-  console.log(id);
   return (
           <button
                 id="deleteButton"
@@ -36,14 +35,12 @@ const DeleteExerciseButton = ({id , setDeleteExercise}) => {
                                             throw new Error(body.message);
                                         }
 
-                                        console.log(id)
-
-
                                         setDeleteExercise(id);
                                         toast.success(body.message);
                                     } catch (error) {
                                         console.error(error.message);
                                         toast.error(error.message);
+                                        
                                     } finally {
                                         setLoading(false);
                                     }
