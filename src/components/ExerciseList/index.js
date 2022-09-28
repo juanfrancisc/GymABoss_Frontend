@@ -27,13 +27,7 @@ const ExercisesList = () => {
             {exercises.map((exercise) => {
                 return (
                     /* <Link to={`?id=${exercise.id}`}> */
-<<<<<<< HEAD
-                    <li key={exercise.id}>
-=======
                     <li className="li_exercise_list" key={exercise.id}>
-
-
->>>>>>> a9f0a24dd1588957e7d7828e88084fd422aa34c6
                         {/* Boton y funcionalidad de borrar ejercicios si es admin */}
                         {user.type_user === 'admin' && (
                             <button

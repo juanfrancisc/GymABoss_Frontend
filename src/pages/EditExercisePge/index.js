@@ -9,8 +9,6 @@ const EditExercisePage = () => {
     const { id } = useParams(); //esto saca la porción con :nombre de la URL
     const { exercise, loading, setExercise } = useExerciseId(id);
 
-    console.log(exercise);
-
     if (!token) {
         return <Navigate to="/login" />;
     }

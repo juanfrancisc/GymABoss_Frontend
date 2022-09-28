@@ -37,6 +37,10 @@ const useExercises = () => {
                     );
                 }
 
+                if (body.data < 1){
+                    toast.success( "No existe ningun ejercicio creado con esa tipología");
+                  }
+
                 setExercises(body.data);
                 //console.log(body.data)
                 toast.success(body.message);
@@ -60,33 +64,9 @@ const useExercises = () => {
             return ex;
         });
 
-<<<<<<< HEAD
+
         setExercises(updatedExercises);
-=======
-        const body = await res.json();
-        console.log(body)
 
-        if (!res.ok) {
-          throw new Error(
-            "Unexpected error fetching API. Please, try again or contact support");
-        }
-        console.log(body.data)
-        if (body.data < 1){
-          toast.success( "No existe ningun ejercicio creado con esa tipología");
-        }
-
-        setExercises(body.data);
-        //console.log(body.data)
-        toast.success(body.message)
-
-      } catch (error) {
-        console.error(error.message);
-        toast.error(error.message);
-
-      } finally {
-        setLoading(false);
-      }
->>>>>>> a9f0a24dd1588957e7d7828e88084fd422aa34c6
     };
 
     return {

@@ -59,7 +59,7 @@ const Exercise = ({ exercise, setExercise, setExerciseLikes, user }) => {
             } */}
             {/* {user.type_user === 'admin' && <EditExerciseForm exercise={exercise}/>} */}
             {user.type_user === 'admin' && (
-                <EditExerciseButton exercise={exercise} />
+                <EditExerciseButton id={id} exercise={exercise} />
             )}
 
            {/*  <Link className='Link' to={`../exercisesPageId/${id}`}> */}
