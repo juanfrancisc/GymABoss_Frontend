@@ -20,7 +20,9 @@ const useExercises = () => {
                 const consulta = `${
                     process.env.REACT_APP_API_URL
                 }/getExercises?${searchParams.toString()}`;
-                //console.log(consulta)
+
+                const parametro = `${searchParams}`
+                
                 const res = await fetch(consulta, {
                     method: 'GET',
                     headers: {
@@ -37,12 +39,20 @@ const useExercises = () => {
                     );
                 }
 
-                if (body.data < 1){
+                /* if (parametro){
                     toast.success( "No existe ningun ejercicio creado con esa tipología");
+                } */
+
+                if (body.data <1 && parametro.length > 10){
+                    toast.success( "No existe ningun ejercicio creado con esa tipología");
+                }
+
+                if (body.data < 1){
+                    toast.success( "No existe ningun ejercicio creado aun. Puedes crear alguno");
                   }
 
                 setExercises(body.data);
-                //console.log(body.data)
+                /* console.log(body.data) */
                 toast.success(body.message);
             } catch (error) {
                 console.error(error.message);
@@ -63,8 +73,6 @@ const useExercises = () => {
 
             return ex;
         });
-
-
         setExercises(updatedExercises);
 
     };
@@ -75,6 +83,7 @@ const useExercises = () => {
         );
         setExercises(updatedExercises);
     };
+
     return {
         exercises,
         setExercises,

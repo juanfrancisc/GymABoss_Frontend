@@ -16,6 +16,7 @@ import VerExercise from './components/VerExercise/VerExercise_pruebas'
 import RememberPass from './components/RememberPass/RememberPass'
 import EditExercisePage from './pages/EditExercisePge'
 import EditExerciseForm from './components/EditExerciseForm/EditExerciseForm'
+import ExerciseDetail from './pages/ExerciseDetailPage/ExerciseDetail'
 //mport DeteleExercise from "./components/DeleteExercise/DeleteExercise";
 //import TypologyFilter from "./components/TypologyFilter/TypologyFilter";
 //import NavbarButton from "./components/NavbarButton/NavbarButton";
@@ -42,7 +43,7 @@ function App() {
                         />
                         <Route
                             path="/verExercise/:id"
-                            element={<VerExercise />}
+                            element={<ExerciseDetail />}
                         />
                         <Route
                             path="/exercisesPage"
@@ -67,7 +68,7 @@ function App() {
                 </main>
 
                 {/* Para mostrar las alertas */}
-                <ToastContainer position="bottom-center" theme="dark" />
+                <ToastContainer position="bottom-center" pauseOnFocusLoss={false} theme="dark" />
 
                 <footer>Gym a Boss 2022©</footer>
             </CustomTokenContextProvider>

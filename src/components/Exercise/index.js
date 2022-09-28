@@ -28,10 +28,10 @@ const Exercise = ({ exercise, setExercise, setExerciseLikes, user, setDeleteExer
                 <EditExerciseButton id={id} exercise={exercise} />
             )}
 
-            <Link className="Link" to={`?id=${id}`}>
+            <Link className="Link" to={`../verExercise/${id}`}>
                 <h3 className="title">{title}</h3>
+                <p className="description">{description}</p>
                 <p className="typology">{typology}</p>
-                {/* <img  src={flexiones}></img> */}
                  {photo.length > 0 && (
                     <img
                         height="180"
