@@ -84,6 +84,27 @@ const useExercises = () => {
         setExercises(updatedExercises);
     };
 
+    /** Para pruebas  */
+    const setFavExercices = async (token) => {
+        const consulta = `${
+            process.env.REACT_APP_API_URL
+        }/viewFavorites`;
+
+        const res = await fetch(consulta, {
+            method: 'GET',
+            headers: {
+                authorization: token,
+            },
+        });
+
+        const body = await res.json();
+        console.log(body)
+
+        setFavExercices(body);
+
+    };
+    /** Fin pruebas */
+
     return {
         exercises,
         setExercises,

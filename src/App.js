@@ -17,6 +17,7 @@ import RememberPass from './components/RememberPass/RememberPass'
 import EditExercisePage from './pages/EditExercisePge'
 import EditExerciseForm from './components/EditExerciseForm/EditExerciseForm'
 import ExerciseDetail from './pages/ExerciseDetailPage/ExerciseDetail'
+import ViewFavoriteList from './components/ViewFavoriteList'
 //mport DeteleExercise from "./components/DeleteExercise/DeleteExercise";
 //import TypologyFilter from "./components/TypologyFilter/TypologyFilter";
 //import NavbarButton from "./components/NavbarButton/NavbarButton";
@@ -29,6 +30,7 @@ function App() {
                     <Header />
                 </header>
                 <main>
+                    
                     <Routes>
                         <Route path="/" element={<LoginPage />} />
                         <Route path="/login" element={<LoginPage />} />
@@ -61,6 +63,7 @@ function App() {
                             path="/editExercises/:id"
                             element={<EditExercisePage />}
                         />
+                        <Route path="/viewFavoritesList" element={<ViewFavoriteList />}/>
                         {/* <Route path="/deleteExercise/:id" element={<DeteleExercise />} /> */}
 
                         <Route path="*" element={<NotFoundPage />} />

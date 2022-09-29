@@ -12,6 +12,7 @@ import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'; */
 
 const ExercisesList = () => {
     const { exercises, setExercises, setExerciseLikes, setDeleteExercise } = useExercises([]);
+
     const { user } = useUser();
     /* const { token } = useTokenContext(); */
     /* const [updateExercises, setUpdateExercises] = useState([exercises]) */
