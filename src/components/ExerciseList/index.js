@@ -10,7 +10,7 @@ import useExercises from '../../hooks/useExercises';
 /* import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
 import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'; */
 
-
+const ExercisesList = () => {
     const {
         exercises,
         setExercises,
@@ -18,6 +18,7 @@ import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'; */
         setDeleteExercise,
         setExerciseFavs,
     } = useExercises([]);
+
     const { user } = useUser();
     /* const { token } = useTokenContext(); */
     /* const [updateExercises, setUpdateExercises] = useState([exercises]) */
