@@ -11,7 +11,13 @@ import useExercises from '../../hooks/useExercises';
 import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'; */
 
 const ExercisesList = () => {
-    const { exercises, setExercises, setExerciseLikes, setDeleteExercise } = useExercises([]);
+    const {
+        exercises,
+        setExercises,
+        setExerciseLikes,
+        setDeleteExercise,
+        setExerciseFavs,
+    } = useExercises([]);
     const { user } = useUser();
     /* const { token } = useTokenContext(); */
     /* const [updateExercises, setUpdateExercises] = useState([exercises]) */
@@ -26,17 +32,16 @@ const ExercisesList = () => {
                 return (
                     /* <Link to={`?id=${exercise.id}`}> */
                     <li className="li_exercise_list" key={exercise.id}>
-
                         <Exercise
                             user={user}
                             exercise={exercise}
                             setExercise={setExercise}
                             setExerciseLikes={setExerciseLikes}
                             setDeleteExercise={setDeleteExercise}
+                            setExerciseFavs={setExerciseFavs}
                         />
-
                     </li>
-                
+
                     /* </Link> */
                 );
             })}

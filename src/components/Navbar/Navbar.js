@@ -1,15 +1,17 @@
-import './Navbar.css'
-import { Link } from 'react-router-dom'
-import { useTokenContext } from '../../contexts/TokenContext'
-import LogoutButton from '../LogoutButton/LogoutButton'
-import NewExerciseButton from '../NewExerciseButton/NewExereciseButton'
+import './Navbar.css';
+import { Link } from 'react-router-dom';
+import { useTokenContext } from '../../contexts/TokenContext';
+import LogoutButton from '../LogoutButton/LogoutButton';
+import NewExerciseButton from '../NewExerciseButton/NewExereciseButton';
 /* import { useState } from "react"; */
-import useUser from '../../hooks/useUser'
-import logo from '../../assets/imagenes/logo.png'
+import useUser from '../../hooks/useUser';
+import logo from '../../assets/imagenes/logo.png';
+import FavButton from '../FavButton/FavButton';
+import FavButtonList from '../FavButtonList/FavButtonList';
 
 const Navbar = () => {
-    const { token } = useTokenContext()
-    const { user } = useUser()
+    const { token } = useTokenContext();
+    const { user } = useUser();
 
     return (
         <nav>
@@ -75,13 +77,16 @@ const Navbar = () => {
                             )}
                         </li>
                         <li>
+                            {user.type_user === 'normal' && <FavButtonList />}
+                        </li>
+                        <li>
                             <LogoutButton />
                         </li>
                     </ul>
                 </>
             )}
         </nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;

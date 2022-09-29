@@ -1,18 +1,17 @@
-import Heart from '../Heart/Heart';
-import './LikeButton.css';
+import './FavButton.css';
 import { toast } from 'react-toastify';
 import { useTokenContext } from '../../contexts/TokenContext';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-const LikeButton = ({ id, setExerciseLikes }) => {
-    const { token } = useTokenContext();
+const FavButton = ({ id }) => {
+    const { token, setToken } = useTokenContext();
     const navigate = useNavigate();
-    const [like, setLike] = useState('');
+    const [fav, setFav] = useState('');
 
-    const likeExerciseId = async (id, token) => {
+    const favExerciseId = async (id, token) => {
         try {
-            const consulta = `${process.env.REACT_APP_API_URL}/addLike/${id}`;
+            const consulta = `${process.env.REACT_APP_API_URL}/addFavorite/${id}`;
 
             const res = await fetch(consulta, {
                 method: 'POST',
@@ -25,7 +24,7 @@ const LikeButton = ({ id, setExerciseLikes }) => {
 
             toast.success(body.message);
 
-            setExerciseLikes(id, body.likeCount);
+            /* setExerciseFavs(id, body.favoriteCount);*/
         } catch (error) {
             console.error(error.message);
             toast.error(error.message);
@@ -35,16 +34,16 @@ const LikeButton = ({ id, setExerciseLikes }) => {
     return (
         <>
             <button
-                className="LikeButton"
+                className="FavButton"
                 id={id}
                 onClick={() => {
-                    likeExerciseId(id, token);
+                    favExerciseId(id, token);
                 }}
             >
-                ❤
+                ⭐
             </button>
         </>
     );
 };
 
-export default LikeButton;
+export default FavButton;

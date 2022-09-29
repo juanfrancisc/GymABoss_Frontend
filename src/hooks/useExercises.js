@@ -21,8 +21,8 @@ const useExercises = () => {
                     process.env.REACT_APP_API_URL
                 }/getExercises?${searchParams.toString()}`;
 
-                const parametro = `${searchParams}`
-                
+                const parametro = `${searchParams}`;
+
                 const res = await fetch(consulta, {
                     method: 'GET',
                     headers: {
@@ -43,13 +43,17 @@ const useExercises = () => {
                     toast.success( "No existe ningun ejercicio creado con esa tipología");
                 } */
 
-                if (body.data <1 && parametro.length > 10){
-                    toast.success( "No existe ningun ejercicio creado con esa tipología");
+                if (body.data < 1 && parametro.length > 10) {
+                    toast.success(
+                        'No existe ningun ejercicio creado con esa tipología'
+                    );
                 }
 
-                if (body.data < 1){
-                    toast.success( "No existe ningun ejercicio creado aun. Puedes crear alguno");
-                  }
+                if (body.data < 1) {
+                    toast.success(
+                        'No existe ningun ejercicio creado aun. Puedes crear alguno'
+                    );
+                }
 
                 setExercises(body.data);
                 /* console.log(body.data) */
@@ -74,15 +78,36 @@ const useExercises = () => {
             return ex;
         });
         setExercises(updatedExercises);
-
     };
 
     const setDeleteExercise = (id) => {
-        const updatedExercises = exercises.filter(
-            (item) => item.id !== id
-        );
+        const updatedExercises = exercises.filter((item) => item.id !== id);
         setExercises(updatedExercises);
     };
+
+    const setFavExercices = async (token) => {
+        const consulta = `${process.env.REACT_APP_API_URL}/viewFavorites`;
+
+        const res = await fetch(consulta, {
+            method: 'GET',
+            headers: {
+                authorization: token,
+            },
+        });
+
+        const body = await res.json();
+        console.log(body);
+
+        setFavExercices(body);
+    };
+
+    /*const setExerciseFavs = (id, favs) => {
+        const updatedExercises = exercises.map((ex) => {
+            if (ex.id === id) {
+                ex.
+            }
+        })
+    }*/
 
     return {
         exercises,
@@ -92,6 +117,7 @@ const useExercises = () => {
         setSearchParams,
         setExerciseLikes,
         setDeleteExercise,
+        setFavExercices,
     };
 };
 
