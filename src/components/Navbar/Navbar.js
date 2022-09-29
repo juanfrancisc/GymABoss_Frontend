@@ -36,7 +36,10 @@ const Navbar = () => {
                             </h4>
                         </li>
                         <li>
-                            <Link to="./exercisesPage?typology=cardio" className="LinkNavbar">
+                            <Link
+                                to="./exercisesPage?typology=cardio"
+                                className="LinkNavbar"
+                            >
                                 Cardio
                             </Link>
                         </li>
@@ -65,15 +68,15 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="./exercisesPage?typology" className="LinkNavbar">
+                            <Link
+                                to="./exercisesPage?typology"
+                                className="LinkNavbar"
+                            >
                                 Todas las tipologias
                             </Link>
                         </li>
                     </ul>
                     <ul className="last_ul">
-                        <li>
-                            <FavButtonList />
-                        </li>
                         <li>
                             {user.type_user === 'admin' && (
                                 <NewExerciseButton />
