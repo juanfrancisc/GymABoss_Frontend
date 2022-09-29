@@ -82,7 +82,7 @@ const NewExerciseForm = () => {
             <label className="new_description" htmlFor="description">
                 Descripción:
             </label>
-            <input
+            <textarea
                 className="input_description"
                 id="description"
                 value={description}

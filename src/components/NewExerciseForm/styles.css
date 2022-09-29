@@ -1,22 +1,44 @@
+.form_new{
+    width:80%;
+    padding: 3rem;
+    margin-left: 9rem;
+    margin-right: 12rem;
+}
+
 .new_title {
     padding-left: 10rem;
     padding-bottom: 1rem;
-    padding-right: 5rem;
+    padding-right: 3rem;
+    width: 50%;
+    text-align: right;
 }
 .new_description {
     padding-left: 10rem;
     padding-bottom: 1rem;
+    padding-right: 3rem;
+    width: 50%;
+    text-align: right;
 }
 
 .new_typology {
     padding-left: 10rem;
     padding-bottom: 1rem;
+    padding-right: 3rem;
+    width: 50%;
+    text-align: right;
 }
 
 .new_photo {
     padding-left: 10rem;
+    padding-bottom: 1rem;
+    padding-right: 3rem;
+    width: 50%;
+    text-align: right;
 }
 
 .button_crear {
-    padding-left: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: flex;
+    width: 100%;
 }

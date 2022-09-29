@@ -28,6 +28,7 @@ const EditExerciseForm = ({ exercise }) => {
 
     return (
         <form
+        className="form_new"
             onSubmit={async (event) => {
                 try {
                     event.preventDefault();
@@ -91,7 +92,7 @@ const EditExerciseForm = ({ exercise }) => {
             <label className="new_description" htmlFor="description">
                 Descripción:
             </label>
-            <input
+            <textarea
                 id="description"
                 value={newDescription}
                 onChange={(event) => {
@@ -99,7 +100,6 @@ const EditExerciseForm = ({ exercise }) => {
                 }}
                 placeholder={currentDescription}
             />
-
             <label className="new_typology" htmlFor="typology">
                 Tipología:
             </label>
@@ -140,7 +140,7 @@ const EditExerciseForm = ({ exercise }) => {
 
             /> 
 
-            <button>Actualizar Ejercicio</button>
+            <button className="button_crear">Actualizar Ejercicio</button>
         </form>
     );
 };

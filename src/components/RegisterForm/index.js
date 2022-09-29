@@ -1,24 +1,24 @@
-import './RegisterForm.css'
-import { useState } from 'react'
-import { toast } from 'react-toastify'
+import './RegisterForm.css';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 //Falta importar useNavigate
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     //Falta crear esta variable
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     return (
         <form
             onSubmit={async (event) => {
                 try {
-                    event.preventDefault()
+                    event.preventDefault();
 
-                    const newUser = { name, email, password }
-                    console.log(newUser)
+                    const newUser = { name, email, password };
+                    console.log(newUser);
                     const res = await fetch(
                         `${process.env.REACT_APP_API_URL}/register`,
                         {
@@ -28,19 +28,19 @@ const RegisterForm = () => {
                             },
                             body: JSON.stringify(newUser),
                         }
-                    )
-                    const body = await res.json()
+                    );
+                    const body = await res.json();
                     //console.log(body)
 
                     if (!res.ok) {
-                        throw new Error(body.message)
+                        throw new Error(body.message);
                     }
 
-                    toast.success(body.message)
-                    navigate('/login')
+                    toast.success(body.message);
+                    navigate('/login');
                 } catch (error) {
-                    console.error(error.message)
-                    toast.error(error.message)
+                    console.error(error.message);
+                    toast.error(error.message);
                 }
             }}
         >
@@ -50,7 +50,7 @@ const RegisterForm = () => {
                 type="name"
                 value={name}
                 onChange={(event) => {
-                    setName(event.target.value)
+                    setName(event.target.value);
                 }}
             />
             <label htmlFor="email">Email:</label>
@@ -59,7 +59,7 @@ const RegisterForm = () => {
                 type="email"
                 value={email}
                 onChange={(event) => {
-                    setEmail(event.target.value)
+                    setEmail(event.target.value);
                 }}
             />
             <label htmlFor="password">Password:</label>
@@ -68,12 +68,12 @@ const RegisterForm = () => {
                 type="password"
                 value={password}
                 onChange={(event) => {
-                    setPassword(event.target.value)
+                    setPassword(event.target.value);
                 }}
             />
             <button type="submit">Register</button>
         </form>
-    )
-}
+    );
+};
 
-export default RegisterForm
+export default RegisterForm;

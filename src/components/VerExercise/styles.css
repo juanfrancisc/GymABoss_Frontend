@@ -1,11 +1,42 @@
+.box {
+    margin: 1rem;
+    background-color: white;
+    border-radius: 10%;
+    box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.514);
+    width: 30%;
+    text-align: center;
+}
 
+.e_title{
+    margin: 1rem;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 5rem;
+    color: rgb(51, 51, 88);
+}
+
+.e_typology{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.e_description{
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: 0;
+}
 
 .detail{
     color:red;
     background-color: black;
 }
 
-.detail img{
-    max-width: 50%;
-    z-index: +10;
+.img{
+    object-fit: contain;
+    padding: 1rem;
+    box-shadow: none;
+    border-radius: 10%;
+    background-color: transparent;
+    text-align: center;
 }
+
