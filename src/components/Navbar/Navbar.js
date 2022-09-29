@@ -36,13 +36,13 @@ const Navbar = () => {
                             </h4>
                         </li>
                         <li>
-                            <Link to="?typology=cardio" className="LinkNavbar">
+                            <Link to="./exercisesPage?typology=cardio" className="LinkNavbar">
                                 Cardio
                             </Link>
                         </li>
                         <li>
                             <Link
-                                to="?typology=musculacion"
+                                to="./exercisesPage?typology=musculacion"
                                 className="LinkNavbar"
                             >
                                 Musculación
@@ -50,7 +50,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                to="?typology=relajacion"
+                                to="./exercisesPage?typology=relajacion"
                                 className="LinkNavbar"
                             >
                                 Relajación
@@ -58,19 +58,22 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                to="?typology=natacion"
+                                to="./exercisesPage?typology=natacion"
                                 className="LinkNavbar"
                             >
                                 Natación
                             </Link>
                         </li>
                         <li>
-                            <Link to="?typology" className="LinkNavbar">
+                            <Link to="./exercisesPage?typology" className="LinkNavbar">
                                 Todas las tipologias
                             </Link>
                         </li>
                     </ul>
                     <ul className="last_ul">
+                        <li>
+                            <FavButtonList />
+                        </li>
                         <li>
                             {user.type_user === 'admin' && (
                                 <NewExerciseButton />

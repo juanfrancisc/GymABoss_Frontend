@@ -1,0 +1,41 @@
+.boxes-fav {
+    margin: 1rem;
+    border-radius: 5rem;
+}
+
+ul.boxes-fav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+}
+
+li.boxes-fav{
+    display: flex;
+    width: 40vw;
+    height: 20vw;
+    background-color: white;
+    margin-left: 1rem;
+}
+
+.boxes-fav img {
+    width: 200px;
+    height: 200px;
+    margin-left: 2rem;
+}
+
+li.boxes-fav section{
+    color: red;
+    padding: 1rem;
+}
+
+li.boxes-fav section h3{
+    color: red;
+    padding: 1rem;
+}
+li.boxes-fav section p{
+    color: red;
+    padding: 0.5rem;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import useUser from '../../hooks/useUser';
 import { useTokenContext } from '../../contexts/TokenContext';
 import { toast } from 'react-toastify';
+import './styles.css'
 
 const ViewFavoriteList = () => {
     const [loading, setLoading] = useState(true);
@@ -48,15 +49,21 @@ const ViewFavoriteList = () => {
     return (
         <>
             <h2> Mis Favoritos</h2>
-            <ul >      
+            <ul className='boxes-fav'>      
             {favorites &&
             favorites.map((object, index) => {
                 return ( 
-                <li className='boxes' key={index}>
-                    <img src={`${process.env.REACT_APP_API_URL}/imagenes/${object.photo}`} alt={object.title} />
-                    <h3>{object.title}</h3>
-                    <p>{object.typology}</p>
-                    <p>{object.description}</p>
+                <li className='boxes-fav' key={index}>
+                    <section>
+                        <img src={`${process.env.REACT_APP_API_URL}/imagenes/${object.photo}`} alt={object.title} />
+                    </section>
+                    <section>
+                        <h3>{object.title}</h3>
+                        <p>{object.typology}</p>
+                        <p>{object.description}</p>
+                    </section>
+                    
+                    
                 </li>)
             })
             }

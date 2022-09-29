@@ -10,7 +10,11 @@ const FavButtonList = () => {
         <button
             className="FavButtonList"
             onClick={() => {
-                navigate('/FavoritesPage/');
+                /**Realizado por David, se comenta para pruebas */
+                /* navigate('/FavoritesPage/'); */
+
+                /**En pruebas por JF */
+                navigate('/viewFavoritesList');
             }}
         >
             ⭐
