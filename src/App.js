@@ -5,7 +5,7 @@ import { CustomTokenContextProvider } from './contexts/TokenContext';
 import Spinner from '../src/components/Spinner/Spinner';
 
 //Importamos BrowserRouter, Routes, Route para el trabajo de rutas
-<<<<<<< HEAD
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header/Header'
 import LoginPage from './pages/LoginPage/LoginPage'
@@ -19,20 +19,7 @@ import EditExercisePage from './pages/EditExercisePge'
 import EditExerciseForm from './components/EditExerciseForm/EditExerciseForm'
 import ExerciseDetail from './pages/ExerciseDetailPage/ExerciseDetail'
 import ViewFavoriteList from './components/ViewFavoriteList'
-=======
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import LoginPage from './pages/LoginPage/LoginPage';
-import NewExercisePage from './pages/NewExercisePage';
-import ExercisesPage from './pages/ExercisesPage';
-import RegisterPage from './pages/RegisterPage/Registerpage';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import VerExercise from './components/VerExercise/VerExercise_pruebas';
-import RememberPass from './components/RememberPass/RememberPass';
-import EditExercisePage from './pages/EditExercisePge';
-import EditExerciseForm from './components/EditExerciseForm/EditExerciseForm';
-import ExerciseDetail from './pages/ExerciseDetailPage/ExerciseDetail';
->>>>>>> 1ad6673a0202b7346459bde7b0f76593ed7ecd99
+
 //mport DeteleExercise from "./components/DeleteExercise/DeleteExercise";
 //import TypologyFilter from "./components/TypologyFilter/TypologyFilter";
 //import NavbarButton from "./components/NavbarButton/NavbarButton";
