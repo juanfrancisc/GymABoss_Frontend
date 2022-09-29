@@ -46,17 +46,20 @@ const VerExercise = ({ id, user }) => {
     }, [id]);
 
     return (
-        <fieldset className="detail">
-            <p>{user.type_user}</p>
-
-            <h3>{name}</h3>
-            <p>{description}</p>
-            <img
-                className="detail"
-                src={`${process.env.REACT_APP_API_URL}/imagenes/${photo}`}
-                alt={name}
-            />
-        </fieldset>
+        <section className="ver_exercise">
+            <h3 className="e_title">{name}</h3>
+            <h4 className="e_typology">{typology}</h4>
+            <article className="box">
+                {/* <p>{user.type_user}</p> */}
+                <p className="e_description">{description}</p>
+                <img
+                    height="380"
+                    className="img"
+                    src={`${process.env.REACT_APP_API_URL}/imagenes/${photo}`}
+                    alt={name}
+                />
+            </article>
+        </section>
     );
 };
 

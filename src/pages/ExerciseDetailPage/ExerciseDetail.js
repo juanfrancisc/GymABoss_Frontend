@@ -17,7 +17,7 @@ const ExerciseDetail = () => {
 
     return (
       <fieldset>
-        <h2>Detalle del ejercicio: </h2>
+        {/* <h2>Detalle del ejercicio: </h2> */}
   
         {/* {loading && <Spinner />} */}
         <VerExercise id={id} /* exercise={exercise} */ user={user}/>
