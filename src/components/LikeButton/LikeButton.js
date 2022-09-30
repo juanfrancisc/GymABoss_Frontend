@@ -1,9 +1,11 @@
-import Heart from '../Heart/Heart';
+/* import Heart from '../Heart/Heart'; */
 import './LikeButton.css';
 import { toast } from 'react-toastify';
 import { useTokenContext } from '../../contexts/TokenContext';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import heart from '../../assets/imagenes/black_heart.png'
+
 
 const LikeButton = ({ id, setExerciseLikes }) => {
     const { token } = useTokenContext();
@@ -34,7 +36,13 @@ const LikeButton = ({ id, setExerciseLikes }) => {
 
     return (
         <>
-            <button
+        <input type="image" src={heart}
+        className="LikeButton"
+        onClick={() => {
+            likeExerciseId(id, token);
+        }}
+        />
+            {/* <button
                 className="LikeButton"
                 id={id}
                 onClick={() => {
@@ -42,7 +50,7 @@ const LikeButton = ({ id, setExerciseLikes }) => {
                 }}
             >
                 ❤
-            </button>
+            </button> */}
         </>
     );
 };

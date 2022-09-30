@@ -31,18 +31,24 @@ const Exercise = ({
     return (
         <section className="boxes">
             {/* {user.type_user === 'admin' && <EditExerciseForm exercise={exercise}/>} */}
-            {user.type_user === 'admin' && (
+            {/* {user.type_user === 'admin' && (
                 <DeleteExerciseButton
                     id={id}
                     setDeleteExercise={setDeleteExercise}
                 />
-            )}
+            )} */}
 
             {user.type_user === 'admin' && (
-                <EditExerciseButton id={id} exercise={exercise} />
+                <section>
+                    <EditExerciseButton 
+                        id={id} 
+                        exercise={exercise} />
+                    <DeleteExerciseButton
+                        id={id}
+                        setDeleteExercise={setDeleteExercise} />
+                </section>
+                
             )}
-
-            <FavButton id={id} setExerciseFavs={setExerciseFavs} />
 
             <Link className="Link" to={`../verExercise/${id}`}>
                 <h3 className="title">{title}</h3>
@@ -55,11 +61,11 @@ const Exercise = ({
                         alt={title}
                     />
                 )}
-
                 <p className="nLikes">Likes: {n_like}</p>
             </Link>
 
             <LikeButton id={id} setExerciseLikes={setExerciseLikes} />
+            {user.type_user === 'normal' && <FavButton id={id} setExerciseFavs={setExerciseFavs} />}
         </section>
     );
 };

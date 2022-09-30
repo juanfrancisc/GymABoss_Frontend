@@ -3,6 +3,7 @@ import useUser from '../../hooks/useUser';
 import { useTokenContext } from '../../contexts/TokenContext';
 import { toast } from 'react-toastify';
 import './styles.css'
+import { Link } from 'react-router-dom';
 
 const ViewFavoriteList = () => {
     const [loading, setLoading] = useState(true);
@@ -25,7 +26,7 @@ const ViewFavoriteList = () => {
 
                 const body = await res.json();
 
-                console.log(body.status)
+                console.log(body)
                 if( body.status === "0" ){
                     toast.success( "No existe ningun ejercicio marcado como favorito");
                     setFavorites("")
@@ -51,9 +52,11 @@ const ViewFavoriteList = () => {
             <h2> Mis Favoritos</h2>
             <ul className='boxes-fav'>      
             {favorites &&
-            favorites.map((object, index) => {
+            favorites.map((object) => {
                 return ( 
-                <li className='boxes-fav' key={index}>
+                <li className='boxes-fav' key={object.id}>
+                    
+                    <Link className='boxes-fav' to={`../verExercise/${object.id}`}>
                     <section>
                         <img src={`${process.env.REACT_APP_API_URL}/imagenes/${object.photo}`} alt={object.title} />
                     </section>
@@ -62,7 +65,7 @@ const ViewFavoriteList = () => {
                         <p>{object.typology}</p>
                         <p>{object.description}</p>
                     </section>
-                    
+                    </Link>
                     
                 </li>)
             })

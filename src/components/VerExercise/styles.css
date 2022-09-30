@@ -40,3 +40,15 @@
     text-align: center;
 }
 
+.view_exercise_detail{
+    display: flex;
+}
+
+article.box_detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333358;
+}
+

@@ -21,6 +21,7 @@ const ExercisesPage = () => {
 
 {/*       {user.type_user === 'admin' && <NewExerciseButton />  }
  */}
+      
       {exercises.length > 0 && <ExerciseList exercises={exercises} />}
 
       {errorMessage && <ErrorMessage msg={errorMessage} />}

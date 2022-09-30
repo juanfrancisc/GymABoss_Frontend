@@ -1,12 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useTokenContext } from '../../contexts/TokenContext';
+import useExercises from '../../hooks/useExercises';
 import Exercise from '../Exercise';
 import './styles.css';
+import LikeButton from '../LikeButton/LikeButton';
+import FavButton from '../FavButton/FavButton';
 
 const VerExercise = ({ id, user }) => {
     /* console.log(exercise) */
     const [exercise, setExercise] = useState('');
     const { token } = useTokenContext();
+    const {
+        exercises,
+        setExercises,
+        setExerciseLikes,
+        setDeleteExercise,
+        setExerciseFavs,
+    } = useExercises([]);
 
     const { name, description, typology, photo } = exercise;
 
@@ -49,7 +59,7 @@ const VerExercise = ({ id, user }) => {
         <section className="ver_exercise">
             <h3 className="e_title">{name}</h3>
             <h4 className="e_typology">{typology}</h4>
-            <article className="box">
+            <article className="box_detail">
                 {/* <p>{user.type_user}</p> */}
                 <p className="e_description">{description}</p>
                 <img
@@ -59,6 +69,8 @@ const VerExercise = ({ id, user }) => {
                     alt={name}
                 />
             </article>
+            <LikeButton id={id} setExerciseLikes={setExerciseLikes} />
+            {user.type_user === 'normal' && <FavButton id={id} />}
         </section>
     );
 };

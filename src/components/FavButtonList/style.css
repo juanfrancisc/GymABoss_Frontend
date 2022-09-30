@@ -1,5 +1,5 @@
 .FavButtonList {
-    width: 10%;
+   width: 10%;
     border: transparent;
     display: block;
     color: #000;
@@ -7,3 +7,5 @@
     object-fit: contain;
     padding-bottom: 3rem;
 }
+
+

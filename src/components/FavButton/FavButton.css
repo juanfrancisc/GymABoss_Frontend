@@ -21,3 +21,46 @@
     text-decoration: none;
     color: black;
 }*/
+
+.pruebas-fav{
+    background-image:url(../../assets/imagenes/black_heart.png);
+    background-repeat:no-repeat;
+    height:100px;
+    width:100px;
+    background-position:center;
+
+}
+
+.pruebas-fav:hover{
+    background-image:url(../../assets/imagenes/red_heart.png);
+    background-repeat:no-repeat;
+    height:100px;
+    width:100px;
+    background-position:center;
+
+}
+
+.pruebas-fav:active{
+    background-image:url(../../assets/imagenes/red_heart.png);
+    background-repeat:no-repeat;
+    height:100px;
+    width:100px;
+    background-position:center;
+
+}
+
+
+.pruebas-fav:before{
+    background-image:url(../../assets/imagenes/red_heart.png);
+    background-repeat:no-repeat;
+    height:100px;
+    width:100px;
+    background-position:center;
+
+}
+
+input .FavButton img{
+    width: 64px;
+    height: 64px;
+    
+}

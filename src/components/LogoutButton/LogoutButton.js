@@ -9,16 +9,15 @@ const LogoutButton = () => {
     const navigate = useNavigate()
 
     return (
-        <button
-            className="logoutButton"
-            onClick={() => {
-                setToken('')
-                navigate('/')
-                toast.success('Unlogged succesfully :)')
-            }}
-        >
-            <img src={IconLogout} alt="Logout" height="60" width="60" />
-        </button>
+        <input type="image" src={IconLogout}
+        className="logoutButton"
+        onClick={() => {
+            setToken('')
+            navigate('/')
+            toast.success('Unlogged succesfully :)')
+        }}
+        />
+        
     )
 }
 

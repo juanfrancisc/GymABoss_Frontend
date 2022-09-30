@@ -12,12 +12,13 @@ ul.boxes-fav{
     align-items: center;
 }
 
-li.boxes-fav{
+a.boxes-fav{
     display: flex;
     width: 40vw;
     height: 20vw;
     background-color: white;
     margin-left: 1rem;
+    text-decoration: none;
 }
 
 .boxes-fav img {

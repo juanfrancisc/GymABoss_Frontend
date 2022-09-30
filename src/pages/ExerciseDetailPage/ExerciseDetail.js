@@ -16,7 +16,7 @@ const ExerciseDetail = () => {
     const { user } = useUser();
 
     return (
-      <fieldset>
+      <fieldset className="view_exercise_detail">
         {/* <h2>Detalle del ejercicio: </h2> */}
   
         {/* {loading && <Spinner />} */}

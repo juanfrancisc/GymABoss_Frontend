@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { useTokenContext } from '../../contexts/TokenContext';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import FavB from '../../assets/imagenes/start.png'
 
 const FavButton = ({ id }) => {
     const { token, setToken } = useTokenContext();
@@ -33,7 +34,7 @@ const FavButton = ({ id }) => {
 
     return (
         <>
-            <button
+            {/* <button
                 className="FavButton"
                 id={id}
                 onClick={() => {
@@ -41,8 +42,19 @@ const FavButton = ({ id }) => {
                 }}
             >
                 ⭐
-            </button>
+            </button> */}
+            
+            <input type="image" className="FavButton"
+                src={FavB}
+                id={id}
+                values="Ir a favoritos"
+                onClick={() => {
+                    favExerciseId(id, token);
+                }}
+            >
+            </input>
         </>
+        
     );
 };
 

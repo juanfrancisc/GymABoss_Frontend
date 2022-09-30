@@ -10,49 +10,48 @@ const DeleteExerciseButton = ({id , setDeleteExercise}) => {
   const { token } = useTokenContext();
   const [loading, setLoading] = useState(true);
   const [ exercise, setExercise ] = useState();
+  
 
   return (
-          <button
-                id="deleteButton"
-                                value={id}
-                                onClick={async () => {
-                                    try {
-                                        const res = await fetch(
-                                            `${process.env.REACT_APP_API_URL}/deleteExercise/${id}`,
-                                            {
-                                                method: 'DELETE',
-                                                headers: {
-                                                    authorization: token,
-                                                },
-                                            }
-                                        );
-                                        //console.log(res);
 
-                                        const body = await res.json();
-                                        //console.log(body)
+    <input 
+        type="image" src={Trash}
+        className="logoutButton"
+        onClick={async () => {
+                try {
+                    const res = await fetch(
+                        `${process.env.REACT_APP_API_URL}/deleteExercise/${id}`,
+                        {
+                            method: 'DELETE',
+                            headers: {
+                                authorization: token,
+                            },
+                        }
+                    );
+                    //console.log(res);
 
-                                        if (!res.ok) {
-                                            throw new Error(body.message);
-                                        }
+                    const body = await res.json();
+                    //console.log(body)
 
-                                        setDeleteExercise(id);
-                                        toast.success(body.message);
-                                    } catch (error) {
-                                        console.error(error.message);
-                                        toast.error(error.message);
-                                        
-                                    } finally {
-                                        setLoading(false);
-                                    }
-                                }}
-                            >
-                                <img
-                                    src={Trash}
-                                    alt="Logout"
-                                    height="44"
-                                    width="44"
-                                />
-                            </button>
+                    if (!res.ok) {
+                        throw new Error(body.message);
+                    }
+
+                    setDeleteExercise(id);
+                    toast.success(body.message);
+                } catch (error) {
+                    console.error(error.message);
+                    toast.error(error.message);
+                    
+                } finally {
+                    setLoading(false);
+                }
+            }
+          }
+        />
+          
+
+                            
 )}
 
 export default DeleteExerciseButton

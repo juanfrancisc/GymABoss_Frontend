@@ -10,7 +10,14 @@ const EditExerciseButton = ({ exercise }) => {
     /* console.log(title) */
 
     return (
-        <button
+        <>
+        <input type="image" src={Edit}
+        className="Modify_button"
+        onClick={() => {
+            navigate(`../editExercises/${id}`)
+        }}
+        />
+        {/* <button
             className="Modify_button"
             onClick={() => {
                 //console.log(exercise);
@@ -18,7 +25,7 @@ const EditExerciseButton = ({ exercise }) => {
             }}
         >
             <img src={Edit} alt="Logout" height="44" width="44" />
-        </button>
+        </button> */}</>
     )
 }
 
