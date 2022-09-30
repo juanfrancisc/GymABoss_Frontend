@@ -4,13 +4,16 @@ import { useTokenContext } from '../../contexts/TokenContext';
 import { toast } from 'react-toastify';
 import './styles.css'
 import { Link } from 'react-router-dom';
+import FavButton from '../FavButton/FavButton';
 
-const ViewFavoriteList = () => {
+const ViewFavoriteList = ({setFavExercices}) => {
     const [loading, setLoading] = useState(true);
 
     const { token } = useTokenContext();
 
-    const [favorites, setFavorites] = useState([])
+    const [favorites , setFavorites] = useState();
+    console.log(favorites)
+
 
     useEffect (() => {
         const fetchFavoritesList = async () => {
@@ -64,8 +67,10 @@ const ViewFavoriteList = () => {
                         <h3>{object.title}</h3>
                         <p>{object.typology}</p>
                         <p>{object.description}</p>
+                            
                     </section>
                     </Link>
+                    <FavButton id={object.id} setFavExercices={setFavExercices} />
                     
                 </li>)
             })

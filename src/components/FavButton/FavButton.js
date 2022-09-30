@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import FavB from '../../assets/imagenes/start.png'
 
-const FavButton = ({ id }) => {
+const FavButton = ({ id, setFavorites }) => {
     const { token, setToken } = useTokenContext();
     const navigate = useNavigate();
     const [fav, setFav] = useState('');

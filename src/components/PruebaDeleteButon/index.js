@@ -11,6 +11,8 @@ const DeleteExerciseButton = ({id , setDeleteExercise}) => {
   const [loading, setLoading] = useState(true);
   const [ exercise, setExercise ] = useState();
   
+  
+  
 
   return (
 

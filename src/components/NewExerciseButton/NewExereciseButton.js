@@ -10,17 +10,16 @@ const NewExerciseButton = () => {
   
 
   return (
-    <>
-    <button className='logoutButton'
-      onClick={() => {
-        if(token){
+
+    <input type="image" src={IconNewExercise}
+        className="logoutButton"
+        onClick={() => {
+          if(token){
             navigate("/newExercise");
-        }
-      }}
-    >
-      <img src={IconNewExercise } alt="New Exercise" height ="64" width="64" />
-    </button>
-    </>
+          }
+          
+        }} />
+   
     
   );
 };
