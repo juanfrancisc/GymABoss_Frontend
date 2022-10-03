@@ -36,10 +36,11 @@ const LikeButton = ({ id, setExerciseLikes }) => {
 
     return (
         <>
-        <input type="image" src={heart}
-        className="LikeButton"
-        onClick={() => {
-            likeExerciseId(id, token);
+        <input type="image" 
+            /* src={heart} */
+            className="LikeButton"
+            onClick={() => {
+                likeExerciseId(id, token);
         }}
         />
             {/* <button

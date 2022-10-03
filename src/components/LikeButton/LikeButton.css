@@ -180,3 +180,15 @@
     }
 }
 */
+
+.LikeButton{
+    content: url(../../assets/imagenes/black_heart.png);
+}
+
+.LikeButton:hover{
+    content: url(../../assets/imagenes/red_heart.png);
+}
+
+.LikeButton::before{
+    content: url(../../assets/imagenes/red_heart.png);
+}

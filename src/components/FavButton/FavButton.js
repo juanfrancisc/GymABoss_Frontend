@@ -33,19 +33,9 @@ const FavButton = ({ id, setFavorites }) => {
     };
 
     return (
-        <>
-            {/* <button
-                className="FavButton"
-                id={id}
-                onClick={() => {
-                    favExerciseId(id, token);
-                }}
-            >
-                ⭐
-            </button> */}
-            
+        <>            
             <input type="image" className="FavButton"
-                src={FavB}
+                /* src={FavB} */
                 id={id}
                 values="Ir a favoritos"
                 onClick={() => {

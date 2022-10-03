@@ -12,7 +12,7 @@ const ViewFavoriteList = ({setFavExercices}) => {
     const { token } = useTokenContext();
 
     const [favorites , setFavorites] = useState();
-    console.log(favorites)
+    /* console.log(favorites) */
 
 
     useEffect (() => {
@@ -29,7 +29,7 @@ const ViewFavoriteList = ({setFavExercices}) => {
 
                 const body = await res.json();
 
-                console.log(body)
+                /* console.log(body) */
                 if( body.status === "0" ){
                     toast.success( "No existe ningun ejercicio marcado como favorito");
                     setFavorites("")
@@ -60,15 +60,15 @@ const ViewFavoriteList = ({setFavExercices}) => {
                 <li className='boxes-fav' key={object.id}>
                     
                     <Link className='boxes-fav' to={`../verExercise/${object.id}`}>
-                    <section>
-                        <img src={`${process.env.REACT_APP_API_URL}/imagenes/${object.photo}`} alt={object.title} />
-                    </section>
-                    <section>
-                        <h3>{object.title}</h3>
-                        <p>{object.typology}</p>
-                        <p>{object.description}</p>
-                            
-                    </section>
+                        <section>
+                            <img src={`${process.env.REACT_APP_API_URL}/imagenes/${object.photo}`} alt={object.title} />
+                        </section>
+                        <section>
+                            <h3>{object.title}</h3>
+                            <p>{object.typology}</p>
+                            <p>{object.description}</p>
+                                
+                        </section>
                     </Link>
                     <FavButton id={object.id} setFavExercices={setFavExercices} />
                     
