@@ -60,3 +60,17 @@
     text-decoration: none;
     color: rgb(51, 51, 88);
 }
+
+.fav_like {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 1rem;
+}
+
+.edit_delete {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+}
+
+
