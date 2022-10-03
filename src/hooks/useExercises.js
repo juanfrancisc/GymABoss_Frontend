@@ -100,9 +100,9 @@ const useExercises = () => {
         });
 
         const body = await res.json();
-        console.log(body)
+        /* console.log(body)
 
-        setFavExercices(body);
+        setFavExercices(body); */
 
     };
     /** Fin pruebas */

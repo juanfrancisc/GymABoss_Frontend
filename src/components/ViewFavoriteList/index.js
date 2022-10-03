@@ -47,7 +47,7 @@ const ViewFavoriteList = ({setFavExercices}) => {
             }
         };
         fetchFavoritesList();
-    },[]);
+    },[favorites]);
 
 
     return (
