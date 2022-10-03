@@ -18,7 +18,7 @@ const DeleteExerciseButton = ({id , setDeleteExercise}) => {
 
     <input 
         type="image" src={Trash}
-        className="logoutButton"
+        height={45}
         onClick={async () => {
                 try {
                     const res = await fetch(

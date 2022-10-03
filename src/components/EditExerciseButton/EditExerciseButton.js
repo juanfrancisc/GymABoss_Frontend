@@ -10,7 +10,7 @@ const EditExerciseButton = ({ exercise }) => {
     /* console.log(title) */
 
     return (
-        <input type="image" src={Edit}
+        <input height={45} type="image" src={Edit}
         className="Modify_button"
         onClick={() => {
             navigate(`../editExercises/${id}`)

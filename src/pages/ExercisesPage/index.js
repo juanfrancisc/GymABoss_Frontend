@@ -6,6 +6,7 @@ import Spinner from "../../components/Spinner/Spinner";
 import useExercises from "../../hooks/useExercises";
 import useUser from "../../hooks/useUser";
 //import useTypology from "../../hooks/useTypology";
+import './styles.css';
 
 
 const ExercisesPage = () => {
@@ -15,7 +16,7 @@ const ExercisesPage = () => {
 
   return (
     <section className="list_exercises">
-      <h2>Ejercicios</h2>
+      <h2 className="exercise">Ejercicios</h2>
 
       {loading && <Spinner />}
 

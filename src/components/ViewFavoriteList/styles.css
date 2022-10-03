@@ -41,13 +41,9 @@ li.boxes-fav section p{
     padding: 0.5rem;
 }
 
-li.boxes-fav {
-    background-color: aliceblue;
-}
 
-li input {
-    display: flex;    
-}
+
+
 
 
 .FavButton {

@@ -39,7 +39,7 @@ const Exercise = ({
             )} */}
 
             {user.type_user === 'admin' && (
-                <section>
+                <section className='edit_delete'>
                     <EditExerciseButton 
                         id={id} 
                         exercise={exercise} />
@@ -52,7 +52,7 @@ const Exercise = ({
 
             <Link className="Link" to={`../verExercise/${id}`}>
                 <h3 className="title">{title}</h3>
-                <p className="description">{description}</p>
+                {/* <p className="description">{description}</p> */}
                 <p className="typology">{typology}</p>
                 {photo.length > 0 && (
                     <img
@@ -63,9 +63,14 @@ const Exercise = ({
                 )}
                 <p className="nLikes">Likes: {n_like}</p>
             </Link>
-
+            <section className='fav_like'>
             <LikeButton id={id} setExerciseLikes={setExerciseLikes} />
+<<<<<<< HEAD
             {user.type_user === 'normal' && <FavButton id={id} /* setExerciseFavs={setExerciseFavs} */ />}
+=======
+            {user.type_user === 'normal' && <FavButton id={id} setExerciseFavs={setExerciseFavs} />}
+            </section>
+>>>>>>> 3c3df41cd9d7509e4eae622933ef0dae1a25154a
         </section>
     );
 };
