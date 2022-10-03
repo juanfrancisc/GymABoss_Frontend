@@ -17,7 +17,7 @@ const Exercise = ({
     setExerciseLikes,
     user,
     setDeleteExercise,
-    setExerciseFavs,
+   /*  setExerciseFavs, */
 }) => {
     /* console.log({exercise, setExercise}); */
     const { id, idUser, n_like, title, description, photo, typology } =
@@ -65,7 +65,7 @@ const Exercise = ({
             </Link>
 
             <LikeButton id={id} setExerciseLikes={setExerciseLikes} />
-            {user.type_user === 'normal' && <FavButton id={id} setExerciseFavs={setExerciseFavs} />}
+            {user.type_user === 'normal' && <FavButton id={id} /* setExerciseFavs={setExerciseFavs} */ />}
         </section>
     );
 };

@@ -6,7 +6,7 @@ import './styles.css'
 import { Link } from 'react-router-dom';
 import FavButton from '../FavButton/FavButton';
 
-const ViewFavoriteList = ({setFavExercices}) => {
+const ViewFavoriteList = (/* {setFavExercices} */) => {
     const [loading, setLoading] = useState(true);
 
     const { token } = useTokenContext();
@@ -70,7 +70,7 @@ const ViewFavoriteList = ({setFavExercices}) => {
                                 
                         </section>
                     </Link>
-                    <FavButton id={object.id} setFavExercices={setFavExercices} />
+                    <FavButton id={object.id} /* setFavExercices={setFavExercices} */ />
                     
                 </li>)
             })

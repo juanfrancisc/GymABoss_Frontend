@@ -86,7 +86,7 @@ const useExercises = () => {
     };
 
     /** Para pruebas  */
-    const setFavExercices = async (token) => {
+    /* const setFavExercices = async (token) => {
         const consulta = `${
             process.env.REACT_APP_API_URL
         }/viewFavorites`;
@@ -102,9 +102,9 @@ const useExercises = () => {
         const body = await res.json();
         /* console.log(body)
 
-        setFavExercices(body); */
+        setFavExercices(body); 
 
-    };
+    };*/
     /** Fin pruebas */
 
 
@@ -116,7 +116,7 @@ const useExercises = () => {
         setSearchParams,
         setExerciseLikes,
         setDeleteExercise,
-        setFavExercices,
+        /* setFavExercices, */
     };
 };
 
