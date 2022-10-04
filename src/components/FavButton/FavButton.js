@@ -5,10 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import FavB from '../../assets/imagenes/start.png'
 
-const FavButton = ({ id, setFavorites }) => {
-    const { token, setToken } = useTokenContext();
-    const navigate = useNavigate();
-    const [fav, setFav] = useState('');
+/* const FavButton = ({ id, favorites, setFavorites}) => { */
+const FavButton = ({id}) => {
+    const { token } = useTokenContext();
+    console.log(id)
+    const [favorites, setFavorites] = useState();
 
     const favExerciseId = async (id, token) => {
         try {
@@ -22,10 +23,11 @@ const FavButton = ({ id, setFavorites }) => {
             });
 
             const body = await res.json();
+            setFavorites(body.data)
 
             toast.success(body.message);
 
-            /* setExerciseFavs(id, body.favoriteCount);*/
+
         } catch (error) {
             console.error(error.message);
             toast.error(error.message);

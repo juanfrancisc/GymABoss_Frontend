@@ -6,14 +6,13 @@ import './styles.css'
 import { Link } from 'react-router-dom';
 import FavButton from '../FavButton/FavButton';
 
-const ViewFavoriteList = (/* {setFavExercices} */) => {
+/* const ViewFavoriteList = ({exercises, favorites, setFavorites}) => { */
+const ViewFavoriteList = () => {
     const [loading, setLoading] = useState(true);
-
     const { token } = useTokenContext();
+    const [favorites, setFavorites] = useState("")
 
-    const [favorites , setFavorites] = useState();
-    /* console.log(favorites) */
-
+    
 
     useEffect (() => {
         const fetchFavoritesList = async () => {
@@ -45,9 +44,12 @@ const ViewFavoriteList = (/* {setFavExercices} */) => {
             } finally {
                 setLoading(false);
             }
+
+            
         };
         fetchFavoritesList();
-    },[favorites]);
+
+    },[]);
 
 
     return (
@@ -70,7 +72,7 @@ const ViewFavoriteList = (/* {setFavExercices} */) => {
                                 
                         </section>
                     </Link>
-                    <FavButton id={object.id} /* setFavExercices={setFavExercices} */ />
+                    <FavButton id={object.id} favorites={favorites} setFavorites={setFavorites} />
                     
                 </li>)
             })

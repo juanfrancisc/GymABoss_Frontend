@@ -8,10 +8,13 @@ import useUser from '../../hooks/useUser';
 import logo from '../../assets/imagenes/logo.png';
 import FavButton from '../FavButton/FavButton';
 import FavButtonList from '../FavButtonList/FavButtonList';
+import SearchForm from "../../components/SearchForm";
+import useExercises from '../../hooks/useExercises';
 
 const Navbar = () => {
     const { token } = useTokenContext();
     const { user } = useUser();
+    const { searchParams, setSearchParams } = useExercises();
 
     return (
         <nav>
@@ -74,6 +77,12 @@ const Navbar = () => {
                             >
                                 Todas las tipologias
                             </Link>
+                        </li>
+                        <li>
+                        <SearchForm
+                            searchParams={searchParams}
+                            setSearchParams={setSearchParams}
+                            />
                         </li>
                     </ul>
                     <ul className="last_ul">

@@ -65,12 +65,11 @@ const Exercise = ({
             </Link>
             <section className='fav_like'>
             <LikeButton id={id} setExerciseLikes={setExerciseLikes} />
-<<<<<<< HEAD
+
             {user.type_user === 'normal' && <FavButton id={id} /* setExerciseFavs={setExerciseFavs} */ />}
-=======
-            {user.type_user === 'normal' && <FavButton id={id} setExerciseFavs={setExerciseFavs} />}
+
             </section>
->>>>>>> 3c3df41cd9d7509e4eae622933ef0dae1a25154a
+
         </section>
     );
 };

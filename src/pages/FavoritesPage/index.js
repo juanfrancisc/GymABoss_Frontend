@@ -1,13 +1,13 @@
-import ErrorMessage from '../../components/ErrorMessage';
 import FavoritesList from '../../components/FavList/FavoritesList';
-
 import Spinner from '../../components/Spinner/Spinner';
 import useExercises from '../../hooks/useExercises';
 import useUser from '../../hooks/useUser';
+import { useState } from 'react';
 
 const FavoritesPage = () => {
-    const { exercises, errorMessage, loading } = useExercises();
+    const { exercises, loading } = useExercises();
     const { user } = useUser();
+    const [favorites , setFavorites] = useState("");
 
     return (
         <section className="favorites_exercises">
@@ -17,9 +17,8 @@ const FavoritesPage = () => {
 
             {/*       {user.type_user === 'admin' && <NewExerciseButton />  }
              */}
-            {exercises.length > 0 && <FavoritesList exercises={exercises} />}
+            {exercises.length > 0 && <FavoritesList exercises={exercises} favorites={favorites} setFavorites={setFavorites}/>}
 
-            {errorMessage && <ErrorMessage msg={errorMessage} />}
         </section>
     );
 };
