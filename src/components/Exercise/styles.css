@@ -38,17 +38,19 @@
 }
 .title {
     padding: 1rem;
-    padding-top: 0;
+    padding-top: 0.5rem;
     padding-bottom: 0rem;
     text-align: center;
     font-size: 2.7rem;
-}
+    text-transform: uppercase;
+    }
 
 .typology {
     text-align: center;
     padding: 2rem;
     padding-top: 0.5rem;
-    font-size: medium;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
 }
 
 .nLikes {
@@ -59,7 +61,7 @@
 .Link {
     text-decoration: none;
     color: rgb(51, 51, 88);
-}
+    }
 
 .fav_like {
   display: flex;

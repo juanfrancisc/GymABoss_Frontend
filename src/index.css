@@ -7,7 +7,7 @@ body {
         'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url(./assets/imagenes/background.png);
+    background-image: url(./assets/imagenes/background_last.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -16,7 +16,7 @@ body {
     /* display: flex;
     flex-direction: column; */
     font-family: 'Bebas Neue';
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.15rem;
 }
 
 code {

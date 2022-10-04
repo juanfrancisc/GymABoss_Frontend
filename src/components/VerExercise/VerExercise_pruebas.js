@@ -69,8 +69,10 @@ const VerExercise = ({ id, user }) => {
                     alt={name}
                 />
             </article>
+            <article className='fav_like'>
             <LikeButton id={id} setExerciseLikes={setExerciseLikes} />
             {user.type_user === 'normal' && <FavButton id={id} />}
+            </article>
         </section>
     );
 };

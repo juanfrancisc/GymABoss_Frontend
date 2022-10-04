@@ -2,6 +2,7 @@ nav {
     background-color: rgb(51, 51, 88);
     height: 6.5rem;
     display: flex;
+    justify-content: space-between;
 }
 
 li {
@@ -170,7 +171,9 @@ a:active {
 }
 
 .LinkNavbar:hover {
-    background-color: rgb(16, 16, 54);
+    /* background-color: rgb(16, 16, 54); */
+    background-color: white;
+    color: black;
 }
 
 .logo_nav {
@@ -188,3 +191,5 @@ a:active {
 .bienvenido {
     color: rgb(156, 151, 151);
 }
+
+
