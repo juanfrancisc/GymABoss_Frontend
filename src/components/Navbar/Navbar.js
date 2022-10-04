@@ -35,7 +35,7 @@ const Navbar = () => {
                                     : ''}
                             </h4>
                         </li>
-                        <li>
+                        <li className="li_typo">
                             <Link
                                 to="./exercisesPage?typology=cardio"
                                 className="LinkNavbar"

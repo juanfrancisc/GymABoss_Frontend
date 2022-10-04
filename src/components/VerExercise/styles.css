@@ -27,7 +27,8 @@
     padding-bottom: 0;
     margin-right: 15rem;
     margin-left: 15rem;
-    background-color: rgba(192, 192, 192, 0.548);
+    background-color: rgba(192, 192, 192, 0.377);
+    font-size: 1.1rem;
     }
 
 .detail{
@@ -37,11 +38,11 @@
 
 .img{
     object-fit: contain;
-    padding: 1rem;
-    box-shadow: none;
+    padding: 0.2rem;
     border-radius: 10%;
-    background-color: transparent;
+    background-color: #333358;
     text-align: center;
+    margin: 1rem;
 }
 
 .view_exercise_detail{
