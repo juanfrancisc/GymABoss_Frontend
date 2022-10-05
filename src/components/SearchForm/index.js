@@ -1,4 +1,6 @@
 import { useState } from "react";
+import lupa from '../../assets/imagenes/lupa_w.png'
+import './styles.css';
 
 const SearchForm = ({ searchParams, setSearchParams }) => {
   // Recogemos las props, y en vez de iniciar los inputs con comillas vacías, los iniciamos con el valor que haya en los searchParams (si existe)
@@ -22,8 +24,10 @@ const SearchForm = ({ searchParams, setSearchParams }) => {
         setSearchParams(new URLSearchParams(queryParams));
       }}
     >
-      <label htmlFor="title">Titulo o Descripción:</label>
+      <label htmlFor="title"></label>
       <input
+      className="search_inp"
+      placeholder=" Encuentra tu ejercicio"
         id="title"
         type="multiselect"
         value={title}
@@ -33,7 +37,7 @@ const SearchForm = ({ searchParams, setSearchParams }) => {
         }}
       />
 
-      <button>Buscar</button>
+      <button className="search_but"> <img src={lupa} height={25}/></button>
     </form>
   );
 };

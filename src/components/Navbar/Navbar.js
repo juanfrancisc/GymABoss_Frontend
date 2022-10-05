@@ -78,10 +78,11 @@ const Navbar = () => {
                                 Todas las tipologias
                             </Link>
                         </li>
-                        <li>
-                        <SearchForm
+                        <li>    
+                        <SearchForm 
                             searchParams={searchParams}
                             setSearchParams={setSearchParams}
+                            
                             />
                         </li>
                     </ul>

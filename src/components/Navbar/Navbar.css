@@ -192,4 +192,19 @@ a:active {
     color: rgb(156, 151, 151);
 }
 
+.search {
+  background-color: transparent;
 
+}
+
+nav form {
+  background-color: transparent;
+  display: flex;
+  padding: 1rem;
+  margin: 0;
+  margin-left: 1rem;
+  flex-direction: row;
+  border-color: rgba(240, 248, 255, 0.377);
+  /* border-style:ridge; */
+  
+}
