@@ -18,10 +18,10 @@ const ExercisesPage = () => {
       <h2 className="exercise">Ejercicios</h2>
 
       {loading && <Spinner />}
-      <SearchForm
+     {/*  <SearchForm
         searchParams={searchParams}
         setSearchParams={setSearchParams}
-      />
+      /> */}
      
       {exercises.length > 0 && <ExerciseList exercises={exercises} />}
 
