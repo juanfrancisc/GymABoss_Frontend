@@ -180,19 +180,62 @@
     }
 }
 */
-
+/** Clase LikeButton */
 .LikeButton{
     content: url(../../assets/imagenes/black_heart.png);
-}
-
-.LikeButton_like{
-    content: url(../../assets/imagenes/red_heart.png);
 }
 
 .LikeButton:hover{
     content: url(../../assets/imagenes/red_heart.png);
 }
 
-.LikeButton::before{
+.LikeButton::after{
     content: url(../../assets/imagenes/red_heart.png);
+}
+
+.LikeButton:active{
+    content: url(../../assets/imagenes/red_heart.png);
+}
+
+.LikeButton::selection{
+    content: url(../../assets/imagenes/red_heart.png);
+}
+
+.LikeButton:checked{
+    content: url(../../assets/imagenes/red_heart.png);
+}
+
+/* .LikeButton:focus{
+    content: url(../../assets/imagenes/red_heart.png);
+} */
+
+.LikeButton:visited{
+    content: url(../../assets/imagenes/red_heart.png);
+}
+
+
+
+/** Clase LikeButton_Like */
+.LikeButton_like{
+    content: url(../../assets/imagenes/red_heart.png);
+}
+
+.LikeButton_like:hover{
+    content: url(../../assets/imagenes/black_heart.png);
+}
+
+.LikeButton_like:hover{
+    content: url(../../assets/imagenes/black_heart.png);
+}
+
+.LikeButton_like::after{
+    content: url(../../assets/imagenes/black_heart.png);
+}
+
+.LikeButton_like:checked{
+    content: url(../../assets/imagenes/black_heart.png);
+}
+
+.LikeButton_like:focus{
+    content: url(../../assets/imagenes/black_heart.png);
 }

@@ -16,7 +16,7 @@ const ExercisesList = () => {
         setExercises,
         setExerciseLikes,
         setDeleteExercise,
-        setExerciseFavs,
+        setFavorites,
     } = useExercises([]);
 
     const { user } = useUser();
@@ -39,7 +39,7 @@ const ExercisesList = () => {
                             setExercise={setExercise}
                             setExerciseLikes={setExerciseLikes}
                             setDeleteExercise={setDeleteExercise}
-                            setExerciseFavs={setExerciseFavs}
+                            setFavorites={setFavorites}
                         />
                     </li>
 

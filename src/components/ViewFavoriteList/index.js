@@ -10,7 +10,7 @@ import FavButton from '../FavButton/FavButton';
 const ViewFavoriteList = () => {
     const [loading, setLoading] = useState(true);
     const { token } = useTokenContext();
-    const [favorites, setFavorites] = useState("")
+    const [favorites, setFavorites] = useState([])
 
     
 

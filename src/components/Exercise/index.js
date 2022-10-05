@@ -17,26 +17,16 @@ const Exercise = ({
     setExerciseLikes,
     user,
     setDeleteExercise,
-   /*  setExerciseFavs, */
+    setFavorites,
 }) => {
-    /* console.log({exercise, setExercise}); */
+
     const { id, idUser, n_like, title, description, photo, typology } =
         exercise;
     //console.log(id);
 
-    /* const { token } = useTokenContext();
-    const [loading, setLoading] = useState(true);
-    const [exercises, setExercises] = useState(''); */
 
     return (
         <section className="boxes">
-            {/* {user.type_user === 'admin' && <EditExerciseForm exercise={exercise}/>} */}
-            {/* {user.type_user === 'admin' && (
-                <DeleteExerciseButton
-                    id={id}
-                    setDeleteExercise={setDeleteExercise}
-                />
-            )} */}
 
             {user.type_user === 'admin' && (
                 <section className='edit_delete'>
@@ -52,7 +42,7 @@ const Exercise = ({
 
             <Link className="Link" to={`../verExercise/${id}`}>
                 <h3 className="title">{title}</h3>
-                {/* <p className="description">{description}</p> */}
+
                 <p className="typology">{typology}</p>
                 {photo.length > 0 && (
                     <img
@@ -66,7 +56,7 @@ const Exercise = ({
             <section className='fav_like'>
             <LikeButton id={id} setExerciseLikes={setExerciseLikes} />
 
-            {user.type_user === 'normal' && <FavButton id={id} /* setExerciseFavs={setExerciseFavs} */ />}
+            {user.type_user === 'normal' && <FavButton id={id} setFavorites={setFavorites}  />}
 
             </section>
 
