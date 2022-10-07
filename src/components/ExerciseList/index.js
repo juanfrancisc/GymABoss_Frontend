@@ -13,7 +13,7 @@ import EditExerciseButton from '../EditExerciseButton/EditExerciseButton'; */
 const ExercisesList = () => {
     const {
         exercises,
-        setExercises,
+        /* setExercises, */
         setExerciseLikes,
         setDeleteExercise,
         setFavorites,
@@ -23,7 +23,7 @@ const ExercisesList = () => {
     /* const { token } = useTokenContext(); */
     /* const [updateExercises, setUpdateExercises] = useState([exercises]) */
     /* const [loading, setLoading] = useState(true); */
-    const { exercise, setExercise } = useState();
+    const { /* exercise, */ setExercise } = useState();
 
     //const [updateExercises, setUpdateExercises] = useState([exercises]);
 
