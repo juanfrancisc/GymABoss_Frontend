@@ -3,7 +3,6 @@ import logo from '../../assets/imagenes/logo.png'
 import RegisterForm from '../../components/RegisterForm'
 
 const RegisterPage = () => {
-    console.log('RegisterPage')
     return (
         <section>
             <h2>Register</h2>
