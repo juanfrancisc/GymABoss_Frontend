@@ -20,8 +20,6 @@ const VerExercise = ({ id, user }) => {
 
     const { name, description, typology, photo } = exercise;
 
-    console.log(name);
-
     useEffect(() => {
         const fetchExercises = async () => {
             try {

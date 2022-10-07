@@ -3,7 +3,8 @@ import './styles.css'
 const Spinner = () => {
     return (
 
-        <span class="spinner"></span> 
+        <span className="spinner"></span> 
+
         
         )
 

@@ -20,7 +20,8 @@ const EditExerciseForm = ({ exercise }) => {
     const [newTypology, setNewTypology] = useState(currentTypology);
     const [newPhoto, setNewPhoto] = useState(currentPhoto);
 
-    const newPhotoRef = useRef();
+
+    const newPhotoRef = useRef(newPhoto);
 
     const { token } = useTokenContext();
 
@@ -37,7 +38,7 @@ const EditExerciseForm = ({ exercise }) => {
                         !newTitle ||
                         !newDescription ||
                         !newTypology ||
-                        !newPhotoRef
+                        !newPhoto
                     ) {
                         toast.warn(
                             'No has modificado ningun datos del ejercicio'

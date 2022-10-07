@@ -13,16 +13,14 @@ import NewExercisePage from './pages/NewExercisePage'
 import ExercisesPage from './pages/ExercisesPage'
 import RegisterPage from './pages/RegisterPage/Registerpage'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
-import VerExercise from './components/VerExercise/VerExercise_pruebas'
+
 import RememberPass from './components/RememberPass/RememberPass'
 import EditExercisePage from './pages/EditExercisePge'
-import EditExerciseForm from './components/EditExerciseForm/EditExerciseForm'
+
 import ExerciseDetail from './pages/ExerciseDetailPage/ExerciseDetail'
 import ViewFavoriteList from './components/ViewFavoriteList'
 
-//mport DeteleExercise from "./components/DeleteExercise/DeleteExercise";
-//import TypologyFilter from "./components/TypologyFilter/TypologyFilter";
-//import NavbarButton from "./components/NavbarButton/NavbarButton";
+
 import FavoritesPage from './pages/FavoritesPage';
 
 function App() {
@@ -33,7 +31,7 @@ function App() {
                     <Header />
                 </header>
                 <main>
-                    
+                    {/* <Spinner /> */}
                     <Routes>
                         <Route path="/" element={<LoginPage />} />
                         <Route path="/login" element={<LoginPage />} />

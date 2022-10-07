@@ -205,9 +205,9 @@
     content: url(../../assets/imagenes/red_heart.png);
 }
 
-/* .LikeButton:focus{
+.LikeButton:focus{
     content: url(../../assets/imagenes/red_heart.png);
-} */
+}
 
 .LikeButton:visited{
     content: url(../../assets/imagenes/red_heart.png);
@@ -237,5 +237,9 @@
 }
 
 .LikeButton_like:focus{
+    content: url(../../assets/imagenes/black_heart.png);
+}
+
+.LikeButton_like:visited{
     content: url(../../assets/imagenes/black_heart.png);
 }

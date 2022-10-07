@@ -6,10 +6,10 @@ import { useState } from 'react';
 import FavB from '../../assets/imagenes/start.png'
 
 /* const FavButton = ({ id, favorites, setFavorites}) => { */
-const FavButton = ({id, favorites, setFavorites}) => {
+const FavButton = ({id}) => {
     const { token } = useTokenContext();
     /* console.log(id) */
-    /* const [favorites, setFavorites] = useState(); */
+    const [favorites, setFavorites] = useState();
 
     const favExerciseId = async (id, token) => {
         try {
@@ -43,6 +43,7 @@ const FavButton = ({id, favorites, setFavorites}) => {
                 values="Ir a favoritos"
                 onClick={() => {
                     favExerciseId(id, token);
+                    setFavorites(...favorites)
                 }}
             >
             </input>

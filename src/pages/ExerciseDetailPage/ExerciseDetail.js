@@ -5,7 +5,7 @@ import Spinner from "../../components/Spinner/Spinner";
 import useExerciseId from "../../hooks/useExerciseId";
 import useUser from "../../hooks/useUser";
 import { useParams } from "react-router-dom";
-import VerExercise from "../../components/VerExercise/VerExercise_pruebas";
+import VerExercise from "../../components/VerExercise/VerExercise";
 //import useTypology from "../../hooks/useTypology";
 
 const ExerciseDetail = () => {
