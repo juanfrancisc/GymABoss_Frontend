@@ -1,14 +1,7 @@
-import './styles.css'
+import './styles.css';
 
 const Spinner = () => {
-    return (
+	return <span className="spinner"></span>;
+};
 
-        <span className="spinner"></span> 
-
-        
-        )
-
-  };
-  
-  export default Spinner;
-  
+export default Spinner;
