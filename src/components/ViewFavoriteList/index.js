@@ -23,7 +23,7 @@ const ViewFavoriteList = () => {
 		const fetchFavoritesList = async () => {
 			try {
 				const consulta = `${process.env.REACT_APP_API_URL}/viewFavorites`;
-				/* console.log(consulta) */
+
 				const res = await fetch(consulta, {
 					method: 'POST',
 					headers: {
@@ -32,15 +32,6 @@ const ViewFavoriteList = () => {
 				});
 
 				const body = await res.json();
-
-				/* console.log(body) */
-				if (body.status === '0') {
-					toast.success(
-						'No existe ningun ejercicio marcado como favorito'
-					);
-					setFavorites('');
-					return;
-				}
 
 				setFavorites(body.data);
 			} catch (error) {
@@ -53,12 +44,15 @@ const ViewFavoriteList = () => {
 		fetchFavoritesList();
 	}, []);
 
+    
+
 	return (
 		<>
 			<h2> Mis Favoritos</h2>
 			<ul className="boxes-fav">
-				{favorites &&
-					favorites.map((object) => {
+				{(!favorites || favorites.length === 0) 
+                ? (<h2>No has marcado ningún ejercicio como favorito</h2>) 
+                : favorites.map((object) => {
 						return (
 							<li className="boxes-fav" key={object.id}>
 								<Link
@@ -84,7 +78,7 @@ const ViewFavoriteList = () => {
 								/>
 							</li>
 						);
-					})}
+					})  }
 			</ul>
 		</>
 	);
