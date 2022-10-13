@@ -1,66 +1,11 @@
-/*header nav ul {
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    font-size: 22px;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
+.FavButton {
+	content: url(../../assets/imagenes/img_fav1.png);
 }
 
-.title {
-    justify-content: center;
-    font-family: 'Bungee Spice', cursive;
-    font-size: 120px;
-    align-items: center;
-    text-align: center;
+.FavButton:hover {
+	content: url(../../assets/imagenes/start.png);
 }
 
-.link {
-    text-decoration: none;
-    color: black;
-}*/
-
-.pruebas-fav{
-    background-image:url(../../assets/imagenes/black_heart.png);
-    background-repeat:no-repeat;
-    height:100px;
-    width:100px;
-    background-position:center;
-
-}
-
-.pruebas-fav:hover{
-    background-image:url(../../assets/imagenes/red_heart.png);
-    background-repeat:no-repeat;
-    height:100px;
-    width:100px;
-    background-position:center;
-
-}
-
-.pruebas-fav:active{
-    background-image:url(../../assets/imagenes/red_heart.png);
-    background-repeat:no-repeat;
-    height:100px;
-    width:100px;
-    background-position:center;
-
-}
-
-
-.pruebas-fav:before{
-    background-image:url(../../assets/imagenes/red_heart.png);
-    background-repeat:no-repeat;
-    height:100px;
-    width:100px;
-    background-position:center;
-
-}
-
-input .FavButton img{
-    width: 64px;
-    height: 64px;
-    
+.FavButton.favorited {
+	content: url(../../assets/imagenes/start.png);
 }

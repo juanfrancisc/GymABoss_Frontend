@@ -3,18 +3,17 @@ import { Link } from 'react-router-dom';
 import { useTokenContext } from '../../contexts/TokenContext';
 import LogoutButton from '../LogoutButton/LogoutButton';
 import NewExerciseButton from '../NewExerciseButton/NewExereciseButton';
-/* import { useState } from "react"; */
+import { useSearchParams } from "react-router-dom";
 import useUser from '../../hooks/useUser';
 import logo from '../../assets/imagenes/logo.png';
-import FavButton from '../FavButton/FavButton';
 import FavButtonList from '../FavButtonList/FavButtonList';
 import SearchForm from "../../components/SearchForm";
-import useExercises from '../../hooks/useExercises';
+
 
 const Navbar = () => {
     const { token } = useTokenContext();
     const { user } = useUser();
-    const { searchParams, setSearchParams } = useExercises();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     return (
         <nav>

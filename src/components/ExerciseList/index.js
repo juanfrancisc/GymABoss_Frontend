@@ -27,7 +27,6 @@ const ExercisesList = () => {
 
 	//const [updateExercises, setUpdateExercises] = useState([exercises]);
 
-	console.log(exercises);
 	return (
 		<ul className="exercises_list">
 			{exercises.map((exercise) => {

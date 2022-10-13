@@ -1,17 +1,41 @@
 import './FavButton.css';
 import { toast } from 'react-toastify';
 import { useTokenContext } from '../../contexts/TokenContext';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import FavB from '../../assets/imagenes/start.png';
+import { useState, useEffect } from 'react';
 
-/* const FavButton = ({ id, favorites, setFavorites}) => { */
 
-const FavButton = ({ id }) => {
+const FavButton = ({ id, removeFavorite }) => {
+	const [isFavorite, setIsFavorite] = useState(false);
 	const { token } = useTokenContext();
-	/* console.log(id) */
-	const [favorites, setFavorites] = useState();
+	
 
+	useEffect(() => {
+		const checkFavorite = async () => {
+			try {
+				const consulta = `${process.env.REACT_APP_API_URL}/checkFavorite/${id}`;
+
+				const res = await fetch(consulta, {
+					method: 'GET',
+					headers: {
+						authorization: token,
+					},
+				});
+
+				const body = await res.json();
+
+				if (!res.ok) {
+					throw new Error(body.message);
+				}
+
+				setIsFavorite(body.isFavorite);
+			} catch (error) {
+				console.error(error.message);
+				toast.error(error.message);
+			}
+		};
+
+		checkFavorite();
+	}, []);
 
 	const favExerciseId = async (id, token) => {
 		try {
@@ -25,8 +49,12 @@ const FavButton = ({ id }) => {
 			});
 
 			const body = await res.json();
-			setFavorites(body.data);
 
+			if (!res.ok) {
+				throw new Error(body.message);
+			}
+
+			setIsFavorite(body.favorited);
 			toast.success(body.message);
 		} catch (error) {
 			console.error(error.message);
@@ -38,12 +66,17 @@ const FavButton = ({ id }) => {
 		<>
 			<input
 				type="image"
-				className="FavButton"
-				/* src={FavB} */
+				alt="Boton Favorito"
+				className={`FavButton ${isFavorite && 'favorited'}`}
 				id={id}
 				values="Ir a favoritos"
 				onClick={() => {
 					favExerciseId(id, token);
+
+					if (removeFavorite) {
+						removeFavorite(id);
+						
+					}
 				}}
 			></input>
 		</>
