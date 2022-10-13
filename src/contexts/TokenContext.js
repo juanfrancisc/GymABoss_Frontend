@@ -14,12 +14,10 @@ export const CustomTokenContextProvider = ({ children }) => {
       return;
     }
 
-    //console.log("1");
+
     const fetchUser = async () => {
       try {
-        //console.log({token})
-
-        //console.log("2");
+ 
         const res = await fetch(
           `${process.env.REACT_APP_API_URL}/users`,{
             headers: {
@@ -31,14 +29,11 @@ export const CustomTokenContextProvider = ({ children }) => {
         
         const body = await res.json();
 
-        //console.log("3");
 
         if (!res.ok) {
-          //console.log("4");
           throw new Error(body.message);
         }
-        //console.log("5")
-        //console.log(body.data)
+
         setLoggedUser(body.data);
         toast.success(body.message)
       } catch (error) {

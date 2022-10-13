@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTokenContext } from "../contexts/TokenContext";
 
-const useLikeExercise = (id) => {
+/* const useLikeExercise = (id) => {
   //const [exercises, setExercises] = useState([]);
   //console.log(exercises)
   const [errorMessage, setErrorMessage] = useState("");
@@ -52,4 +52,4 @@ const useLikeExercise = (id) => {
   return { errorMessage, loading, like, setLike };
 };
 
-export default useLikeExercise;
+export default useLikeExercise; */

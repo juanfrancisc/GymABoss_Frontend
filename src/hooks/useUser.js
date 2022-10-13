@@ -7,10 +7,8 @@ const useUser = () => {
     const [loading, setLoading] = useState(true);
 
     const { token } = useTokenContext();
-    //console.log(token)
 
     const decodedToken = JSON.parse(atob(token.split(".")[1]));
-    //console.log(decodedToken)
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -22,18 +20,15 @@ const useUser = () => {
             }
         });
         const body = await res.json();
-        //console.log(body)
 
         if (!res.ok) {
           throw new Error(
             "Unexpected error fetching API. Please, try again or contact support"
           );
         }
-        /* if (data.type_user === 'admin'){
-            setUser(data.type_user);
-        } */
+
         setUser(body.data);
-        //console.log(body.data.type_user)
+        
       } catch (error) {
         console.error(error.message);
         toast.error(error.message);

@@ -37,7 +37,7 @@ const SearchForm = ({ searchParams, setSearchParams }) => {
         }}
       />
 
-      <button className="search_but"> <img src={lupa} height={25}/></button>
+      <button className="search_but"> <img src={lupa} alt="Lupa del buscador" height={25}/></button>
     </form>
   );
 };

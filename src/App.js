@@ -2,26 +2,18 @@ import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { CustomTokenContextProvider } from './contexts/TokenContext';
-import Spinner from '../src/components/Spinner/Spinner';
-
-//Importamos BrowserRouter, Routes, Route para el trabajo de rutas
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Header from './components/Header/Header'
-import LoginPage from './pages/LoginPage/LoginPage'
+import Header from './components/Header/index'
+import LoginPage from './pages/LoginPage'
 import NewExercisePage from './pages/NewExercisePage'
 import ExercisesPage from './pages/ExercisesPage'
-import RegisterPage from './pages/RegisterPage/Registerpage'
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
-
-import RememberPass from './components/RememberPass/RememberPass'
-import EditExercisePage from './pages/EditExercisePge'
-
-import ExerciseDetail from './pages/ExerciseDetailPage/ExerciseDetail'
+import RegisterPage from './pages/RegisterPage'
+import NotFoundPage from './pages/NotFoundPage'
+import RememberPass from './components/RememberPass'
+import EditExercisePage from './pages/EditExercisePage'
+import ExerciseDetail from './pages/ExerciseDetailPage'
 import ViewFavoriteList from './components/ViewFavoriteList'
 
-
-import FavoritesPage from './pages/FavoritesPage';
 
 function App() {
     return (
@@ -31,13 +23,12 @@ function App() {
                     <Header />
                 </header>
                 <main>
-                    {/* <Spinner /> */}
                     <Routes>
                         <Route path="/" element={<LoginPage />} />
                         <Route path="/login" element={<LoginPage />} />
                         <Route path="/register" element={<RegisterPage />} />
                         <Route
-                            path="/remenberPass"
+                            path="/rememberPass"
                             element={<RememberPass />}
                         />
                         <Route
@@ -67,12 +58,6 @@ function App() {
 
                         <Route path="/viewFavoritesList" element={<ViewFavoriteList />}/>
 
-                        <Route
-                            path="/FavoritesPage/"
-                            element={<FavoritesPage />}
-                        />
-
-                        {/* <Route path="/deleteExercise/:id" element={<DeteleExercise />} /> */}
 
                         <Route path="*" element={<NotFoundPage />} />
                     </Routes>

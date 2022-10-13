@@ -10,17 +10,10 @@ const NewExerciseForm = () => {
     const [typology, setTypology] = useState('')
     const { token } = useTokenContext()
 
-    /* const decodedToken = JSON.parse(atob(token.split(".")[1]));
-  console.log(decodedToken) */
 
     const navigate = useNavigate()
 
     const photoRef = useRef()
-
-    /* if(decodedToken.type !== 'admin'){
-    console.error("Errorooooo");
-    
-  } */
 
     return (
         <form
@@ -29,7 +22,6 @@ const NewExerciseForm = () => {
                 try {
                     event.preventDefault()
                     const exerecisePhoto = photoRef.current.files[0]
-                    //console.log(exerecisePhoto);
 
                     const formData = new FormData()
                     if (!exerecisePhoto) {

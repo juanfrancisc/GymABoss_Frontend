@@ -7,12 +7,9 @@ const useExercises = () => {
 	const [exercises, setExercises] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	//console.log([exercises, setExercises])
-
 	const { token } = useTokenContext();
 
 	const [searchParams, setSearchParams] = useSearchParams();
-	//console.log(token)
 
 	useEffect(() => {
 		const fetchExercises = async () => {
@@ -20,8 +17,6 @@ const useExercises = () => {
 				const consulta = `${
 					process.env.REACT_APP_API_URL
 				}/getExercises?${searchParams.toString()}`;
-
-				const parametro = `${searchParams}`;
 
 				const res = await fetch(consulta, {
 					method: 'GET',
@@ -31,7 +26,6 @@ const useExercises = () => {
 				});
 
 				const body = await res.json();
-				//console.log(body)
 
 				if (!res.ok) {
 					throw new Error(
@@ -40,7 +34,6 @@ const useExercises = () => {
 				}
 
 				setExercises(body.data);
-				/* console.log(body.data) */
 				toast.success(body.message);
 			} catch (error) {
 				console.error(error.message);
@@ -69,28 +62,7 @@ const useExercises = () => {
 		setExercises(updatedExercises);
 	};
 
-	/** Para pruebas  */
-	/* const setFavExercices = async (token) => {
-        const consulta = `${
-            process.env.REACT_APP_API_URL
-        }/viewFavorites`;
-
-
-        const res = await fetch(consulta, {
-            method: 'GET',
-            headers: {
-                authorization: token,
-            },
-        });
-
-        const body = await res.json();
-        /* console.log(body)
-
-        setFavExercices(body); 
-
-    };*/
-	/** Fin pruebas */
-
+	
 	return {
 		exercises,
 		setExercises,
@@ -99,7 +71,6 @@ const useExercises = () => {
 		setSearchParams,
 		setExerciseLikes,
 		setDeleteExercise,
-		/* setFavExercices, */
 	};
 };
 

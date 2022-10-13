@@ -1,0 +1,21 @@
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    font-size: 22px;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+}
+
+.title {
+    justify-content: center;   
+    font-size: 120px;
+    align-items: center;
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}

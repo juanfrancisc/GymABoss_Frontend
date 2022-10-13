@@ -1,26 +1,19 @@
 import { Link } from 'react-router-dom';
-import { useTokenContext } from '../../contexts/TokenContext';
-import { toast } from 'react-toastify';
 import './styles.css';
-import LikeButton from '../LikeButton/LikeButton';
-/* import flexiones from '../../assets/imagenes/flexiones.jpg' */
-import useUser from '../../hooks/useUser';
-import DeleteExerciseButton from '../PruebaDeleteButon/index';
-import EditExerciseButton from '../EditExerciseButton/EditExerciseButton';
-import { useState } from 'react';
-import EditExerciseForm from '../EditExerciseForm/EditExerciseForm';
-import FavButton from '../FavButton/FavButton';
+import LikeButton from '../LikeButton';
+import DeleteExerciseButton from '../DeleteButton/index';
+import EditExerciseButton from '../EditExerciseButton/index';
+import FavButton from '../FavButton';
 
 const Exercise = ({
     exercise,
-    setExercise,
     setExerciseLikes,
     user,
     setDeleteExercise,
     setFavorites,
 }) => {
 
-    const { id, idUser, n_like, title, description, photo, typology } =
+    const { id, n_like, title, photo, typology } =
         exercise;
     //console.log(id);
 

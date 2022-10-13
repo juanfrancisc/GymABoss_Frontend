@@ -20,7 +20,6 @@ const useExerciseId = (id) => {
                 });
 
                 const body = await res.json();
-                //console.log(body)
 
                 if (!res.ok) {
                     throw new Error(
@@ -29,9 +28,10 @@ const useExerciseId = (id) => {
                 }
 
                 setExercise(body.data);
-                //console.log(body.data)
+
             } catch (error) {
                 console.error(error.message);
+                toast.error(error.message)
             } finally {
                 setLoading(false);
             }

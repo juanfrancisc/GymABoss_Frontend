@@ -1,0 +1,19 @@
+button.logoutButton {
+    width: 10%;
+    border: transparent;
+    display: block;
+    color: #000;
+    background-color: transparent;
+    object-fit: contain;
+    padding-bottom: 3rem;
+    
+}
+
+.logoutButton:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: transparent;
+    filter: brightness(1.25);
+    filter: drop-shadow(0 0 0.75rem rgba(226, 221, 222, 0.541));
+}
+

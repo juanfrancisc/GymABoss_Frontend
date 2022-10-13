@@ -1,14 +1,12 @@
-import './RegisterForm.css';
+import './styles.css';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-//Falta importar useNavigate
 import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    //Falta crear esta variable
     const navigate = useNavigate();
 
     return (
@@ -18,7 +16,7 @@ const RegisterForm = () => {
                     event.preventDefault();
 
                     const newUser = { name, email, password };
-                    console.log(newUser);
+
                     const res = await fetch(
                         `${process.env.REACT_APP_API_URL}/register`,
                         {
@@ -30,7 +28,6 @@ const RegisterForm = () => {
                         }
                     );
                     const body = await res.json();
-                    //console.log(body)
 
                     if (!res.ok) {
                         throw new Error(body.message);
@@ -71,6 +68,7 @@ const RegisterForm = () => {
                     setPassword(event.target.value);
                 }}
             />
+            <p>La contraseña debe de tener al como mínimo 8 caracteres y 15 de máximo, con una mayúscula, una minúscula, un número y un caracter especial</p>
             <button type="submit">Register</button>
         </form>
     );

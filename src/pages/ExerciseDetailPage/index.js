@@ -1,28 +1,18 @@
-import { getByTitle } from "@testing-library/react";
-import ErrorMessage from "../../components/ErrorMessage";
-import ExerciseDetail from "../../components/ExerciseDetail";
-import Spinner from "../../components/Spinner/Spinner";
-import useExercises from "../../hooks/useExercises";
+import useUser from "../../hooks/useUser";
+import { useParams } from "react-router-dom";
+import VerExercise from "../../components/VerExercise";
 
-/**
- * Hacer fetch de los ejercicios del backend y pintarlos en
- * una lista
- */
+const ExerciseDetail = () => {
+    const { id } = useParams();
+    const { user } = useUser();
 
-const ExerciseDetailPage = () => {
-  const { exercises, errorMessage, loading } = useExercises();
+    return (
+      <fieldset className="view_exercise_detail">
 
-  return (
-    <section>
-      <h2>Ejercicio</h2>
-
-      {loading && <Spinner />}
-
-      {exercises.length > 0 && <ExerciseDetail exercises={exercises} />}
-
-      {errorMessage && <ErrorMessage msg={errorMessage} />}
-    </section>
-  );
-};
-
-export default ExerciseDetailPage;
+        <VerExercise id={id} user={user}/>
+  
+      </fieldset>
+    );
+  };
+  
+  export default ExerciseDetail; 

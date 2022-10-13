@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTokenContext } from "../contexts/TokenContext";
 import { toast } from "react-toastify";
 
-const useDeteleExercise = (id) => {
+/* const useDeteleExercise = (id) => {
     const { token } = useTokenContext();
 
     const [exercise, setExercise] = useState("")
@@ -39,4 +39,4 @@ const useDeteleExercise = (id) => {
     return { id, idDelete,setIdDelete,exercise, setExercise, loading };
   };
   
-  export default useDeteleExercise;
+  export default useDeteleExercise; */

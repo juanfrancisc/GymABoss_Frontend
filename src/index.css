@@ -13,8 +13,6 @@ body {
     background-size: cover;
     background-position: center center;
     height: 100vh;
-    /* display: flex;
-    flex-direction: column; */
     font-family: 'Bebas Neue';
     letter-spacing: 0.15rem;
 }

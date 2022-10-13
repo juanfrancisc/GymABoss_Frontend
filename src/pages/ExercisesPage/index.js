@@ -1,14 +1,12 @@
-import ErrorMessage from '../../components/ErrorMessage';
 import ExerciseList from '../../components/ExerciseList';
-import Spinner from '../../components/Spinner/Spinner';
+import Spinner from '../../components/Spinner';
 import useExercises from '../../hooks/useExercises';
 import './styles.css';
 
 
 const ExercisesPage = () => {
-	const { exercises, errorMessage, loading, searchParams, setSearchParams } =
+	const { exercises, loading } =
 		useExercises();
-	/* const { user } = useUser(); */
 
 	return (
 		<section className="list_exercises">
@@ -22,7 +20,6 @@ const ExercisesPage = () => {
 				<ExerciseList exercises={exercises} />
 			)}
 
-			{errorMessage && <ErrorMessage msg={errorMessage} />}
 		</section>
 	);
 };
