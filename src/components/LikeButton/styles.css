@@ -56,7 +56,7 @@
 .LikeButton_like {
 	content: url(../../assets/imagenes/red_heart.png);
 	animation: like 0.25s;
-	animation: sparkles 0.5s;
+	/*animation: sparkles 0.5s;*/
 }
 
 @keyframes like {
